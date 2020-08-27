@@ -1,11 +1,12 @@
-import { today } from '../../main/ts/generators'
+import { now } from '../../main/ts/generators'
 
-describe('today', () => {
+describe('now', () => {
   it('is properly exported', () => {
-    expect(today).toBeDefined()
+    expect(now).toBeDefined()
   })
 
   it('returns instance of Date', () => {
-    expect(today()).toBeInstanceOf(Date)
+    const timestamp = Date.now()
+    expect(now()).toBeGreaterThanOrEqual(timestamp)
   })
 })

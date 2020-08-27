@@ -1,1 +1,1 @@
-export const today = (): Date => new Date()
+export const now = (): number => Date.now()
