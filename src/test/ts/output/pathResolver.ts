@@ -22,25 +22,19 @@ describe('resolveFilePath', () => {
     expect(resolveFilePath(path, '/')).toEqual(`${path}${defaultFilename}`)
   })
 
-  it('throws an error when path refers to an existing file', () => {
-    const filePath = `${path}temp.json`
-    fs.writeFileSync(filePath, JSON.stringify({ foo: 'foo ' }))
-    expect(() => resolveFilePath(filePath, '/'))
-      .toThrowError(`File ${filePath} already exists`)
-  })
-
-  it('throws an error when path with default filename refers to an existing file', () => {
-    const filePath = `${path}${defaultFilename}`
-    fs.writeFileSync(filePath, JSON.stringify({ foo: 'foo ' }))
-    expect(() => resolveFilePath(path, '/'))
-      .toThrowError(`File ${filePath} already exists`)
-  })
-
-  it('creates intermediate directories and returns full path', () => {
+  it('creates intermediate directories and returns full path when given path with file name', () => {
     const fullPath = `${path}foo/bar/baz.json`
     expect(resolveFilePath(fullPath, '/'))
       .toEqual(fullPath)
     expect(fs.lstatSync(`${path}/foo/bar`).isDirectory()).toEqual(true)
+    expect(fs.existsSync(fullPath)).toEqual(false)
+  })
+
+  it('creates intermediate directories and returns full path when given path without file name', () => {
+    const fullPath = `${path}foo/baz/buildstamp.json`
+    expect(resolveFilePath(`${path}foo/baz/`, '/'))
+      .toEqual(fullPath)
+    expect(fs.lstatSync(`${path}/foo/baz`).isDirectory()).toEqual(true)
     expect(fs.existsSync(fullPath)).toEqual(false)
   })
 })
