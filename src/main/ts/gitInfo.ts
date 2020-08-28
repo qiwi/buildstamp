@@ -1,20 +1,22 @@
 import findGitRoot from 'find-git-root'
+import path from 'path'
 import { readFileToString } from './utils'
 import { TVcsInfoCreator } from './interfaces'
 
-export const getGitInfo: TVcsInfoCreator = ({ cwd }, { SEP }) => {
+export const getGitInfo: TVcsInfoCreator = ({ cwd }) => {
+  const { sep } = path
   const gitFolder = findGitRoot(cwd)
 
-  const rev = readFileToString(`${gitFolder}${SEP}HEAD`).trim()
+  const rev = readFileToString(`${gitFolder}${sep}HEAD`).trim()
 
   const commitId = !rev.includes(':')
     ? rev
-    : readFileToString(`${gitFolder}${SEP}` + rev.substring(5)).trim()
+    : readFileToString(`${gitFolder}${sep}` + rev.substring(5)).trim()
 
-  const repoName = readFileToString(`${gitFolder}${SEP}config`)
+  const repoName = readFileToString(`${gitFolder}${sep}config`)
     .split('\n')
     .filter((line) => /\turl =/.exec(line))
-    .reduce((acc, line) => acc + line.split(SEP).slice(-2).join(SEP), '')
+    .reduce((acc, line) => acc + line.split(sep).slice(-2).join(sep), '')
 
   return {
     commitId,

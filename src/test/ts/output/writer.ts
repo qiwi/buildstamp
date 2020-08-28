@@ -1,8 +1,7 @@
 import fs from 'fs'
 import rimraf from 'rimraf'
-import { writeFile } from '../../../main/ts/output/writer'
+import { writeFile } from '../../../main/ts/output'
 import { TStampContext, TStampOptions } from '../../../main/ts'
-import { defaultEnv } from '../../../main/ts/constants'
 
 const ctx: TStampContext = {
   gitInfo: {
@@ -34,14 +33,14 @@ describe('write', () => {
       out: 'some/path/buildstamp.json',
     }
 
-    writeFile(ctx, opts, defaultEnv)
+    writeFile(ctx, opts)
 
     expect(writeFileSyncSpy).toHaveBeenCalledWith('some/path/buildstamp.json', output)
     expect(logSpy).toHaveBeenCalled()
   })
 
   it('throws an error when out is not defined', () => {
-    expect(() => writeFile(ctx, { cwd: process.cwd() }, defaultEnv))
+    expect(() => writeFile(ctx, { cwd: process.cwd() }))
       .toThrowError('Output path is not specified')
   })
 
@@ -56,7 +55,7 @@ describe('write', () => {
       throw writeError
     })
 
-    writeFile(ctx, opts, defaultEnv)
+    writeFile(ctx, opts)
 
     expect(logSpy).toHaveBeenCalledWith(writeError)
   })

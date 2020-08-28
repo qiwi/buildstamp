@@ -1,8 +1,7 @@
-import { TStampEnv, TStampOptions } from '../../main/ts'
+import { TStampOptions } from '../../main/ts'
 import * as executor from '../../main/ts/executor'
 import * as writer from '../../main/ts/output/writer'
 import * as logger from '../../main/ts/output/logger'
-import { defaultEnv } from '../../main/ts/constants'
 import * as generators from '../../main/ts/generators'
 
 const { create, execute, write, print } = executor
@@ -16,7 +15,7 @@ describe('create', () => {
     expect(create).toBeDefined()
   })
 
-  it('uses default pipeline', () => {
+  it('uses default chunks', () => {
     const currentTimestamp = Date.now()
     jest.spyOn(generators, 'now').mockImplementation(() => currentTimestamp)
     const input = {
@@ -33,19 +32,14 @@ describe('create', () => {
         repoName: 'qiwi/buildstamp.git',
       },
     }
-    expect(create({ ...input, cwd: process.cwd() } as TStampOptions, defaultEnv)).toMatchObject(output)
-    expect(create(input as TStampOptions, defaultEnv)).toMatchObject(output)
+    expect(create({ ...input, cwd: process.cwd() } as TStampOptions, process.env)).toMatchObject(output)
+    expect(create(input as TStampOptions, process.env)).toMatchObject(output)
   })
 })
 
 describe('execute', () => {
   it('is properly exported', () => {
     expect(execute).toBeDefined()
-  })
-
-  it('throws an error when SEP is not defined', () => {
-    expect(() => execute(opts, {} as TStampEnv))
-      .toThrowError('You need to specify path separator in SEP environment variable')
   })
 
   it('calls create and writeFile when out is given', () => {
@@ -55,24 +49,16 @@ describe('execute', () => {
       cwd: process.cwd(),
       out: 'some/path',
     }
-    execute(opts, defaultEnv)
-    expect(createSpy).toHaveBeenCalledWith(opts, defaultEnv)
-    expect(writeSpy).toHaveBeenCalled()
-
-    execute(opts)
-    expect(createSpy).toHaveBeenCalledWith(opts, defaultEnv)
+    execute(opts, process.env)
+    expect(createSpy).toHaveBeenCalledWith(opts, process.env)
     expect(writeSpy).toHaveBeenCalled()
   })
 
   it('calls create and log when out is not given', () => {
     const createSpy = jest.spyOn(executor, 'create').mockImplementation(() => ({}))
     const loggerSpy = jest.spyOn(logger, 'log').mockImplementation(() => undefined)
-    execute(opts, defaultEnv)
-    expect(createSpy).toHaveBeenCalledWith(opts, defaultEnv)
-    expect(loggerSpy).toHaveBeenCalled()
-
-    execute(opts)
-    expect(createSpy).toHaveBeenCalledWith(opts, defaultEnv)
+    execute(opts, process.env)
+    expect(createSpy).toHaveBeenCalledWith(opts, process.env)
     expect(loggerSpy).toHaveBeenCalled()
   })
 })
@@ -82,10 +68,7 @@ describe('write', () => {
 
   it('calls writeFile', () => {
     const writeFileSpy = jest.spyOn(writer, 'writeFile').mockImplementation(() => undefined)
-    write(opts, defaultEnv)
-    expect(writeFileSpy).toHaveBeenCalled()
-
-    write(opts)
+    write(opts, process.env)
     expect(writeFileSpy).toHaveBeenCalled()
   })
 })
@@ -95,10 +78,7 @@ describe('print', () => {
 
   it('calls log', () => {
     const logSpy = jest.spyOn(logger, 'log').mockImplementation(() => undefined)
-    print(opts, defaultEnv)
-    expect(logSpy).toHaveBeenCalled()
-
-    print(opts)
+    print(opts, process.env)
     expect(logSpy).toHaveBeenCalled()
   })
 })

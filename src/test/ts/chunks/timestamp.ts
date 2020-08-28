@@ -1,7 +1,6 @@
 import { timestampChunk } from '../../../main/ts/chunks/timestamp'
 import { TStampContext, TStampOptions } from '../../../main/ts'
 import * as generators from '../../../main/ts/generators'
-import { defaultEnv } from '../../../main/ts/constants'
 
 type TTestCase = {
   description: string
@@ -85,12 +84,12 @@ const cases: Array<TTestCase> = [
 describe('timestampChunk', () => {
   it('returns properly context value', () => {
     const ctx = {}
-    expect(timestampChunk(ctx, opts, defaultEnv)).toEqual(ctx)
+    expect(timestampChunk(ctx, opts, process.env)).toEqual(ctx)
   })
 
   it('returns context as is if options are not passed', () => {
     const ctx = {}
-    expect(timestampChunk(ctx, opts, defaultEnv)).toEqual(ctx)
+    expect(timestampChunk(ctx, opts, process.env)).toEqual(ctx)
   })
 
   cases.forEach(({ description, input, opts, output, currentTimestamp }) => {
@@ -98,7 +97,7 @@ describe('timestampChunk', () => {
       if (currentTimestamp) {
         jest.spyOn(generators, 'now').mockImplementation(() => currentTimestamp)
       }
-      expect(timestampChunk(input, { ...opts, cwd: process.cwd() }, defaultEnv)).toEqual(output)
+      expect(timestampChunk(input, { ...opts, cwd: process.cwd() }, process.env)).toEqual(output)
     })
   })
 })

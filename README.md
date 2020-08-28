@@ -1,18 +1,14 @@
-# @qiwi/buildstamp
+# buildstamp
 Utility for gathering build details
 # Installation
 ```shell script
-yarn add @qiwi/buildstamp
+yarn add buildstamp
 ```
 ```shell script
-npm i @qiwi/buildstamp
+npm i buildstamp
 ```
 # Usage
 ## CLI
-You should specify path separator of your system in environment variable SEP before using
-```shell script
-export CI=/
-```
 ```shell script
 buildstamp --out=some/path/b.json --git --docker.imageTag=foo --date.format=iso
 ```
@@ -27,20 +23,21 @@ Output in `some/path/b.json`:
 }
 ```
 ### Flags
-| Option            | Description                           | Default                         |
-|:------------------|:--------------------------------------|:--------------------------------|
-| --out             | path to generated file                | stdout                          |
-| --git             | add git data to output                | output doesn't contain git data |
-| --docker.imageTag | working directory                     | process.cwd()                   |
-| --date.format     | iso or instant                        | output doesn't contain date     |
-| --date.value      | any valid input for Date constructor  | current timestamp               |
+| Option            | Description                           | Default                                |
+|:------------------|:--------------------------------------|:---------------------------------------|
+| --out             | path to generated file                | stdout                                 |
+| --git             | add git data to output                | output doesn't contain git data        |
+| --docker.imageTag | docker image tag                      | output doesn't contain git docker info |
+| --date.format     | iso or instant                        | output doesn't contain date            |
+| --date.value      | any valid input for Date constructor  | current timestamp                      |
+| --cwd             | working directory                     | process.cwd()                          |
 
 ## API
 API functions accept the same options as cli
 ### create(options, env)
 Returns buildstamp
 ```javascript
-import { create } from '@qiwi/buildstamp'
+import { create } from 'buildstamp'
 
 const stamp = create({
     git: true,
@@ -62,7 +59,7 @@ console.log(stamp)
 ### write(options, env)
 Creates and writes buildstamp to a file. Parameter `out` is required.
 ```javascript
-import { write } from '@qiwi/buildstamp'
+import { write } from 'buildstamp'
 
 write({
     git: true,
@@ -85,7 +82,7 @@ Output in `some/path/stamp.json`:
 ### print(options, env)
 Creates and prints buildstamp to stdout.
 ```javascript
-import { print } from '@qiwi/buildstamp'
+import { print } from 'buildstamp'
 
 print({
     git: true,

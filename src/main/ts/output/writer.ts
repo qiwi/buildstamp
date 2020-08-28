@@ -1,12 +1,13 @@
 import fs from 'fs'
-import { TStampContext, TStampEnv, TStampOptions } from '../interfaces'
+import { sep } from 'path'
+import { TStampContext, TStampOptions } from '../interfaces'
 import { resolveFilePath } from './pathResolver'
 import { formatOutput } from '../utils'
+import { defaultJsonSpace } from '../constants'
 
 export const writeFile = (
   ctx: TStampContext,
-  opts: TStampOptions,
-  env: TStampEnv
+  opts: TStampOptions
 ) => {
   const { out } = opts
   if (!out) {
@@ -15,11 +16,11 @@ export const writeFile = (
 
   const body = formatOutput(
     ctx,
-    opts.jsonSpace || '\t'
+    opts.jsonSpace || defaultJsonSpace
   )
 
   try {
-    const filePath = resolveFilePath(out, env.SEP)
+    const filePath = resolveFilePath(out, sep)
     fs.writeFileSync(filePath, body)
     console.log('build-info.json was created')
   } catch (e) {

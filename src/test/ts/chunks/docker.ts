@@ -1,6 +1,5 @@
 import { dockerChunk } from '../../../main/ts/chunks/docker'
 import { TDockerDetails, TStampOptions } from '../../../main/ts'
-import { defaultEnv } from '../../../main/ts/constants'
 
 const ctx = {
   foo: 'foo',
@@ -13,7 +12,7 @@ const opts: TStampOptions = {
 
 describe('docker', () => {
   it('returns properly context value if options are not passed', () => {
-    expect(dockerChunk(ctx, opts, defaultEnv)).toEqual(ctx)
+    expect(dockerChunk(ctx, opts, process.env)).toEqual(ctx)
   })
 
   it('returns context with image tag when it is given in options', () => {
@@ -24,6 +23,6 @@ describe('docker', () => {
       docker,
       cwd: process.cwd(),
     }
-    expect(dockerChunk(ctx, opts, defaultEnv)).toEqual({ ...ctx, docker })
+    expect(dockerChunk(ctx, opts, process.env)).toEqual({ ...ctx, docker })
   })
 })

@@ -29,8 +29,6 @@ export type TStampOptions = {
   jsonSpace?: string
 }
 
-export type TStampEnv = Record<string, any> & {
-  SEP: string
-}
+export type TStampEnv = Record<string, any>
 
 export type TStampChunk = (ctx: TStampContext, opts: TStampOptions, env: TStampEnv) => TStampContext

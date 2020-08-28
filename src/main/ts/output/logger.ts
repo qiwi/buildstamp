@@ -1,5 +1,6 @@
 import { TStampContext, TStampOptions } from '../interfaces'
 import { formatOutput } from '../utils'
+import { defaultJsonSpace } from '../constants'
 
 export const log = (
   ctx: TStampContext,
@@ -7,7 +8,7 @@ export const log = (
 ) => {
   const body = formatOutput(
     ctx,
-    opts.jsonSpace || '\t'
+    opts.jsonSpace || defaultJsonSpace
   )
   console.log(body)
 }
