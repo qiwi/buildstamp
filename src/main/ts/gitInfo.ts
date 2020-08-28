@@ -11,7 +11,7 @@ export const getGitInfo: TVcsInfoCreator = ({ cwd }) => {
 
   const commitId = !rev.includes(':')
     ? rev
-    : readFileToString(`${gitFolder}${sep}` + rev.substring(5)).trim()
+    : readFileToString(`${gitFolder}${sep}` + rev.replace('ref: ', '')).trim()
 
   const repoName = readFileToString(`${gitFolder}${sep}config`)
     .split('\n')
