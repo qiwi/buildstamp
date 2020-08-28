@@ -1,6 +1,6 @@
 import { gitChunk } from '../../../main/ts/chunks/git'
 import { TGitDetails, TStampOptions } from '../../../main/ts'
-import * as gitInfoChunk from '../../../main/ts/gitInfo'
+import * as gitInfo from '../../../main/ts/gitInfo'
 import { defaultEnv } from '../../../main/ts/constants'
 
 const ctx = {
@@ -20,11 +20,11 @@ describe('gitChunk', () => {
       git: true,
       cwd: process.cwd(),
     }
-    const gitInfo: TGitDetails = {
+    const git: TGitDetails = {
       commitId: 'bar',
       repoName: 'baz',
     }
-    jest.spyOn(gitInfoChunk, 'getGitInfo').mockImplementation(() => gitInfo)
-    expect(gitChunk(ctx, opts, defaultEnv)).toEqual({ foo: 'foo', gitInfo })
+    jest.spyOn(gitInfo, 'getGitInfo').mockImplementation(() => git)
+    expect(gitChunk(ctx, opts, defaultEnv)).toEqual({ foo: 'foo', git })
   })
 })

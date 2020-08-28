@@ -17,13 +17,13 @@ describe('docker', () => {
   })
 
   it('returns context with image tag when it is given in options', () => {
-    const dockerInfo: TDockerDetails = {
+    const docker: TDockerDetails = {
       imageTag: 'bar',
     }
     const opts: TStampOptions = {
-      docker: dockerInfo,
+      docker,
       cwd: process.cwd(),
     }
-    expect(dockerChunk(ctx, opts, defaultEnv)).toEqual({ ...ctx, dockerInfo })
+    expect(dockerChunk(ctx, opts, defaultEnv)).toEqual({ ...ctx, docker })
   })
 })

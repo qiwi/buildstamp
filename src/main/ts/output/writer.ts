@@ -1,27 +1,27 @@
 import fs from 'fs'
 import { TStampContext, TStampEnv, TStampOptions } from '../interfaces'
 import { resolveFilePath } from './pathResolver'
+import { formatOutput } from '../utils'
 
-export const write = (
+export const writeFile = (
   ctx: TStampContext,
   opts: TStampOptions,
   env: TStampEnv
 ) => {
   const { out } = opts
-  const body = JSON.stringify(
+  if (!out) {
+    throw new Error('Output path is not specified')
+  }
+
+  const body = formatOutput(
     ctx,
-    null,
     opts.jsonSpace || '\t'
   )
 
   try {
-    if (out) {
-      const filePath = resolveFilePath(out, env.SEP)
-      fs.writeFileSync(filePath, body)
-      console.log('build-info.json was created')
-    } else {
-      console.log(body)
-    }
+    const filePath = resolveFilePath(out, env.SEP)
+    fs.writeFileSync(filePath, body)
+    console.log('build-info.json was created')
   } catch (e) {
     console.log(e)
   }

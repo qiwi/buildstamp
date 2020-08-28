@@ -17,7 +17,7 @@ const opts: TStampOptions = {
 
 const cases: Array<TTestCase> = [
   {
-    description: 'appends timestamp as ISO string for corresponding format when value is given',
+    description: 'appends date as ISO string for corresponding format when value is given',
     input: {
       foo: 'foo',
     },
@@ -29,11 +29,11 @@ const cases: Array<TTestCase> = [
     },
     output: {
       foo: 'foo',
-      timestamp: '2020-08-26T07:53:08.395Z',
+      date: '2020-08-26T07:53:08.395Z',
     },
   },
   {
-    description: 'appends timestamp as instant for appropriate format when value is given',
+    description: 'appends date as instant for appropriate format when value is given',
     input: {
       foo: 'foo',
     },
@@ -45,11 +45,11 @@ const cases: Array<TTestCase> = [
     },
     output: {
       foo: 'foo',
-      timestamp: 1598428388395,
+      date: 1598428388395,
     },
   },
   {
-    description: 'appends current timestamp as instant for appropriate format when value is not given',
+    description: 'appends current date as instant for appropriate format when value is not given',
     input: {
       foo: 'foo',
     },
@@ -60,12 +60,12 @@ const cases: Array<TTestCase> = [
     },
     output: {
       foo: 'foo',
-      timestamp: 1598428388395,
+      date: 1598428388395,
     },
     currentTimestamp: 1598428388395,
   },
   {
-    description: 'appends current timestamp as ISO string for appropriate format when value is not given',
+    description: 'appends current date as ISO string for appropriate format when value is not given',
     input: {
       foo: 'foo',
     },
@@ -76,7 +76,7 @@ const cases: Array<TTestCase> = [
     },
     output: {
       foo: 'foo',
-      timestamp: '2020-08-26T07:53:08.395Z',
+      date: '2020-08-26T07:53:08.395Z',
     },
     currentTimestamp: 1598428388395,
   },

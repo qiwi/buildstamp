@@ -6,7 +6,7 @@ export const gitChunk: TStampChunk = (ctx, opts, env) => {
     return ctx
   }
 
-  const gitInfo = getGitInfo(opts, env)
+  const git = getGitInfo(opts, env)
 
-  return { ...ctx, gitInfo }
+  return { ...ctx, git }
 }

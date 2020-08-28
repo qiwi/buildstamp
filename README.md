@@ -1,5 +1,5 @@
 # @qiwi/buildstamp
-Utility for gathering build-time data
+Utility for gathering build details
 # Installation
 ```shell script
 yarn add @qiwi/buildstamp
@@ -14,7 +14,7 @@ You should specify path separator of your system in environment variable SEP bef
 export CI=/
 ```
 ```shell script
-buildstamp --out=some/path/b.json --git docker.imageTag=foo --date.format=iso
+buildstamp --out=some/path/b.json --git --docker.imageTag=foo --date.format=iso
 ```
 Output in `some/path/b.json`:
 ```json
@@ -22,18 +22,18 @@ Output in `some/path/b.json`:
 	"timestamp": "2020-08-27T15:12:07.699Z",
 	"gitInfo": {
 		"commitId": "cd9660293d69a5ca7559197aedd1fa5de1a939fe",
-		"repoName": "qiwi/buildstamp.gitInfo"
+		"repoName": "qiwi/buildstamp.git"
 	}
 }
 ```
-###Options
-
-- `--out` path to generated file, default is stdout
-- `--git` add git data to output
-- `--cwd` a working directory, default is process.cwd()
-- `--docker.imageTag` image tag
-- `--date.format` adds date info to stamp, iso or instant
-- `--date.value` any valid input for Date constructor, default is current time
+### Flags
+| Option            | Description                           | Default                         |
+|:------------------|:--------------------------------------|:--------------------------------|
+| --out             | path to generated file                | stdout                          |
+| --git             | add git data to output                | output doesn't contain git data |
+| --docker.imageTag | working directory                     | process.cwd()                   |
+| --date.format     | iso or instant                        | output doesn't contain date     |
+| --date.value      | any valid input for Date constructor  | current timestamp               |
 
 ## API
 API functions accept the same options as cli
@@ -42,32 +42,65 @@ Returns buildstamp
 ```javascript
 import { create } from '@qiwi/buildstamp'
 
-const stamp = create({ git: true, date: { format: 'iso' }, docker: { imageTag: 'foo', bar: 'bar'}}, { SEP: '/' })
+const stamp = create({
+    git: true,
+    date: { format: 'iso' },
+    docker: { imageTag: 'foo', bar: 'bar'}
+})
 console.log(stamp)
 /*
 {
-  gitInfo: {
+  git: {
     commitId: 'fc6e78b11ef4c7db1c8b89fa6b0d9b3ad4ad481d',
     repoName: 'qiwi/buildstamp.git'
   },
-  dockerInfo: { imageTag: 'foo', bar: 'bar' },
-  timestamp: '2020-08-27T20:47:41.958Z'
+  docker: { imageTag: 'foo', bar: 'bar' },
+  date: '2020-08-27T20:47:41.958Z'
 }
 */
 ```
+### write(options, env)
+Creates and writes buildstamp to a file. Parameter `out` is required.
+```javascript
+import { write } from '@qiwi/buildstamp'
+
+write({
+    git: true,
+    date: { format: 'iso' },
+    docker: { imageTag: 'foo', bar: 'bar'},
+    out: 'some/path/stamp.json'
+})
+```
+Output in `some/path/stamp.json`:
+```json
+{
+  "git": {
+    "commitId": "fc6e78b11ef4c7db1c8b89fa6b0d9b3ad4ad481d",
+    "repoName": "qiwi/buildstamp.git"
+  },
+  "docker": { "imageTag": "foo", "bar": "bar" },
+  "date": "2020-08-27T20:47:41.958Z"
+}
+```
 ### print(options, env)
+Creates and prints buildstamp to stdout.
 ```javascript
 import { print } from '@qiwi/buildstamp'
 
-print({ git: true, date: { format: 'iso' }, docker: { imageTag: 'foo', bar: 'bar'}}, { SEP: '/' })
+print({
+    git: true,
+    date: { format: 'iso' },
+    docker: { imageTag: 'foo', bar: 'bar'},
+    out: 'some/path/stamp.json'
+})
 /*
 {
-  gitInfo: {
+  git: {
     commitId: 'fc6e78b11ef4c7db1c8b89fa6b0d9b3ad4ad481d',
     repoName: 'qiwi/buildstamp.git'
   },
-  dockerInfo: { imageTag: 'foo', bar: 'bar' },
-  timestamp: '2020-08-27T20:47:41.958Z'
+  docker: { imageTag: 'foo', bar: 'bar' },
+  date: '2020-08-27T20:47:41.958Z'
 }
 */
 ```

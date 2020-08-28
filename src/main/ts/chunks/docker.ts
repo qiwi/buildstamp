@@ -5,5 +5,5 @@ export const dockerChunk: TStampChunk = (ctx, opts) => {
     return ctx
   }
 
-  return { ...ctx, dockerInfo: opts.docker }
+  return { ...ctx, docker: opts.docker }
 }

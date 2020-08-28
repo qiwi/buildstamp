@@ -6,6 +6,6 @@ export const timestampChunk: TStampChunk = (ctx, opts) => {
     return ctx
   }
   const value = new Date(opts.date.value || now())
-  const timestamp = opts.date.format === 'iso' ? value.toISOString() : value.getTime()
-  return { ...ctx, timestamp }
+  const date = opts.date.format === 'instant' ? value.getTime() : value.toISOString()
+  return { ...ctx, date }
 }

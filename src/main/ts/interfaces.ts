@@ -6,9 +6,9 @@ export type TGitDetails = {
 export type TVcsInfoCreator = (opts: TStampOptions, env: TStampEnv) => TGitDetails
 
 export type TStampContext = Record<string, any> & {
-  timestamp?: string | number
-  dockerInfo?: TDockerDetails
-  gitInfo?: TGitDetails
+  date?: string | number
+  docker?: TDockerDetails
+  git?: TGitDetails
 }
 
 export type TDockerDetails = {
@@ -27,12 +27,6 @@ export type TStampOptions = {
   cwd: string
   out?: string
   jsonSpace?: string
-}
-
-export type TStamp = {
-  dockerInfo?: TDockerDetails,
-  gitInfo?: TGitDetails,
-  timestamp?: string | number
 }
 
 export type TStampEnv = Record<string, any> & {
