@@ -1,6 +1,6 @@
-import fs from 'fs'
+import { readFileSync } from 'fs'
 
-export const readFileToString = (path: string): string => fs.readFileSync(path).toString()
+export const readFileToString = (path: string): string => readFileSync(path, 'utf-8')
 
 export const hasTrailingSeparator = (path: string, sep: string): boolean => {
   return path.slice(-sep.length) === sep
