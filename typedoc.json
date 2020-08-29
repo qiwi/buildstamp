@@ -1,5 +1,5 @@
 {
-  "name": "blank-ts-repo",
+  "name": "buildstamp",
   "mode": "modules",
   "out": "./docs",
   "target": "ES6",
