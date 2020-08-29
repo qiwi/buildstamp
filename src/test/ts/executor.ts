@@ -29,7 +29,8 @@ describe('create', () => {
         imageTag: 'bar',
       },
       git: {
-        repoName: 'qiwi/buildstamp.git',
+        repoName: 'qiwi/buildstamp',
+        repoUrl: 'git@github.com:qiwi/buildstamp.git',
       },
     }
     expect(create({ ...input, cwd: process.cwd() } as TStampOptions, process.env)).toMatchObject(output)

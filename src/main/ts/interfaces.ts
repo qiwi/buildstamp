@@ -1,9 +1,10 @@
 export type TGitDetails = {
   commitId: string,
   repoName: string
+  repoUrl: string
 }
 
-export type TVcsInfoCreator = (opts: TStampOptions, env: TStampEnv) => TGitDetails
+export type TVcsInfoCreator = (opts: TStampOptions, env?: TStampEnv) => TGitDetails
 
 export type TStampContext = Record<string, any> & {
   date?: string | number
