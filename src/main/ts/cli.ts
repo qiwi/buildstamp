@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import meow from 'meow'
-import { TStampEnv, TStampOptions } from './interfaces'
+import { TEnv, TStampOptions } from './interfaces'
 import { execute } from './executor'
 
 const cli = meow(`
@@ -37,7 +37,7 @@ const cli = meow(`
 
 const launch = () => {
   try {
-    execute(cli.flags as TStampOptions, process.env as TStampEnv)
+    execute(cli.flags as TStampOptions, process.env as TEnv)
   } catch (e) {
     console.error(e)
     process.exit(1)
