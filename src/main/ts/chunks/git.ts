@@ -1,9 +1,21 @@
-import { TStampChunk, TVcsInfoCreator } from '../interfaces'
 import { sep } from 'path'
 import findGitRoot from 'find-git-root'
+import { TStampChunk } from '../interfaces'
 import { readFileToString } from '../utils'
 
-export const getGitInfo: TVcsInfoCreator = ({ cwd }) => {
+export type TVcsInfoCreator = (cwd: string) => TGitStamp
+
+export type IGitStampOptions = {
+  git?: boolean
+}
+
+export type TGitStamp = {
+  commitId: string,
+  repoName: string
+  repoUrl: string
+}
+
+export const getGitInfo: TVcsInfoCreator = (cwd = process.cwd()) => {
   const gitFolder = findGitRoot(cwd)
 
   const rev = readFileToString(`${gitFolder}${sep}HEAD`).trim()
@@ -29,12 +41,18 @@ export const getGitInfo: TVcsInfoCreator = ({ cwd }) => {
   }
 }
 
-export const gitChunk: TStampChunk = (ctx, opts) => {
-  if (!opts.git) {
+export const gitChunk: TStampChunk = (ctx) => {
+  const { options: { git }, stamp, cwd } = ctx
+
+  if (!git) {
     return ctx
   }
 
-  const git = getGitInfo(opts)
-
-  return { ...ctx, git }
+  return {
+    ...ctx,
+    stamp: {
+      ...stamp,
+      git: getGitInfo(cwd as string),
+    },
+  }
 }

@@ -1,41 +1,22 @@
+import { normalizeChunk } from './chunks/normalize'
 import { gitChunk } from './chunks/git'
 import { dockerChunk } from './chunks/docker'
-import { timestampChunk } from './chunks/timestamp'
-import { TStampContext, TStampEnv, TStampOptions } from './interfaces'
-import { writeFile, log } from './output'
+import { dateChunk } from './chunks/date'
+import { loggerChunk } from './chunks/logger'
+import { writerChunk } from './chunks/writer'
+import { TStamp, TEnv, TStampOptions } from './interfaces'
 
 export const chunks = [
+  normalizeChunk,
   gitChunk,
   dockerChunk,
-  timestampChunk,
+  dateChunk,
+  loggerChunk,
+  writerChunk,
 ]
 
-export const create = (
-  opts: TStampOptions,
-  env: TStampEnv
-): TStampContext => {
-  const normalizedOpts = { ...opts }
-  normalizedOpts.cwd = normalizedOpts.cwd || process.cwd()
-  return chunks.reduce((ctx, chunk) => chunk(ctx, normalizedOpts, env), {})
-}
-
-export const write = (
-  opts: TStampOptions,
-  env: TStampEnv
-) => writeFile(create(opts, env), opts)
-
-export const print = (
-  opts: TStampOptions,
-  env: TStampEnv
-) => log(create(opts, env), opts)
-
 export const execute = (
-  opts: TStampOptions,
-  env: TStampEnv
-) => {
-  if (opts.out) {
-    write(opts, env)
-  } else {
-    print(opts, env)
-  }
-}
+  options: TStampOptions,
+  env: TEnv
+): TStamp =>
+  chunks.reduce((ctx, chunk) => chunk(ctx, env), { options, stamp: {} }).stamp
