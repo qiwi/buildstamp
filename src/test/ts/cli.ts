@@ -4,7 +4,7 @@ describe('cli', () => {
   it('calls createBuildInfo', () => {
     process.env.SEP = '/'
     const fn = jest.spyOn(executor, 'execute')
-      .mockImplementation(() => undefined)
+      .mockImplementation(() => ({}))
     require('../../main/ts/cli')
     expect(fn).toHaveBeenCalled()
   })

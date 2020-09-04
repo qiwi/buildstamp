@@ -1,15 +1,9 @@
 import { TStampChunk } from '../interfaces'
 
-export type IDockerStampOptions = {
-  imageTag?: string
-}
-
-export type TDockerStamp = IDockerStampOptions
-
 export const dockerChunk: TStampChunk = (ctx) => {
   const { options, stamp } = ctx
 
-  if (!options.docker) {
+  if (!options || !options.docker) {
     return ctx
   }
 
