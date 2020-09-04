@@ -1,7 +1,6 @@
-import { execute, create, print, write } from './executor'
+import { execute } from './executor'
 
 export * from './interfaces'
-export { execute, create, print, write }
-export { getGitInfo } from './gitInfo'
+export { execute }
 
-export default { execute, create, print, write }
+export default { execute }

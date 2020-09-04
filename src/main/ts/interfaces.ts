@@ -12,20 +12,12 @@ export type TGitDetails = {
   repoUrl: string
 }
 
-export type TVcsInfoCreator = (opts: TStampOptions, env?: TEnv) => TGitDetails
-
 export type TChunkContext = {
   context?: TChunkContext
   stamp?: TStamp
   env?: TEnv
   options?: TStampOptions
   cwd?: string
-}
-
-export type TStampContext = Record<string, any> & {
-  date?: string | number
-  docker?: TDockerDetails
-  git?: TGitDetails
 }
 
 export type TDockerDetails = {
@@ -37,6 +29,16 @@ export type TDateOptions = {
   value?: string | number
 }
 
-export type TStampOptions = Record<string, any>
+export type TOutputOptions = {
+  path: string
+  jsonSeparator?: 'tab' | 'space' | 'double-space'
+}
 
-export type TStampChunk = <T extends TChunkContext>(ctx: T, env?: TEnv) => T
+export type TStampOptions = Record<string, any> & {
+  date?: TDateOptions
+  docker?: TDockerDetails
+  git?: boolean
+  out?: TOutputOptions
+}
+
+export type TStampChunk = <T extends TChunkContext = TChunkContext>(ctx: T, env?: TEnv) => T

@@ -3,7 +3,7 @@ import findGitRoot from 'find-git-root'
 import { TStampChunk } from '../interfaces'
 import { readFileToString } from '../utils'
 
-export type TVcsInfoCreator = (cwd: string) => TGitStamp
+export type TVcsInfoCreator = (cwd?: string) => TGitStamp
 
 export type IGitStampOptions = {
   git?: boolean
@@ -42,9 +42,9 @@ export const getGitInfo: TVcsInfoCreator = (cwd = process.cwd()) => {
 }
 
 export const gitChunk: TStampChunk = (ctx) => {
-  const { options: { git }, stamp, cwd } = ctx
+  const { options, stamp, cwd } = ctx
 
-  if (!git) {
+  if (!options || !options.git) {
     return ctx
   }
 
