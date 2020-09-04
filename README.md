@@ -23,28 +23,32 @@ Output in `some/path/b.json`:
 }
 ```
 ### Flags
-| Option            | Description                           | Default                                |
-|:------------------|:--------------------------------------|:---------------------------------------|
-| --out             | path to generated file                | stdout                                 |
-| --git             | add git data to output                | output doesn't contain git data        |
-| --docker.imageTag | docker image tag                      | output doesn't contain git docker info |
-| --date.format     | iso or instant                        | output doesn't contain date            |
-| --date.value      | any valid input for Date constructor  | current timestamp                      |
-| --cwd             | working directory                     | process.cwd()                          |
+Output is always printed to stdout
+
+| Option              | Description                          | Default                                |
+|:--------------------|:-------------------------------------|:---------------------------------------|
+| --out.path          | path to generated file               | output is not written to a file        |
+| --out.jsonSeparator | one of tab/space/double-space        | tab                                    |
+| --git               | add git data to output               | output doesn't contain git data        |
+| --docker.imageTag   | docker image tag                     | output doesn't contain git docker info |
+| --date.format       | iso or instant                       | output doesn't contain date            |
+| --date.value        | any valid input for Date constructor | current timestamp                      |
+| --cwd               | working directory                    | process.cwd()                          |
 
 ## API
 API functions accept the same options as cli
-### create(options, env)
-Returns buildstamp
-```javascript
-import { create } from 'buildstamp'
+### execute(options, env)
+Creates and returns buildstamp
 
-const stamp = create({
+Get buildstamp
+```javascript
+import { execute } from 'buildstamp'
+
+const stamp = execute({
     git: true,
     date: { format: 'iso' },
     docker: { imageTag: 'foo', bar: 'bar'}
 })
-console.log(stamp)
 /*
 {
   git: {
@@ -56,49 +60,31 @@ console.log(stamp)
 }
 */
 ```
-### write(options, env)
-Creates and writes buildstamp to a file. Parameter `out` is required.
+Write buildstamp to file
 ```javascript
-import { write } from 'buildstamp'
+import { execute } from 'buildstamp'
 
-write({
+execute({
     git: true,
     date: { format: 'iso' },
     docker: { imageTag: 'foo', bar: 'bar'},
-    out: 'some/path/stamp.json'
+    out: {
+      path: 'some/path/stamp.json'
+    }
 })
 ```
 Output in `some/path/stamp.json`:
 ```json
 {
-  "git": {
-    "commitId": "fc6e78b11ef4c7db1c8b89fa6b0d9b3ad4ad481d",
-    "repoName": "qiwi/buildstamp.git"
-  },
-  "docker": { "imageTag": "foo", "bar": "bar" },
-  "date": "2020-08-27T20:47:41.958Z"
+	"git": {
+		"commitId": "19128459495e461b3c2b64704566f6aaac193ce1",
+		"repoUrl": "https://github.com/qiwi/buildstamp.git",
+		"repoName": "qiwi/buildstamp"
+	},
+	"docker": {
+		"imageTag": "foo",
+		"bar": "bar"
+	},
+	"date": "2020-09-04T19:53:03.790Z"
 }
 ```
-### print(options, env)
-Creates and prints buildstamp to stdout.
-```javascript
-import { print } from 'buildstamp'
-
-print({
-    git: true,
-    date: { format: 'iso' },
-    docker: { imageTag: 'foo', bar: 'bar'},
-    out: 'some/path/stamp.json'
-})
-/*
-{
-  git: {
-    commitId: 'fc6e78b11ef4c7db1c8b89fa6b0d9b3ad4ad481d',
-    repoName: 'qiwi/buildstamp.git'
-  },
-  docker: { imageTag: 'foo', bar: 'bar' },
-  date: '2020-08-27T20:47:41.958Z'
-}
-*/
-```
-
