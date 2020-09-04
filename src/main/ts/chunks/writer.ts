@@ -27,7 +27,7 @@ export const writerChunk: TStampChunk = (ctx) => {
       writeFileSync(filePath, body)
       console.log(`Buildstamp has been written to ${filePath}`)
     } catch (e) {
-      console.log(e)
+      console.error(e)
     }
   }
 
