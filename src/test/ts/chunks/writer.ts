@@ -46,7 +46,7 @@ describe('writer', () => {
   })
 
   it('logs writeFile error', () => {
-    const logSpy = jest.spyOn(console, 'log').mockImplementation(() => undefined)
+    const logSpy = jest.spyOn(console, 'error').mockImplementation(() => undefined)
     const ctx: TChunkContext = {
       cwd: process.cwd(),
       options: {
