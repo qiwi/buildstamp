@@ -3,16 +3,16 @@ import findGitRoot from 'find-git-root'
 import { TStampChunk } from '../interfaces'
 import { readFileToString } from '../utils'
 
-export type TVcsInfoCreator = (cwd?: string) => TGitStamp
-
-export type IGitStampOptions = {
-  git?: boolean
-}
-
 export type TGitStamp = {
   commitId: string,
   repoName: string
   repoUrl: string
+}
+
+export type TVcsInfoCreator = (cwd?: string) => TGitStamp
+
+export type IGitStampOptions = {
+  git?: boolean
 }
 
 export const getGitInfo: TVcsInfoCreator = (cwd = process.cwd()) => {

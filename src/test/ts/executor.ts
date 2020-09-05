@@ -19,13 +19,15 @@ describe('execute', () => {
         value: date,
       },
     }
+    const buildstamp = execute(options, {})
 
-    expect(execute(options, {})).toMatchObject({
+    expect(buildstamp).toEqual({
       docker,
       date,
       git: {
+        commitId: expect.any(String),
         repoName: 'qiwi/buildstamp',
-        repoUrl: 'https://github.com/qiwi/buildstamp.git',
+        repoUrl: expect.stringMatching(/^.+github\.com[/:]qiwi\/buildstamp\.git$/),
       },
     })
   })
