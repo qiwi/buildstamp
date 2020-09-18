@@ -17,6 +17,6 @@ export const chunks = [
 
 export const execute = (
   options: TStampOptions,
-  env: TEnv
+  env: TEnv = process.env
 ): TStamp =>
   chunks.reduce((ctx, chunk) => chunk(ctx, env), { options, stamp: {} }).stamp
