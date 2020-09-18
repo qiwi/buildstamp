@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/qiwi/buildstamp/compare/v1.0.1...v1.0.2) (2020-09-18)
+
+
+### Bug Fixes
+
+* **package.json:** typings path, updated libdefkit ([#12](https://github.com/qiwi/buildstamp/issues/12)) ([6e065ea](https://github.com/qiwi/buildstamp/commit/6e065ea0d73c828a476c89422f90917e0401e3e7))
+
 ## [1.0.1](https://github.com/qiwi/buildstamp/compare/v1.0.0...v1.0.1) (2020-09-18)
 
 
