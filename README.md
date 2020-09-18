@@ -25,15 +25,15 @@ Output in `some/path/b.json`:
 ### Flags
 Output is always printed to stdout
 
-| Option              | Description                          | Default                                |
-|:--------------------|:-------------------------------------|:---------------------------------------|
-| --out.path          | path to generated file               | output is not written to a file        |
-| --out.jsonSeparator | one of tab/space/double-space        | tab                                    |
-| --git               | add git data to output               | output doesn't contain git data        |
-| --docker.imageTag   | docker image tag                     | output doesn't contain git docker info |
-| --date.format       | iso or instant                       | output doesn't contain date            |
-| --date.value        | any valid input for Date constructor | current timestamp                      |
-| --cwd               | working directory                    | process.cwd()                          |
+| Option              | Description                                             | Default                                |
+|:--------------------|:--------------------------------------------------------|:---------------------------------------|
+| --out.path          | path to generated file                                  | output is not written to a file        |
+| --out.jsonSeparator | one of `tab`, `space`, `double-space`                   | `tab`                                  |
+| --git               | add git data to output                                  | git data is omitted                    |
+| --docker.imageTag   | docker image tag, will be added to output, if exists    | docker info is omitted                 |
+| --date.format       | add date to output, one of `iso` or `instant`           | date is omitted                        |
+| --date.value        | any valid input for Date constructor                    | `Date.now()`                           |
+| --cwd               | working directory                                       | `process.cwd()`                        |
 
 ## API
 API functions accept the same options as cli
