@@ -683,10 +683,10 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@qiwi/libdefkit@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@qiwi/libdefkit/-/libdefkit-1.0.3.tgz#3b2e13d5b189838698afcc0e02e6b41bf21797f3"
-  integrity sha512-TivGNWNaHniFmQIOeyyZpdHjT9uzh3GFFNHqB6TDzFFQJ4P2XyG7h4+iHwT4X/611VIE+726dOqix8spWAOUWg==
+"@qiwi/libdefkit@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.qiwi.com/repository/npm/@qiwi/libdefkit/-/libdefkit-1.1.0.tgz#56fd5fdb90cadd272c358f7dac7cb4ed6d4b5a61"
+  integrity sha512-nIPe6UvCVQcQlgY6xesPee2zid+FyVjCAcazNdIj1tt2D5q8eBDyZGJCZ8/1E3B3Dmq9TxK2qRkPG4bn+4eyHw==
   dependencies:
     "@qiwi/substrate" "^1.18.37"
     "@types/lodash" "^4.14.159"
