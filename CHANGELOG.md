@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/qiwi/buildstamp/compare/v1.0.0...v1.0.1) (2020-09-18)
+
+
+### Bug Fixes
+
+* **executor:** set default value of env in execute ([555faf9](https://github.com/qiwi/buildstamp/commit/555faf952c99cc7ee9e44de62789853460b4fc63))
+* **README.md:** updated cli args description ([8812bac](https://github.com/qiwi/buildstamp/commit/8812bac8585ffef909b80e443861c0ce475f7dd0))
+
 # 1.0.0 (2020-09-05)
 
 
