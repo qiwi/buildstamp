@@ -105,33 +105,33 @@
 						</tr>
 						<tr>
 							<td align="left">--out.jsonSeparator</td>
-							<td align="left">one of tab/space/double-space</td>
-							<td align="left">tab</td>
+							<td align="left">one of <code>tab</code>, <code>space</code>, <code>double-space</code></td>
+							<td align="left"><code>tab</code></td>
 						</tr>
 						<tr>
 							<td align="left">--git</td>
 							<td align="left">add git data to output</td>
-							<td align="left">output doesn&#39;t contain git data</td>
+							<td align="left">git data is omitted</td>
 						</tr>
 						<tr>
 							<td align="left">--docker.imageTag</td>
-							<td align="left">docker image tag</td>
-							<td align="left">output doesn&#39;t contain git docker info</td>
+							<td align="left">docker image tag, will be added to output, if exists</td>
+							<td align="left">docker info is omitted</td>
 						</tr>
 						<tr>
 							<td align="left">--date.format</td>
-							<td align="left">iso or instant</td>
-							<td align="left">output doesn&#39;t contain date</td>
+							<td align="left">add date to output, one of <code>iso</code> or <code>instant</code></td>
+							<td align="left">date is omitted</td>
 						</tr>
 						<tr>
 							<td align="left">--date.value</td>
 							<td align="left">any valid input for Date constructor</td>
-							<td align="left">current timestamp</td>
+							<td align="left"><code>Date.now()</code></td>
 						</tr>
 						<tr>
 							<td align="left">--cwd</td>
 							<td align="left">working directory</td>
-							<td align="left">process.cwd()</td>
+							<td align="left"><code>process.cwd()</code></td>
 						</tr>
 				</tbody></table>
 				<a href="#api" id="api" style="color: inherit; text-decoration: none;">
