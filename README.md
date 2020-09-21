@@ -10,7 +10,7 @@ npm i buildstamp
 # Usage
 ## CLI
 ```shell script
-buildstamp --out=some/path/b.json --git --docker.imageTag=foo --date.format=iso
+buildstamp --out.path=some/path/b.json --git --docker.imageTag=foo --date.format=iso
 ```
 Output in `some/path/b.json`:
 ```json
