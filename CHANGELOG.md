@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/qiwi/buildstamp/compare/v1.0.2...v1.0.3) (2020-09-23)
+
+
+### Bug Fixes
+
+* fix typings ([558e02c](https://github.com/qiwi/buildstamp/commit/558e02ca41dd9ef35ac5a4062824a2567be8c0c1))
+
 ## [1.0.2](https://github.com/qiwi/buildstamp/compare/v1.0.1...v1.0.2) (2020-09-18)
 
 
