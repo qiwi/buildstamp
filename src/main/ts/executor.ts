@@ -4,9 +4,9 @@ import { dockerChunk } from './chunks/docker'
 import { dateChunk } from './chunks/date'
 import { loggerChunk } from './chunks/logger'
 import { writerChunk } from './chunks/writer'
-import { TStamp, TEnv, TStampOptions } from './interfaces'
+import { TStamp, TEnv, TStampOptions, TStampChunk } from './interfaces'
 
-export const chunks = [
+export const chunks: TStampChunk[] = [
   normalizeChunk,
   gitChunk,
   dockerChunk,
