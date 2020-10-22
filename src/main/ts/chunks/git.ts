@@ -25,7 +25,7 @@ export const getGitInfo: TVcsInfoCreator = (cwd = process.cwd()) => {
     : readFileToString(`${gitFolder}${sep}` + rev.slice('ref: '.length)).trim()
 
   const repoUrlRegexp = /\turl = (.+)$/
-  const repoNameRegexp = /\turl =.+[/:](\w+\/\w+).*$/
+  const repoNameRegexp = /\turl =.+[/:]([\w-]+\/[\w-]+).*$/
 
   const origin = readFileToString(`${gitFolder}${sep}config`)
     .split('\n')

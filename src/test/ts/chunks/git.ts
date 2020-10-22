@@ -40,6 +40,22 @@ const testCases: TGitInfoTestCase[] = [
     repoUrl: /^undefined$/,
     commitId: '1234567890abcdef1234567890abcdef12345678',
   },
+  {
+    description: 'config contains gerrit url',
+    head: 'rev: 1234567890abcdef1234567890abcdef12345678',
+    config: '\turl = ssh://d.abramov@gerrit.foo.ru:4242/foo/bar-baz-bat',
+    repoName: 'foo/bar-baz-bat',
+    repoUrl: /^ssh:\/\/d.abramov@gerrit.foo.ru:4242\/foo\/bar-baz-bat$/,
+    commitId: '1234567890abcdef1234567890abcdef12345678',
+  },
+  {
+    description: 'config contains url with kebab-named org',
+    head: 'rev: 1234567890abcdef1234567890abcdef12345678',
+    config: '\turl = ssh://d.abramov@gerrit.foo.ru:4242/foo-qux/bar-baz-bat',
+    repoName: 'foo-qux/bar-baz-bat',
+    repoUrl: /^ssh:\/\/d.abramov@gerrit.foo.ru:4242\/foo-qux\/bar-baz-bat$/,
+    commitId: '1234567890abcdef1234567890abcdef12345678',
+  },
 ]
 
 afterAll(() => {
