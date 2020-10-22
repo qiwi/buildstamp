@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/qiwi/buildstamp/compare/v1.0.3...v1.0.4) (2020-10-22)
+
+
+### Bug Fixes
+
+* accept hyphen in reponame regexp ([#19](https://github.com/qiwi/buildstamp/issues/19)) ([7513fa1](https://github.com/qiwi/buildstamp/commit/7513fa1ed8f62625e82074fddf8b864bc07a5011))
+
 ## [1.0.3](https://github.com/qiwi/buildstamp/compare/v1.0.2...v1.0.3) (2020-09-23)
 
 
