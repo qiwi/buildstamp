@@ -31,3 +31,5 @@ describe('readBuildstamp', () => {
     expect(errorSpy).toHaveBeenCalled()
   })
 })
+
+afterAll(jest.resetAllMocks)
