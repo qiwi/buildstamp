@@ -30,6 +30,6 @@ describe('readBuildstamp', () => {
     expect(readBuildstamp('some/path')).toBeUndefined()
     expect(errorSpy).toHaveBeenCalled()
   })
-})
 
-afterAll(jest.resetAllMocks)
+  afterAll(jest.resetAllMocks)
+})
