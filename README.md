@@ -88,3 +88,19 @@ Output in `some/path/stamp.json`:
 	"date": "2020-09-04T19:53:03.790Z"
 }
 ```
+### getBuildstamp(path)
+Safely parses and returns buildstamp by given path. Returns `undefined` on error.
+```javascript
+import { getBuildstamp } from 'buildstamp'
+
+const stamp = getBuildstamp('some/path')
+/*
+{
+  git: {
+    commitId: 'fc6e78b11ef4c7db1c8b89fa6b0d9b3ad4ad481d',
+    repoName: 'qiwi/buildstamp.git'
+  },
+  docker: { imageTag: 'foo', bar: 'bar' },
+  date: '2020-08-27T20:47:41.958Z'
+}
+```
