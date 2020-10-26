@@ -1,4 +1,4 @@
-import { getBuildstamp, TStamp } from '../../main/ts'
+import { readBuildstamp, TStamp } from '../../main/ts'
 import * as utils from '../../main/ts/utils'
 
 const stamp: TStamp = {
@@ -13,11 +13,11 @@ const stamp: TStamp = {
   },
 }
 
-describe('getBuildstamp', () => {
+describe('readBuildstamp', () => {
   it('reads and parses file', () => {
     jest.spyOn(utils, 'readFileToString')
       .mockImplementation(() => JSON.stringify(stamp))
-    expect(getBuildstamp('some/path')).toEqual(stamp)
+    expect(readBuildstamp('some/path')).toEqual(stamp)
   })
 
   it('logs an error', () => {
@@ -27,7 +27,7 @@ describe('getBuildstamp', () => {
       })
     const errorSpy = jest.spyOn(console, 'error')
       .mockImplementation(() => { /* noop */ })
-    expect(getBuildstamp('some/path')).toBeUndefined()
+    expect(readBuildstamp('some/path')).toBeUndefined()
     expect(errorSpy).toHaveBeenCalled()
   })
 })
