@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/qiwi/buildstamp/compare/v1.0.4...v1.1.0) (2020-10-26)
+
+
+### Features
+
+* added readBuildstamp ([#20](https://github.com/qiwi/buildstamp/issues/20)) ([6daedd7](https://github.com/qiwi/buildstamp/commit/6daedd7ec3eef61fe78f4b7e6d857c6c8e73f74d))
+
 ## [1.0.4](https://github.com/qiwi/buildstamp/compare/v1.0.3...v1.0.4) (2020-10-22)
 
 
