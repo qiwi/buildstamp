@@ -6,7 +6,6 @@ const stamp: TStamp = {
     commitId: 'foo',
     repoName: 'bar',
     repoUrl: 'baz',
-    commitMessage: 'qux',
   },
   date: 0,
   docker: {
