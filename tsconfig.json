@@ -1,28 +1,10 @@
 {
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "rootDir": "./src/main/ts/",
-    "baseUrl": "./src/main/ts/",
-    "moduleResolution": "node",
-    "target": "es5",
-    "lib": [
-      "es6",
-      "esnext",
-      "dom"
-    ],
-    "module": "ES2015",
-    "outDir": "./target/es5",
-    "strict": true,
-    "experimentalDecorators": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": false,
-    "declaration": true,
-    "esModuleInterop": true,
-
-    "incremental": true,
-    "tsBuildInfoFile": "./buildcache/.tsbuildinfo"
-  },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules"]
+    "baseUrl": "./packages",
+    "paths": {
+      "buildstamp": ["./core/src/main/ts"],
+      "buildstamp-binaries": ["./common/src/main/ts"],
+    }
+  }
 }
