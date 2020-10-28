@@ -3,8 +3,7 @@
   "compilerOptions": {
     "baseUrl": "./packages",
     "paths": {
-      "buildstamp": ["./core/src/main/ts"],
-      "buildstamp-binaries": ["./common/src/main/ts"],
+      "buildstamp": ["./core/src/main/ts"]
     }
   }
 }

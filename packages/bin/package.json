@@ -1,15 +1,15 @@
 {
-  "name": "buildstamp-binaries",
+  "name": "buildstamp-bin",
   "version": "0.0.0",
   "private": false,
   "publishConfig": {
     "access": "public"
   },
-  "description": "Buildstamp binaries for macOS, Linux and Windows",
+  "description": "Buildstamp binaries for MacOS, Linux and Windows",
   "scripts": {
     "clean": "rimraf target",
-    "build:binaries": "pkg --out-path=./target --targets=node12-linux-x64,node12-macos-x64,node12-win-x64 ../core",
-    "build": "yarn clean && yarn build:binaries"
+    "build:bins": "pkg --out-path=./target --targets=node12-linux-x64,node12-macos-x64,node12-win-x64 ../core",
+    "build": "yarn clean && yarn build:bins"
   },
   "repository": {
     "type": "git",

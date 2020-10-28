@@ -1,6 +1,6 @@
 {
   "name": "buildstamp",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -78,7 +78,6 @@
   },
   "dependencies": {
     "find-git-root": "^1.0.4",
-    "lerna": "^3.22.1",
     "meow": "^7.1.1",
     "tslib": "^2.0.1"
   },
