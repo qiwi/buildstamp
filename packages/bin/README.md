@@ -4,7 +4,7 @@ Buildstamp binaries for MacOS, Linux and Windows
 ## Downloading
 Get download links
 ```shell script
-curl https://registry.npmjs.org/buildstamp | grep -E -o 'https://registry.npmjs.org/buildstamp/-/buildstamp-\d+.\d+.\d+.tgz'
+curl https://registry.npmjs.org/buildstamp | grep -E -o 'https://registry.npmjs.org/buildstamp-bins/-/buildstamp-bins-\d+.\d+.\d+.tgz'
 ```
 Download package by one of the links
 ```shell script
