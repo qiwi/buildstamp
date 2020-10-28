@@ -1,0 +1,39 @@
+{
+  "name": "buildstamp-bin",
+  "version": "0.0.0",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Buildstamp binaries for MacOS, Linux and Windows",
+  "scripts": {
+    "clean": "rimraf target",
+    "build:bins": "pkg --out-path=./target/bin --targets=node14-linux-x64,node14-macos-x64,node14-win-x64 ../core",
+    "build": "yarn clean && yarn build:bins"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qiwi/buildstamp.git"
+  },
+  "keywords": [
+    "build-info",
+    "buildstamp"
+  ],
+  "files": [
+    "README.md",
+    "CHANGELOG.md",
+    "target"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "pkg": "^4.4.9",
+    "rimraf": "^3.0.2",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/github": "^7.1.1",
+    "@semantic-release/npm": "^7.0.6"
+  },
+  "dependencies": {
+    "buildstamp": "^1.0.4"
+  }
+}
