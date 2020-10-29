@@ -1,3 +1,10 @@
+## buildstamp [1.2.1](https://github.com/qiwi/buildstamp/compare/buildstamp@1.2.0...buildstamp@1.2.1) (2020-10-29)
+
+
+### Performance Improvements
+
+* migrate to semrel-toolkit ([#25](https://github.com/qiwi/buildstamp/issues/25)) ([599ca57](https://github.com/qiwi/buildstamp/commit/599ca57f904d574e59e675690de9da079e188298))
+
 # [1.1.0](https://github.com/qiwi/buildstamp/compare/v1.0.4...v1.1.0) (2020-10-26)
 
 
