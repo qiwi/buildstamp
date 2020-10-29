@@ -1,6 +1,6 @@
 {
   "name": "buildstamp-bin",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -30,6 +30,6 @@
     "rimraf": "^3.0.2"
   },
   "dependencies": {
-    "buildstamp": "^1.0.4"
+    "buildstamp": "1.2.1"
   }
 }
