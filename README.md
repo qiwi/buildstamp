@@ -14,8 +14,8 @@ Utility for generating buildstamp file, which contains build meta info like gitc
 }
 ```
 ## Packages
-### [core](https://github.com/qiwi/buildstamp/tree/master/packages/core)
-Package with buildstamp CLI and API
+### [buildstamp](https://github.com/qiwi/buildstamp/tree/master/packages/core)
+Buildstamp generator utility supporting native JS and CLI API
 ```javascript
 import { execute } from 'buildstamp'
 
@@ -28,8 +28,8 @@ const stamp = execute({
 ```shell script
 buildstamp --out.path=some/path/b.json --git --docker.imageTag=foo --date.format=iso
 ```
-###  [bin](https://github.com/qiwi/buildstamp/tree/master/packages/bin)
-Buildstamp utility executables for MacOS, Windows and Linux. They don't need Node.js for executing.
+###  [buildstamp-bin](https://github.com/qiwi/buildstamp/tree/master/packages/bin)
+Buildstamp generator executables for MacOS, Windows and Linux. They don't need Node.js for executing.
 ```shell script
 ./buildstamp-macos --out.path=some/path/b.json --git --docker.imageTag=foo --date.format=iso
 ```
