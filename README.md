@@ -1,5 +1,5 @@
 # Buildstamp monorepo
-Utility for generating buildstamp, a file with build-time info.
+Utility for generating buildstamp file, which contains build meta info like gitcommit hash, timestamp, repo name and so on. This file could be a part of some release artifact (npm-package, docker-image) and makes it self-descriptive.
 ```json
 {
   "git": {
@@ -14,7 +14,7 @@ Utility for generating buildstamp, a file with build-time info.
 }
 ```
 ## Packages
-### core
+### [core](https://github.com/qiwi/buildstamp/tree/master/packages/core)
 Package with buildstamp CLI and API
 ```javascript
 import { execute } from 'buildstamp'
@@ -28,10 +28,8 @@ const stamp = execute({
 ```shell script
 buildstamp --out.path=some/path/b.json --git --docker.imageTag=foo --date.format=iso
 ```
-See more at [core](https://github.com/qiwi/buildstamp/tree/master/packages/core)
-### binaries
+###  [bin](https://github.com/qiwi/buildstamp/tree/master/packages/bin)
 Buildstamp utility executables for MacOS, Windows and Linux. They don't need Node.js for executing.
 ```shell script
 ./buildstamp-macos --out.path=some/path/b.json --git --docker.imageTag=foo --date.format=iso
 ```
-See more at [bin](https://github.com/qiwi/buildstamp/tree/master/packages/bin)
