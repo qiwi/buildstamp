@@ -1,3 +1,10 @@
+## buildstamp [1.2.3](https://github.com/qiwi/buildstamp/compare/buildstamp@1.2.2...buildstamp@1.2.3) (2020-10-30)
+
+
+### Bug Fixes
+
+* multiple flag processing, changed root clean script ([#28](https://github.com/qiwi/buildstamp/issues/28)) ([25481e4](https://github.com/qiwi/buildstamp/commit/25481e4bb9dccdaf17cc3322c52768ede4ef5db0))
+
 ## buildstamp [1.2.2](https://github.com/qiwi/buildstamp/compare/buildstamp@1.2.1...buildstamp@1.2.2) (2020-10-30)
 
 
