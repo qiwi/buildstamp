@@ -6,7 +6,7 @@ describe('execute', () => {
   })
 
   it('returns empty stamp when options are empty', () => {
-    jest.spyOn(console, 'log').mockImplementation(() => undefined)
+    jest.spyOn(console, 'log').mockImplementation(() => { /* noop */ })
     const docker = {
       imageTag: 'foo',
     }

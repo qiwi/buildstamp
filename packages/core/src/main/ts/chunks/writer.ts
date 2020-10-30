@@ -1,9 +1,10 @@
-import { TStampChunk } from '../interfaces'
-import { formatOutput } from '../utils'
-import { defaultJsonSpace } from '../constants'
-import { resolveFilePath } from '../output/pathResolver'
-import { sep } from 'path'
 import { writeFileSync } from 'fs'
+import { sep } from 'path'
+
+import { defaultJsonSpace } from '../constants'
+import { TStampChunk } from '../interfaces'
+import { resolveFilePath } from '../output/pathResolver'
+import { formatOutput } from '../utils'
 
 const spaceTypes = {
   tab: '\t',
@@ -19,7 +20,7 @@ export const writerChunk: TStampChunk = (ctx) => {
 
     const body = formatOutput(
       ctx.stamp,
-      spaceTypes[jsonSeparator || defaultJsonSpace]
+      spaceTypes[jsonSeparator || defaultJsonSpace],
     )
 
     try {

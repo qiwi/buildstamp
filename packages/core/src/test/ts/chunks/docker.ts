@@ -1,5 +1,5 @@
-import { dockerChunk } from '../../../main/ts/chunks/docker'
 import { TDockerDetails, TStampOptions } from '../../../main/ts'
+import { dockerChunk } from '../../../main/ts/chunks/docker'
 
 describe('docker', () => {
   it('returns properly context value if options are not passed', () => {

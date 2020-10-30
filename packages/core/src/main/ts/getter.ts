@@ -1,5 +1,5 @@
-import { readFileToString } from './utils'
 import { TStamp } from './interfaces'
+import { readFileToString } from './utils'
 
 export const readBuildstamp = (stampPath: string): TStamp | undefined => {
   try {
@@ -7,5 +7,4 @@ export const readBuildstamp = (stampPath: string): TStamp | undefined => {
   } catch (e) {
     console.error('Buildstamp reading error:', e.message)
   }
-  return undefined
 }

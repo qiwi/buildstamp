@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 import meow from 'meow'
-import { TEnv, TStampOptions } from './interfaces'
+
 import { execute } from './executor'
+import { TEnv, TStampOptions } from './interfaces'
 
 const cli = meow(`
     Usage:

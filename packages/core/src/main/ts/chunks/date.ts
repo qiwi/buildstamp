@@ -1,5 +1,5 @@
-import { TStampChunk } from '../interfaces'
 import { now } from '../generators'
+import { TStampChunk } from '../interfaces'
 
 export const dateChunk: TStampChunk = (ctx) => {
   const { options, stamp } = ctx

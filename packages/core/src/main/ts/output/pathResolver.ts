@@ -1,7 +1,8 @@
 import { mkdirSync } from 'fs'
 import { join } from 'path'
-import { hasTrailingSeparator } from '../utils'
+
 import { defaultFilename } from '../constants'
+import { hasTrailingSeparator } from '../utils'
 
 export const resolveFilePath = (path: string, sep: string): string => {
   if (hasTrailingSeparator(path, sep)) {
