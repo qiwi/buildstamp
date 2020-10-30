@@ -1,8 +1,9 @@
 import fs from 'fs'
-import { writerChunk } from '../../../main/ts/chunks'
+
 import { TChunkContext } from '../../../main/ts'
-import { formatOutput } from '../../../main/ts/utils'
+import { writerChunk } from '../../../main/ts/chunks'
 import * as pathResolver from '../../../main/ts/output/pathResolver'
+import { formatOutput } from '../../../main/ts/utils'
 
 type TInactiveTestCase = {
   description: string,
@@ -46,7 +47,7 @@ describe('writer', () => {
   })
 
   it('logs writeFile error', () => {
-    const logSpy = jest.spyOn(console, 'error').mockImplementation(() => undefined)
+    const logSpy = jest.spyOn(console, 'error').mockImplementation(() => { /* noop */ })
     const ctx: TChunkContext = {
       cwd: process.cwd(),
       options: {
@@ -71,9 +72,9 @@ describe('writer', () => {
 
   it('writes stamp to file', () => {
     const logSpy = jest.spyOn(console, 'log')
-      .mockImplementation(() => undefined)
+      .mockImplementation(() => { /* noop */ })
     const writeFileSyncSpy = jest.spyOn(fs, 'writeFileSync')
-      .mockImplementation(() => undefined)
+      .mockImplementation(() => { /* noop */ })
     jest.spyOn(pathResolver, 'resolveFilePath')
       .mockImplementation(() => 'some/path/buildstamp.json')
     const ctx = {

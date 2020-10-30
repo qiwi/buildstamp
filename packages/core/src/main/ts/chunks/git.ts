@@ -1,5 +1,6 @@
-import { sep } from 'path'
 import findGitRoot from 'find-git-root'
+import { sep } from 'path'
+
 import { TStampChunk } from '../interfaces'
 import { readFileToString } from '../utils'
 

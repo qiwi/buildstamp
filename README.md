@@ -1,4 +1,8 @@
 # Buildstamp monorepo
+[![Build Status](https://travis-ci.com/qiwi/buildstamp.svg?branch=master)](https://travis-ci.com/qiwi/buildstamp)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/b14a2a44e024ca0b2771/test_coverage)](https://codeclimate.com/github/qiwi/buildstamp/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/b14a2a44e024ca0b2771/maintainability)](https://codeclimate.com/github/qiwi/buildstamp/maintainability)
+
 Utility for generating buildstamp file, which contains build meta info like gitcommit hash, timestamp, repo name and so on. This file could be a part of some release artifact (npm-package, docker-image) and makes it self-descriptive.
 ```json
 {

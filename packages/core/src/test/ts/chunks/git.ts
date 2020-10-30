@@ -1,8 +1,9 @@
+import { mkdirSync, writeFileSync } from 'fs'
 import rimraf from 'rimraf'
-import * as gitModule from '../../../main/ts/chunks/git'
-import { gitChunk, getGitInfo } from '../../../main/ts/chunks/git'
+
 import { TChunkContext, TGitDetails } from '../../../main/ts'
-import { writeFileSync, mkdirSync } from 'fs'
+import * as gitModule from '../../../main/ts/chunks/git'
+import { getGitInfo, gitChunk } from '../../../main/ts/chunks/git'
 
 const artifactsFolder = 'testArtifactsFolder'
 

@@ -1,8 +1,9 @@
 import fs from 'fs'
 import mkdirp from 'mkdirp'
-import { resolveFilePath } from '../../../main/ts/output/pathResolver'
-import { defaultFilename } from '../../../main/ts/constants'
 import rimraf from 'rimraf'
+
+import { defaultFilename } from '../../../main/ts/constants'
+import { resolveFilePath } from '../../../main/ts/output/pathResolver'
 
 const root = 'temp'
 const path = `${root}/test/`
