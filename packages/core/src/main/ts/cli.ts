@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import meow from 'meow'
+import meow, { Options } from 'meow'
 
 import { execute } from './executor'
 import { TEnv, TStampOptions } from './interfaces'
@@ -34,7 +34,7 @@ const cli = meow(`
       isMultiple: true,
     },
   },
-})
+} as Options)
 
 const launch = () => {
   try {
