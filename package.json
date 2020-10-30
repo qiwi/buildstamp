@@ -10,7 +10,7 @@
   ],
   "description": "Buildstamp monorepo",
   "scripts": {
-    "clean": "lerna clean --yes && lerna run clean",
+    "clean": "lerna run clean",
     "build": "yarn clean && lerna run build --stream --concurrency 2",
     "bootstrap": "lerna bootstrap",
     "jest": "jest",
