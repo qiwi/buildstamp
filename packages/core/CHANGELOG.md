@@ -1,3 +1,10 @@
+## buildstamp [1.2.2](https://github.com/qiwi/buildstamp/compare/buildstamp@1.2.1...buildstamp@1.2.2) (2020-10-30)
+
+
+### Performance Improvements
+
+* updated deps versions ([#27](https://github.com/qiwi/buildstamp/issues/27)) ([80baa1c](https://github.com/qiwi/buildstamp/commit/80baa1c30f37614d51792c3d14f2f1ffccadf0bc))
+
 ## buildstamp [1.2.1](https://github.com/qiwi/buildstamp/compare/buildstamp@1.2.0...buildstamp@1.2.1) (2020-10-29)
 
 
