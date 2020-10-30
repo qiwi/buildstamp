@@ -34,10 +34,13 @@ const cli = meow(`
       isMultiple: true,
     },
   },
-} as Options)
+} as Options<any>)
 
 const launch = () => {
   try {
+    if (Array.isArray(cli.flags.docker)) {
+      delete cli.flags.docker
+    }
     execute(cli.flags as TStampOptions, process.env as TEnv)
   } catch (e) {
     console.error(e)
