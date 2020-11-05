@@ -7,15 +7,16 @@ Utility for generating buildstamp file, which contains build meta info like gitc
 ```json
 {
   "git": {
-    "commitId": "fc6e78b11ef4c7db1c8b89fa6b0d9b3ad4ad481d",
-    "repoName": "qiwi/buildstamp.git",
-    "repoUrl": "https://github.com/qiwi/buildstamp.git"
+    "commitId": "007b8f715eb5670662d90f90cd1916398d1dfe98",
+    "repoUrl": "https://github.com/qiwi/buildstamp.git",
+    "repoName": "qiwi/buildstamp"
   },
   "docker": {
     "imageTag": "foo"
   },
-  "date": "2020-08-27T20:47:41.958Z"
+  "date": "2020-11-05T15:16:35.904Z"
 }
+
 ```
 ## Packages
 ### [buildstamp](https://github.com/qiwi/buildstamp/tree/master/packages/core)
