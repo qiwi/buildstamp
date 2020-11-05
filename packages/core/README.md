@@ -15,11 +15,15 @@ buildstamp --out.path=some/path/b.json --git --docker.imageTag=foo --date.format
 Output in `some/path/b.json`:
 ```json
 {
-	"timestamp": "2020-08-27T15:12:07.699Z",
-	"gitInfo": {
-		"commitId": "cd9660293d69a5ca7559197aedd1fa5de1a939fe",
-		"repoName": "qiwi/buildstamp.git"
-	}
+  "git": {
+    "commitId": "007b8f715eb5670662d90f90cd1916398d1dfe98",
+    "repoUrl": "https://github.com/qiwi/buildstamp.git",
+    "repoName": "qiwi/buildstamp"
+  },
+  "docker": {
+    "imageTag": "foo"
+  },
+  "date": "2020-11-05T15:16:35.904Z"
 }
 ```
 ### Flags
@@ -51,12 +55,16 @@ const stamp = execute({
 })
 /*
 {
-  git: {
-    commitId: 'fc6e78b11ef4c7db1c8b89fa6b0d9b3ad4ad481d',
-    repoName: 'qiwi/buildstamp.git'
+  "git": {
+    "commitId": "007b8f715eb5670662d90f90cd1916398d1dfe98",
+    "repoUrl": "https://github.com/qiwi/buildstamp.git",
+    "repoName": "qiwi/buildstamp"
   },
-  docker: { imageTag: 'foo', bar: 'bar' },
-  date: '2020-08-27T20:47:41.958Z'
+  "docker": {
+    "imageTag": "foo".
+    "bar": "bar"
+  },
+  "date": "2020-11-05T15:16:35.904Z"
 }
 */
 ```
@@ -94,14 +102,4 @@ Safely parses and returns buildstamp by given path. Returns `undefined` on error
 import { readBuildstamp } from 'buildstamp'
 
 const stamp = getBuildstamp('some/path')
-/*
-{
-  git: {
-    commitId: 'fc6e78b11ef4c7db1c8b89fa6b0d9b3ad4ad481d',
-    repoName: 'qiwi/buildstamp.git'
-  },
-  docker: { imageTag: 'foo', bar: 'bar' },
-  date: '2020-08-27T20:47:41.958Z'
-}
-*/
 ```
