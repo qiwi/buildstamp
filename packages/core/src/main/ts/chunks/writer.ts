@@ -1,16 +1,10 @@
 import { writeFileSync } from 'fs'
 import { sep } from 'path'
 
-import { defaultJsonSpace } from '../constants'
+import { defaultJsonSpace, spaceTypes } from '../constants'
 import { TStampChunk } from '../interfaces'
 import { resolveFilePath } from '../output/pathResolver'
 import { formatOutput } from '../utils'
-
-const spaceTypes = {
-  tab: '\t',
-  space: ' ',
-  'double-space': '  ',
-}
 
 export const writerChunk: TStampChunk = (ctx) => {
   const out = ctx?.options?.out
