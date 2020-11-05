@@ -1,3 +1,13 @@
+## buildstamp-bin [1.0.3](https://github.com/qiwi/buildstamp/compare/buildstamp-bin@1.0.2...buildstamp-bin@1.0.3) (2020-11-05)
+
+
+
+
+
+### Dependencies
+
+* **buildstamp:** upgraded to 1.3.0
+
 ## buildstamp-bin [1.0.2](https://github.com/qiwi/buildstamp/compare/buildstamp-bin@1.0.1...buildstamp-bin@1.0.2) (2020-10-30)
 
 
