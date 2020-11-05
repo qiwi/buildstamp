@@ -1,3 +1,10 @@
+# buildstamp [1.3.0](https://github.com/qiwi/buildstamp/compare/buildstamp@1.2.3...buildstamp@1.3.0) (2020-11-05)
+
+
+### Features
+
+* **core:** added output formatting ([#30](https://github.com/qiwi/buildstamp/issues/30)) ([4d72503](https://github.com/qiwi/buildstamp/commit/4d72503d720f312afb0ca062a74ac09c8b0fcd1b))
+
 ## buildstamp [1.2.3](https://github.com/qiwi/buildstamp/compare/buildstamp@1.2.2...buildstamp@1.2.3) (2020-10-30)
 
 
