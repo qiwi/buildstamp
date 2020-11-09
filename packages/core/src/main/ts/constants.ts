@@ -6,4 +6,5 @@ export const spaceTypes = {
   tab: '\t',
   space: ' ',
   'double-space': '  ',
+  'no-space': '',
 }
