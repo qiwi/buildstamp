@@ -32,7 +32,7 @@ Output is always printed to stdout
 | Option              | Description                                             | Default                                |
 |:--------------------|:--------------------------------------------------------|:---------------------------------------|
 | --out.path          | path to generated file                                  | output is not written to a file        |
-| --out.jsonSeparator | one of `tab`, `space`, `double-space`                   | `tab`                                  |
+| --out.jsonSeparator | one of `tab`, `space`, `double-space`, `no-space`       | `tab`                                  |
 | --git               | add git data to output                                  | git data is omitted                    |
 | --docker.imageTag   | docker image tag, will be added to output, if exists    | docker info is omitted                 |
 | --date.format       | add date to output, one of `iso` or `instant`           | date is omitted                        |

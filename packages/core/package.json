@@ -22,6 +22,7 @@
     "build:es5": "mkdirp target/es5 && tsc -p tsconfig.es5.json",
     "build:es6": "mkdirp target/es6 && tsc -p tsconfig.es6.json",
     "build:ts": "mkdirp target/ts && cp -r src/main/ts/ target/ts/",
+    "build:local": "yarn build:es5 && chmod +x target/es5/cli.js",
     "build:libdef": "libdefkit --tsconfig=tsconfig.es5.json --tsconfig=tsconfig.es6.json",
     "test:report": "yarn test && yarn push:report",
     "push:report": "yarn coveralls:push",
