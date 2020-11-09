@@ -1,3 +1,10 @@
+# buildstamp [1.4.0](https://github.com/qiwi/buildstamp/compare/buildstamp@1.3.0...buildstamp@1.4.0) (2020-11-09)
+
+
+### Features
+
+* **core:** added no-space json separator option ([#31](https://github.com/qiwi/buildstamp/issues/31)) ([4849ade](https://github.com/qiwi/buildstamp/commit/4849adebe0957bdf9055e519f1086a0bcc6c59b6))
+
 # buildstamp [1.3.0](https://github.com/qiwi/buildstamp/compare/buildstamp@1.2.3...buildstamp@1.3.0) (2020-11-05)
 
 
