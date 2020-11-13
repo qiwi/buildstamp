@@ -34,7 +34,7 @@ const stamp = execute({
 buildstamp --out.path=some/path/b.json --git --docker.imageTag=foo --date.format=iso
 ```
 ###  [buildstamp-bin](https://github.com/qiwi/buildstamp/tree/master/packages/bin)
-Buildstamp generator executables for MacOS, Windows and Linux. They don't need Node.js for executing.
+Buildstamp generator executables for MacOS, Windows and Linux. No need Node.js (npx) to be installed.
 ```shell script
 ./buildstamp-macos --out.path=some/path/b.json --git --docker.imageTag=foo --date.format=iso
 ```

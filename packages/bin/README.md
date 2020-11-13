@@ -1,7 +1,7 @@
 # buildstamp-binaries
 Buildstamp binaries for MacOS, Linux and Windows
 
-## Downloading
+## Download binaries without installation
 Get download links
 ```shell script
 curl https://registry.npmjs.org/buildstamp-bin | grep -E -o 'https://registry.npmjs.org/buildstamp-bin/-/buildstamp-bin-\d+.\d+.\d+.tgz'
@@ -13,4 +13,16 @@ curl -o buildstamp.tgz https://registry.npmjs.org/buildstamp-bin/-/buildstamp-bi
 Extract binaries
 ```shell script
 tar --extract --file buildstamp.tgz
+```
+
+## Usage
+If you use Windows, you can [download](#download-binaries-without-installation) package and find executable in `package/target/bin/buildstamp-win.exe`.
+
+Installation on Linux or MacOS (requires [jq](https://github.com/stedolan/jq)).
+```shell script
+curl -o- https://raw.githubusercontent.com/qiwi/buildstamp/feat/bin-install/packages/bin/scripts/sh/install.sh | bash
+```
+Utility call
+```shell script
+buildstamp --out.path=some/path/b.json --git --docker.imageTag=foo --date.format=iso
 ```
