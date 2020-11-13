@@ -18,15 +18,9 @@ tar --extract --file buildstamp.tgz
 ## Installation
 Installation script requires [jq](https://github.com/stedolan/jq).
 
-Download installation script.
+Linux and MacOS
 ```shell script
-curl https://raw.githubusercontent.com/qiwi/buildstamp/master/packages/bin/scripts/sh/install.sh -o install.sh
+curl -o- https://raw.githubusercontent.com/qiwi/buildstamp/feat/bin-install/packages/bin/scripts/sh/install.sh | bash
 ```
-Make it executable.
-```shell script
-chmod +x install.sh
-```
-Launch it:
-```shell script
-./install.sh
-```
+
+If you use Windows, you can [download](#download-binaries-without-installation) package and find executable in `package/target/bin/buildstamp-win.exe`.

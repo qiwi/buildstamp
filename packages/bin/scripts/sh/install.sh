@@ -5,7 +5,7 @@ if [ "$OSTYPE" == linux-gnu ]; then
 elif [[ "$OSTYPE" == darwin* ]]; then
   OS=macos
 else
-  echo "Unsupported OS"
+  echo "Unsupported OS, only MacOS and Linux are supported"
   exit 1
 fi
 
