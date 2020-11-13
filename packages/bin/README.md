@@ -15,12 +15,14 @@ Extract binaries
 tar --extract --file buildstamp.tgz
 ```
 
-## Installation
-Installation script requires [jq](https://github.com/stedolan/jq).
+## Usage
+If you use Windows, you can [download](#download-binaries-without-installation) package and find executable in `package/target/bin/buildstamp-win.exe`.
 
-Linux and MacOS
+Installation on Linux or MacOS (requires [jq](https://github.com/stedolan/jq)).
 ```shell script
 curl -o- https://raw.githubusercontent.com/qiwi/buildstamp/feat/bin-install/packages/bin/scripts/sh/install.sh | bash
 ```
-
-If you use Windows, you can [download](#download-binaries-without-installation) package and find executable in `package/target/bin/buildstamp-win.exe`.
+Utility call
+```shell script
+buildstamp --out.path=some/path/b.json --git --docker.imageTag=foo --date.format=iso
+```
