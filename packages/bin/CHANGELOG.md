@@ -1,3 +1,10 @@
+# buildstamp-bin [1.1.0](https://github.com/qiwi/buildstamp/compare/buildstamp-bin@1.0.4...buildstamp-bin@1.1.0) (2020-11-13)
+
+
+### Features
+
+* **bin:** added installation script ([#32](https://github.com/qiwi/buildstamp/issues/32)) ([5d45a53](https://github.com/qiwi/buildstamp/commit/5d45a53a10f9e843fbb5b05413c45d3f6897c432))
+
 ## buildstamp-bin [1.0.4](https://github.com/qiwi/buildstamp/compare/buildstamp-bin@1.0.3...buildstamp-bin@1.0.4) (2020-11-09)
 
 
