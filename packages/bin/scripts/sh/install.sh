@@ -13,10 +13,10 @@ curl --progress-bar  -o "$PACKAGE_ARCHIVE_NAME" https://registry.npmjs.org/build
 echo Extracting...
 tar --extract --file "$PACKAGE_ARCHIVE_NAME"
 
-echo Copying binary to /usr/local/bin
+echo Copying binary to /usr/local/bin...
 cp package/target/bin/buildstamp-$OS /usr/local/bin/buildstamp
 
-echo Cleaning up
+echo Cleaning up...
 rm -rf package "$PACKAGE_ARCHIVE_NAME"
 
 echo Done!
