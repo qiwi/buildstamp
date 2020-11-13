@@ -2,12 +2,18 @@
 
 OS=$1
 
+if [ "$OS" != "macos" ] && [ "$OS" != "linux" ]
+  then
+    echo "Argument is missing or wrong, should be 'linux' or 'macos'"
+    exit 1
+fi
+
 PACKAGE_ARCHIVE_NAME=buildstamp.tgz
 
-echo Getting latest version...
+echo Getting the latest version...
 LATEST_VERSION=$(curl --progress-bar https://registry.npmjs.org/buildstamp-bin | jq -r '."dist-tags".latest')
 
-echo Downloading package of latest version...
+echo Downloading package of the latest version...
 curl --progress-bar  -o "$PACKAGE_ARCHIVE_NAME" https://registry.npmjs.org/buildstamp-bin/-/buildstamp-bin-$LATEST_VERSION.tgz
 
 echo Extracting...
