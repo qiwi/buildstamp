@@ -28,7 +28,5 @@ chmod +x install.sh
 ```
 Launch it:
 ```shell script
-./install.sh macos # for MacOS
-
-./install.sh linux # for Linux (thanks, cap!)
+./install.sh
 ```
