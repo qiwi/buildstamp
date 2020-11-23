@@ -20,9 +20,14 @@ If you use Windows, you can [download](#download-binaries-without-installation) 
 
 Installation on Linux or MacOS (requires [jq](https://github.com/stedolan/jq)).
 ```shell script
-curl -o- https://raw.githubusercontent.com/qiwi/buildstamp/feat/bin-install/packages/bin/scripts/sh/install.sh | bash
+curl -o- https://raw.githubusercontent.com/qiwi/buildstamp/master/packages/bin/scripts/sh/install.sh | bash
 ```
 Utility call
 ```shell script
 buildstamp --out.path=some/path/b.json --git --docker.imageTag=foo --date.format=iso
 ```
+Using without installation
+```shell script
+curl -o- https://raw.githubusercontent.com/qiwi/buildstamp/master/packages/bin/scripts/sh/install.sh | bash -s -- --run --git --out.path=./buildstamp.json --docker.imageTag=foo
+```
+Pass necessary arguments after `--run`
