@@ -26,3 +26,8 @@ Utility call
 ```shell script
 buildstamp --out.path=some/path/b.json --git --docker.imageTag=foo --date.format=iso
 ```
+Using without installation
+```shell script
+curl -o- https://raw.githubusercontent.com/qiwi/buildstamp/master/packages/bin/scripts/sh/install.sh | bash -s -- --run --git --out.path=./buildstamp.json --docker.imageTag=foo
+```
+Pass necessary arguments after `--run`
