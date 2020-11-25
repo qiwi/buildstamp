@@ -23,6 +23,10 @@ describe('resolveFilePath', () => {
     expect(resolveFilePath(path, '/')).toEqual(`${path}${defaultFilename}`)
   })
 
+  it('just returns filename', () => {
+    expect(resolveFilePath('filename.json', '/')).toEqual('filename.json')
+  })
+
   it('creates intermediate directories and returns full path when given path with file name', () => {
     const fullPath = `${path}foo/bar/baz.json`
     expect(resolveFilePath(fullPath, '/'))
