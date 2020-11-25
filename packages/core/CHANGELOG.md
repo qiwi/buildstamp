@@ -1,3 +1,10 @@
+## buildstamp [1.4.1](https://github.com/qiwi/buildstamp/compare/buildstamp@1.4.0...buildstamp@1.4.1) (2020-11-25)
+
+
+### Bug Fixes
+
+* **core:** allow filename without separator as output path ([#36](https://github.com/qiwi/buildstamp/issues/36)) ([70b5e50](https://github.com/qiwi/buildstamp/commit/70b5e506f04b199a589fe7e13df427202ebb0911))
+
 # buildstamp [1.4.0](https://github.com/qiwi/buildstamp/compare/buildstamp@1.3.0...buildstamp@1.4.0) (2020-11-09)
 
 
