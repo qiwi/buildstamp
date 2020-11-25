@@ -12,6 +12,11 @@ export const resolveFilePath = (path: string, sep: string): string => {
   }
 
   const segments = path.split(sep)
+
+  if (segments.length === 1) {
+    return path
+  }
+
   const lastIndex = segments.length - 1
   const directoryPath = segments.slice(0, lastIndex).join(sep)
   mkdirSync(directoryPath, { recursive: true })
