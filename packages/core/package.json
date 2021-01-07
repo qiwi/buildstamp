@@ -68,7 +68,7 @@
   },
   "dependencies": {
     "find-git-root": "^1.0.4",
-    "meow": "^8.0.0",
+    "meow": "^9.0.0",
     "tslib": "^2.0.3"
   },
   "bin": {
