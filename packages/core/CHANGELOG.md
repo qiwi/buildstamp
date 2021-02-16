@@ -1,3 +1,10 @@
+## buildstamp [1.4.2](https://github.com/qiwi/buildstamp/compare/buildstamp@1.4.1...buildstamp@1.4.2) (2021-02-16)
+
+
+### Performance Improvements
+
+* update deps ([#45](https://github.com/qiwi/buildstamp/issues/45)) ([8774e47](https://github.com/qiwi/buildstamp/commit/8774e473744c75740ffe96a8b668601aa7d4579d))
+
 ## buildstamp [1.4.1](https://github.com/qiwi/buildstamp/compare/buildstamp@1.4.0...buildstamp@1.4.1) (2020-11-25)
 
 
