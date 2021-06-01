@@ -1,3 +1,18 @@
+## buildstamp-bin [1.1.3](https://github.com/qiwi/buildstamp/compare/buildstamp-bin@1.1.2...buildstamp-bin@1.1.3) (2021-06-01)
+
+
+### Performance Improvements
+
+* update deps ([#60](https://github.com/qiwi/buildstamp/issues/60)) ([a55d95e](https://github.com/qiwi/buildstamp/commit/a55d95e95355e87fe2421b20a0056adee48b4327))
+
+
+
+
+
+### Dependencies
+
+* **buildstamp:** upgraded to 1.4.3
+
 ## buildstamp-bin [1.1.2](https://github.com/qiwi/buildstamp/compare/buildstamp-bin@1.1.1...buildstamp-bin@1.1.2) (2021-02-16)
 
 
