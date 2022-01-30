@@ -15,23 +15,24 @@ const stamp: TStamp = {
   },
 }
 
+const readFileSpy = jest.spyOn(fs, 'readFileSync')
+
+afterAll(jest.resetAllMocks)
+
 describe('readBuildstamp', () => {
   it('reads and parses file', () => {
-    jest.spyOn(fs, 'readFileSync')
-      .mockImplementation(() => JSON.stringify(stamp))
+    readFileSpy.mockImplementationOnce(() => JSON.stringify(stamp))
     expect(readBuildstamp('some/path')).toEqual(stamp)
   })
 
   it('logs an error', () => {
-    jest.spyOn(fs, 'readFileSync')
+    readFileSpy
       .mockImplementation(() => {
         throw new Error('foo')
       })
     const errorSpy = jest.spyOn(console, 'error')
-      .mockImplementation(() => { /* noop */ })
-    expect(readBuildstamp('some/path')).toBeUndefined()
-    expect(errorSpy).toHaveBeenCalled()
-  })
 
-  afterAll(jest.resetAllMocks)
+    expect(readBuildstamp('some/path')).toBeUndefined()
+    expect(errorSpy).toHaveBeenCalledWith('Buildstamp reading error:', 'foo')
+  })
 })

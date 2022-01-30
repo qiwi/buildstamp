@@ -10,6 +10,8 @@ type TTestCase = {
   currentTimestamp?: number
 }
 
+afterAll(jest.resetAllMocks)
+
 const cases: Array<TTestCase> = [
   {
     description: 'appends date as ISO string for corresponding format when value is given',
