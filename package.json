@@ -5,6 +5,7 @@
   "publishConfig": {
     "access": "public"
   },
+  "type": "module",
   "workspaces": [
     "packages/*"
   ],
@@ -13,8 +14,8 @@
     "clean": "lerna run clean",
     "build": "yarn clean && lerna run build --stream --concurrency 2",
     "bootstrap": "lerna bootstrap",
-    "jest": "jest",
-    "test": "yarn lint && yarn jest",
+    "test": "yarn lint && yarn test:unit",
+    "test:unit": "NODE_OPTIONS='--experimental-vm-modules' jest",
     "test:report": "yarn test && yarn coveralls:push",
     "test:concurrent": "lerna run test --concurrency 1 --stream --no-prefix && yarn coverage:merge",
     "coverage:merge": "node scripts/js/coverage-merge.js",

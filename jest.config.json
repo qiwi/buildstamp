@@ -2,5 +2,6 @@
   "collectCoverage": true,
   "projects": [
     "<rootDir>/packages/core/jest.config.json"
-  ]
+  ],
+  "resolver": "<rootDir>/packages/core/jest.resolver.cjs"
 }
