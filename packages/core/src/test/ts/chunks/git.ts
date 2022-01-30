@@ -59,9 +59,7 @@ const testCases: TGitInfoTestCase[] = [
   },
 ]
 
-afterAll(() => {
-  rimraf.sync(artifactsFolder)
-})
+afterAll(() => rimraf.sync(artifactsFolder))
 
 describe('getGitInfo', () => {
   it('is properly exported', () => {
@@ -94,7 +92,7 @@ describe('getGitInfo', () => {
 })
 
 describe('gitChunk', () => {
-  afterAll(jest.clearAllMocks)
+  afterAll(jest.resetAllMocks)
 
   it('returns properly context value if options are not passed', () => {
     const ctx: TChunkContext = {

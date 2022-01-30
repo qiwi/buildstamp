@@ -1460,10 +1460,10 @@
   dependencies:
     "@octokit/openapi-types" "^11.2.0"
 
-"@qiwi/libdefkit@^3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@qiwi/libdefkit/-/libdefkit-3.2.0.tgz#941813bff5918fc5ff65784cdc03abbaf840ee72"
-  integrity sha512-eCGWZztttKmKYS2lC4LMtgmX5sfDDOaV+MLvSBUIoshnVwvrRhfVik9uYFSo/U2mMEdlsAHwG11/uER4Wi4bVA==
+"@qiwi/libdefkit@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@qiwi/libdefkit/-/libdefkit-4.0.0.tgz#df5c7f5c32181edeaffb698bd68d0a587cd7e20b"
+  integrity sha512-SR/WTKtJZBPRr6cDGWiYPSVkQXmF0ljjgVdwr9+Hd2JNnqS4/SMqM7aEJgLJ7imX/q/0J4gKf7pLxbtqU4XNVw==
   dependencies:
     chalk "^5.0.0"
     find-up "^6.2.0"
