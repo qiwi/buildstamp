@@ -5,10 +5,11 @@
   "publishConfig": {
     "access": "public"
   },
+  "type": "module",
   "description": "Buildstamp binaries for MacOS, Linux and Windows",
   "scripts": {
     "clean": "rimraf target",
-    "build:bins": "pkg --out-path=./target/bin --targets=node14-linux-x64,node14-macos-x64,node14-win-x64 ../core",
+    "build:bins": "pkg --out-path=./target/bin --targets=node16-linux-x64,node16-macos-x64,node16-win-x64 ../core",
     "build": "yarn clean && yarn build:bins"
   },
   "repository": {
