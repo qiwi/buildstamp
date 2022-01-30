@@ -7,7 +7,7 @@
   "testEnvironment": "node",
   "collectCoverage": true,
   "coveragePathIgnorePatterns": [
-    "src/main/ts/cli.ts"
+    "<rootDir>src/main/ts/cli.ts"
   ],
   "collectCoverageFrom": [
     "<rootDir>/src/main/**/*.(j|t)s"
