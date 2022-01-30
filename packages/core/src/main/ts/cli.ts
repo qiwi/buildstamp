@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 import meow, { Options } from 'meow'
 
-import { execute } from './executor'
-import { TEnv, TStampOptions } from './interfaces'
+import { run } from './index'
 
 const cli = meow(`
     Usage:
@@ -15,6 +14,7 @@ const cli = meow(`
       --date.format, adds date info to stamp, iso or instant
       --date.value, any valid input for Date constructor, default is current time
 `, {
+  importMeta: import.meta,
   flags: {
     out: {
       type: 'string',
@@ -36,16 +36,4 @@ const cli = meow(`
   },
 } as Options<any>)
 
-const launch = () => {
-  try {
-    if (Array.isArray(cli.flags.docker)) {
-      delete cli.flags.docker
-    }
-    execute(cli.flags as TStampOptions, process.env as TEnv)
-  } catch (e) {
-    console.error(e)
-    process.exit(1)
-  }
-}
-
-launch()
+run(cli.flags)

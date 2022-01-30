@@ -1,3 +1,5 @@
+import { jest } from '@jest/globals'
+
 import { TChunkContext } from '../../../main/ts'
 import { loggerChunk } from '../../../main/ts/chunks'
 import { defaultJsonSpace, spaceTypes } from '../../../main/ts/constants'

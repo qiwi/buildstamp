@@ -1,14 +1,14 @@
-import { mkdirSync } from 'fs'
-import { join } from 'path'
+import fs from 'fs'
+import p from 'path'
 
 import { defaultFilename } from '../constants'
 import { hasTrailingSeparator } from '../utils'
 
 export const resolveFilePath = (path: string, sep: string): string => {
   if (hasTrailingSeparator(path, sep)) {
-    mkdirSync(path, { recursive: true })
+    fs.mkdirSync(path, { recursive: true })
 
-    return join(path, defaultFilename)
+    return p.join(path, defaultFilename)
   }
 
   const segments = path.split(sep)
@@ -19,7 +19,7 @@ export const resolveFilePath = (path: string, sep: string): string => {
 
   const lastIndex = segments.length - 1
   const directoryPath = segments.slice(0, lastIndex).join(sep)
-  mkdirSync(directoryPath, { recursive: true })
+  fs.mkdirSync(directoryPath, { recursive: true })
 
-  return join(directoryPath, segments[lastIndex])
+  return p.join(directoryPath, segments[lastIndex])
 }

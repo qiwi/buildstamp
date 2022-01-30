@@ -41,4 +41,4 @@ export type TChunkContext = {
   cwd?: string
 }
 
-export type TStampChunk = <T extends TChunkContext = TChunkContext>(ctx: T, env?: TEnv) => T
+export type TStampChunk = { <T extends TChunkContext = TChunkContext>(ctx: T, env?: TEnv): T, [key: string]: any }

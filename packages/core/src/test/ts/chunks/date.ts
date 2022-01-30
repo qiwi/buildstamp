@@ -1,6 +1,7 @@
+import { jest } from '@jest/globals'
+
 import { TChunkContext, TStamp } from '../../../main/ts'
-import { dateChunk } from '../../../main/ts/chunks/date'
-import * as generators from '../../../main/ts/generators'
+import { dateChunk } from '../../../main/ts/chunks'
 
 type TTestCase = {
   description: string
@@ -77,7 +78,7 @@ describe('timestampChunk', () => {
   cases.forEach(({ description, input, stamp, currentTimestamp }) => {
     it(description, () => {
       if (currentTimestamp) {
-        jest.spyOn(generators, 'now').mockImplementation(() => currentTimestamp)
+        jest.spyOn(Date, 'now').mockImplementation(() => currentTimestamp)
       }
       expect(dateChunk(input)).toEqual({ ...input, stamp })
     })
