@@ -1,8 +1,8 @@
+import { jest } from '@jest/globals'
 import fs from 'fs'
 
 import { TChunkContext } from '../../../main/ts'
 import { writerChunk } from '../../../main/ts/chunks'
-import * as pathResolver from '../../../main/ts/output/pathResolver'
 import { formatOutput } from '../../../main/ts/utils'
 
 type TInactiveTestCase = {
@@ -37,6 +37,8 @@ const inactiveTestCases: TInactiveTestCase[] = [
   },
 ]
 
+afterAll(jest.resetAllMocks)
+
 describe('writer', () => {
   describe('inactive test cases', () => {
     inactiveTestCases.forEach(testCase => it(`does nothing when ${testCase.description}`, () => {
@@ -62,7 +64,7 @@ describe('writer', () => {
     jest.spyOn(fs, 'writeFileSync').mockImplementation(() => {
       throw writeError
     })
-    jest.spyOn(pathResolver, 'resolveFilePath')
+    jest.spyOn(fs, 'mkdirSync')
       .mockImplementation(() => 'some/path/buildstamp.json')
 
     writerChunk(ctx)
@@ -75,7 +77,7 @@ describe('writer', () => {
       .mockImplementation(() => { /* noop */ })
     const writeFileSyncSpy = jest.spyOn(fs, 'writeFileSync')
       .mockImplementation(() => { /* noop */ })
-    jest.spyOn(pathResolver, 'resolveFilePath')
+    jest.spyOn(fs, 'mkdirSync')
       .mockImplementation(() => 'some/path/buildstamp.json')
     const ctx = {
       cwd: process.cwd(),

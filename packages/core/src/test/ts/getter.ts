@@ -1,5 +1,7 @@
+import { jest } from '@jest/globals'
+import fs from 'fs'
+
 import { readBuildstamp, TStamp } from '../../main/ts'
-import * as utils from '../../main/ts/utils'
 
 const stamp: TStamp = {
   git: {
@@ -15,13 +17,13 @@ const stamp: TStamp = {
 
 describe('readBuildstamp', () => {
   it('reads and parses file', () => {
-    jest.spyOn(utils, 'readFileToString')
+    jest.spyOn(fs, 'readFileSync')
       .mockImplementation(() => JSON.stringify(stamp))
     expect(readBuildstamp('some/path')).toEqual(stamp)
   })
 
   it('logs an error', () => {
-    jest.spyOn(utils, 'readFileToString')
+    jest.spyOn(fs, 'readFileSync')
       .mockImplementation(() => {
         throw new Error('foo')
       })

@@ -1,11 +1,17 @@
-import * as executor from '../../main/ts/executor'
+import { jest } from '@jest/globals'
+
+import executor from '../../main/ts/executor'
+// import { run } from '../../main/ts'
+
+const fakeExec = jest.fn(() => ({/* noop */}))
+beforeAll(() => {
+  jest.spyOn(executor, 'execute').mockImplementation(fakeExec)
+})
 
 describe('cli', () => {
-  it('calls createBuildInfo', () => {
+  it('calls createBuildInfo', async () => {
     process.env.SEP = '/'
-    const fn = jest.spyOn(executor, 'execute')
-      .mockImplementation(() => ({}))
-    require('../../main/ts/cli')
-    expect(fn).toHaveBeenCalled()
+    await import('../../main/ts/cli')
+    expect(fakeExec).toHaveBeenCalled()
   })
 })

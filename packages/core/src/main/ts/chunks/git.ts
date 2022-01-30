@@ -53,7 +53,9 @@ export const gitChunk: TStampChunk = (ctx) => {
     ...ctx,
     stamp: {
       ...stamp,
-      git: getGitInfo(cwd as string),
+      git: gitChunk.getGitInfo(cwd as string),
     },
   }
 }
+
+gitChunk.getGitInfo = getGitInfo

@@ -1,3 +1,5 @@
+import { jest } from '@jest/globals'
+
 import { execute, TStampOptions } from '../../main/ts'
 
 describe('execute', () => {

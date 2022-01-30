@@ -1,9 +1,9 @@
+import { jest } from '@jest/globals'
 import { mkdirSync, writeFileSync } from 'fs'
 import rimraf from 'rimraf'
 
 import { TChunkContext, TGitDetails } from '../../../main/ts'
-import * as gitModule from '../../../main/ts/chunks/git'
-import { getGitInfo, gitChunk } from '../../../main/ts/chunks/git'
+import { getGitInfo, gitChunk } from '../../../main/ts/chunks'
 
 const artifactsFolder = 'testArtifactsFolder'
 
@@ -115,7 +115,7 @@ describe('gitChunk', () => {
       repoName: 'baz',
       repoUrl: 'qux',
     }
-    jest.spyOn(gitModule, 'getGitInfo').mockImplementation(() => git)
+    jest.spyOn(gitChunk, 'getGitInfo').mockImplementation(() => git)
     expect(gitChunk(ctx)).toEqual({ ...ctx, stamp: { git } })
   })
 })

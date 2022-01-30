@@ -1,4 +1,4 @@
-import { writeFileSync } from 'fs'
+import fs from 'fs'
 import { sep } from 'path'
 
 import { defaultJsonSpace, spaceTypes } from '../constants'
@@ -19,7 +19,7 @@ export const writerChunk: TStampChunk = (ctx) => {
 
     try {
       const filePath = resolveFilePath(path, sep)
-      writeFileSync(filePath, body)
+      fs.writeFileSync(filePath, body)
       console.log(`Buildstamp has been written to ${filePath}`)
     } catch (e) {
       console.error(e)
