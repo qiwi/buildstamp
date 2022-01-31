@@ -22,10 +22,10 @@ tar --extract --file "$PACKAGE_ARCHIVE_NAME"
 
 if [ "$1" == --run ]; then
   shift
-  ./package/target/bin/buildstamp-$OS "$@"
+  ./package/target/bin/buildstamp "$@"
 else
   echo Copying binary to /usr/local/bin...
-  cp package/target/bin/buildstamp-$OS /usr/local/bin/buildstamp
+  cp package/target/bin/buildstamp /usr/local/bin/buildstamp
 fi
 
 echo Cleaning up...
