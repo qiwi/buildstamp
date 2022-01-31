@@ -1,3 +1,15 @@
+# buildstamp [2.0.0](https://github.com/qiwi/buildstamp/compare/buildstamp@1.4.3...buildstamp@2.0.0) (2022-01-31)
+
+
+### Features
+
+* following deps, moved to ESM ([6ac531a](https://github.com/qiwi/buildstamp/commit/6ac531a6a563735971eb2c3c4b4d4c4e9034237f))
+
+
+### BREAKING CHANGES
+
+* move to ESM
+
 ## buildstamp [1.4.3](https://github.com/qiwi/buildstamp/compare/buildstamp@1.4.2...buildstamp@1.4.3) (2021-06-01)
 
 ### Performance Improvements
