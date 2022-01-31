@@ -1,5 +1,5 @@
 # buildstamp-binaries
-Buildstamp binaries for MacOS, Linux and Windows
+Buildstamp binaries for macOS and Linux
 
 ## Download binaries without installation
 Get download links
