@@ -1,3 +1,10 @@
+# buildstamp-bin [1.2.0](https://github.com/qiwi/buildstamp/compare/buildstamp-bin@1.1.3...buildstamp-bin@1.2.0) (2022-01-31)
+
+
+### Features
+
+* **bin:** move to nodejs v16 ([bd0b224](https://github.com/qiwi/buildstamp/commit/bd0b2243354196ff9a1a0d8ccb719bdc8e12fb0e))
+
 ## buildstamp-bin [1.1.3](https://github.com/qiwi/buildstamp/compare/buildstamp-bin@1.1.2...buildstamp-bin@1.1.3) (2021-06-01)
 
 
