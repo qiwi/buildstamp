@@ -12,7 +12,7 @@
   "description": "Buildstamp monorepo",
   "scripts": {
     "clean": "yarn workspaces foreach --parallel --topological-dev --no-private run clean",
-    "build": "yarn clean && yarn workspaces foreach -t --since run build --stream --concurrency 2",
+    "build": "yarn clean && yarn workspaces foreach -pt run build --stream --concurrency 2",
     "test": "yarn lint && yarn test:unit",
     "test:unit": "NODE_OPTIONS='--experimental-vm-modules' jest",
     "test:report": "yarn test && yarn coveralls:push",
