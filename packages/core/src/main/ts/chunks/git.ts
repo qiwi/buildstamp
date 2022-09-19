@@ -36,7 +36,7 @@ export const getGitInfo: TVcsInfoCreator = (argCwd) => {
   const repoName = (repoNameRegexp.exec(origin) || [])[1] + ''
   const repoUrl = (repoUrlRegexp.exec(origin) || [])[1] + ''
 
-  const checkEndRepoUrl = /.+\.git$/
+  const checkEndRepoUrl = /\.git$/
 
   return {
     commitId,
