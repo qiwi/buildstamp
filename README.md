@@ -1,5 +1,5 @@
 # Buildstamp monorepo
-[![Build Status](https://travis-ci.com/qiwi/buildstamp.svg?branch=master)](https://travis-ci.com/qiwi/buildstamp)
+[![CI](https://github.com/qiwi/buildstamp/actions/workflows/ci.yaml/badge.svg?branch=master)](https://github.com/qiwi/buildstamp/actions/workflows/ci.yaml)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/b14a2a44e024ca0b2771/test_coverage)](https://codeclimate.com/github/qiwi/buildstamp/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/b14a2a44e024ca0b2771/maintainability)](https://codeclimate.com/github/qiwi/buildstamp/maintainability)
 
@@ -8,7 +8,7 @@ Utility for generating buildstamp file, which contains build meta info like gitc
 {
   "git": {
     "commitId": "007b8f715eb5670662d90f90cd1916398d1dfe98",
-    "repoUrl": "https://github.com/qiwi/buildstamp.git",
+    "repoUrl": "https://github.com/qiwi/buildstamp",
     "repoName": "qiwi/buildstamp"
   },
   "docker": {

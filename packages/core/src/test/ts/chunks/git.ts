@@ -86,7 +86,7 @@ describe('getGitInfo', () => {
 
       expect(data.commitId).toMatch(/^[\dA-Fa-f]{40}/)
       expect(data.repoName).toBe('qiwi/buildstamp')
-      expect(data.repoUrl).toMatch(/qiwi\/buildstamp\.git$/)
+      expect(data.repoUrl).toMatch(/^.+github\.com[/:]qiwi\/buildstamp(\.git)?$/)
     })
   })
 })
