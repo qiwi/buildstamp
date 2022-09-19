@@ -29,7 +29,7 @@ describe('execute', () => {
       git: {
         commitId: expect.any(String),
         repoName: 'qiwi/buildstamp',
-        repoUrl: expect.stringMatching(/^.+github\.com[/:]qiwi\/buildstamp(\.git)?$/),
+        repoUrl: expect.stringMatching(/^.+github\.com[/:]qiwi\/buildstamp\.git$/),
       },
     })
   })

@@ -8,7 +8,7 @@ Utility for generating buildstamp file, which contains build meta info like gitc
 {
   "git": {
     "commitId": "007b8f715eb5670662d90f90cd1916398d1dfe98",
-    "repoUrl": "https://github.com/qiwi/buildstamp",
+    "repoUrl": "https://github.com/qiwi/buildstamp.git",
     "repoName": "qiwi/buildstamp"
   },
   "docker": {
