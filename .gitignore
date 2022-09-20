@@ -71,3 +71,17 @@ buildcache
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+.npmrc
+
+# Coverage
+cc-reporter
+cc-reporter.*
+codeclimate.*
+coverage.*
+
+# Creds
+*.asc
+*.key
+*.pem
+*.cert
