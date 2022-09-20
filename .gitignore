@@ -62,3 +62,26 @@ buildcache
 .rts2_cache_cjs/
 .rts2_cache_es/
 .rts2_cache_umd/
+
+# yarn
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+.npmrc
+
+# Coverage
+cc-reporter
+cc-reporter.*
+codeclimate.*
+coverage.*
+
+# Creds
+*.asc
+*.key
+*.pem
+*.cert

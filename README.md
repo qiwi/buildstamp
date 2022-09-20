@@ -1,5 +1,5 @@
 # Buildstamp monorepo
-[![Build Status](https://travis-ci.com/qiwi/buildstamp.svg?branch=master)](https://travis-ci.com/qiwi/buildstamp)
+[![CI](https://github.com/qiwi/buildstamp/actions/workflows/ci.yaml/badge.svg?branch=master)](https://github.com/qiwi/buildstamp/actions/workflows/ci.yaml)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/b14a2a44e024ca0b2771/test_coverage)](https://codeclimate.com/github/qiwi/buildstamp/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/b14a2a44e024ca0b2771/maintainability)](https://codeclimate.com/github/qiwi/buildstamp/maintainability)
 

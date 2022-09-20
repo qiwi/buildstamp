@@ -16,7 +16,8 @@ export type IGitStampOptions = {
   git?: boolean
 }
 
-export const getGitInfo: TVcsInfoCreator = (cwd = process.cwd()) => {
+export const getGitInfo: TVcsInfoCreator = (argCwd) => {
+  const cwd = argCwd || process.cwd()
   const gitFolder = findGitRoot(cwd)
 
   const rev = readFileToString(`${gitFolder}${sep}HEAD`).trim()
@@ -35,9 +36,11 @@ export const getGitInfo: TVcsInfoCreator = (cwd = process.cwd()) => {
   const repoName = (repoNameRegexp.exec(origin) || [])[1] + ''
   const repoUrl = (repoUrlRegexp.exec(origin) || [])[1] + ''
 
+  const checkEndRepoUrl = /\.git$/
+
   return {
     commitId,
-    repoUrl,
+    repoUrl: checkEndRepoUrl.test(repoUrl) || argCwd ? repoUrl : repoUrl + '.git',
     repoName,
   }
 }

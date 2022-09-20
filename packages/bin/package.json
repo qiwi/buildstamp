@@ -1,7 +1,6 @@
 {
   "name": "buildstamp-bin",
   "version": "1.2.1",
-  "private": false,
   "publishConfig": {
     "access": "public"
   },
@@ -10,7 +9,7 @@
   "scripts": {
     "clean": "rimraf target",
     "build:bins": "caxa --input ./ --output 'target/bin/buildstamp' -- '{{caxa}}/node_modules/.bin/node' '{{caxa}}/src/main/js/index.js'",
-    "build": "yarn clean && yarn build:bins"
+    "build": "yarn build:bins"
   },
   "repository": {
     "type": "git",
