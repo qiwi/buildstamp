@@ -59,7 +59,7 @@
   "license": "MIT",
   "devDependencies": {
     "@jest/globals": "^27.4.6",
-    "@qiwi/libdefkit": "^4.0.8",
+    "@qiwi/libdefkit": "^5.0.0",
     "@qiwi/license": "^1.4.4",
     "@types/jest": "^27.4.0",
     "@types/mkdirp": "^1.0.2",
