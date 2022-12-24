@@ -1756,7 +1756,7 @@ __metadata:
     "@types/node": "npm:^18.7.18"
     "@types/rimraf": "npm:^3.0.2"
     find-git-root: "npm:^1.0.4"
-    meow: "npm:^10.1.3"
+    meow: "npm:^11.0.0"
     mkdirp: "npm:^1.0.4"
     prettier: "npm:^2.7.1"
     rimraf: "npm:^3.0.2"
