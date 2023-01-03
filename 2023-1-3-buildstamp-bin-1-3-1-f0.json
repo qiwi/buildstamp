@@ -1,0 +1,9 @@
+{
+  "META_VERSION": "1",
+  "name": "buildstamp-bin",
+  "hash": "769c6bed89bc88da0af3ad52e796a55738bae32b",
+  "version": "1.3.1",
+  "dependencies": {
+    "buildstamp": "2.1.1"
+  }
+}
