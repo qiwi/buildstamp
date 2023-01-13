@@ -1880,7 +1880,7 @@ __metadata:
   dependencies:
     buildstamp: "npm:2.0.0"
     caxa: "npm:^2.1.0"
-    rimraf: "npm:^3.0.2"
+    rimraf: "npm:^4.0.0"
   bin:
     buildstamp-bin: ./src/main/js/index.js
   languageName: unknown
@@ -1896,7 +1896,7 @@ __metadata:
     eslint-config-qiwi: "npm:^1.17.6"
     jest: "npm:^29.0.0"
     prettier: "npm:^2.7.1"
-    rimraf: "npm:^3.0.2"
+    rimraf: "npm:^4.0.0"
     typescript: "npm:4.7.4"
   languageName: unknown
   linkType: soft
@@ -1916,7 +1916,7 @@ __metadata:
     meow: "npm:^11.0.0"
     mkdirp: "npm:^1.0.4"
     prettier: "npm:^2.7.1"
-    rimraf: "npm:^3.0.2"
+    rimraf: "npm:^4.0.0"
     terser: "npm:^5.15.0"
     ts-jest: "npm:^29.0.0"
     tslib: "npm:^2.4.0"
@@ -6089,6 +6089,15 @@ __metadata:
   bin:
     rimraf: bin.js
   checksum: b786c9ad52df9fbcd9c7120e105f3150b83b39dd87d9235a93b0c7e806575e1e68936504ff64563dbe67b3f8bbbc00bdfff586157d402ee8990e7143456511c0
+  languageName: node
+  linkType: hard
+
+"rimraf@npm:^4.0.0":
+  version: 4.0.4
+  resolution: "rimraf@npm:4.0.4"
+  bin:
+    rimraf: dist/cjs/src/bin.js
+  checksum: 814be48c28367ec1781c2a82173332cca01b77679a323b84a96423c8b50087e1dfc0849a6f90b6fe7859f70a005e0539efac43c88c2abd017944729b6dbb21c0
   languageName: node
   linkType: hard
 
