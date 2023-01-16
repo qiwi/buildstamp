@@ -1914,7 +1914,7 @@ __metadata:
     "@types/rimraf": "npm:^3.0.2"
     find-git-root: "npm:^1.0.4"
     meow: "npm:^11.0.0"
-    mkdirp: "npm:^1.0.4"
+    mkdirp: "npm:^2.0.0"
     prettier: "npm:^2.7.1"
     rimraf: "npm:^3.0.2"
     terser: "npm:^5.15.0"
@@ -5205,6 +5205,15 @@ __metadata:
   bin:
     mkdirp: bin/cmd.js
   checksum: 123361119829ab8115234f36ed8ef8f697b0f6f83ec9f9bc8f76da587487976d74bc874ffa892e7a66df607fa8f2cc758eed8db225e9cd3a84846350209e53db
+  languageName: node
+  linkType: hard
+
+"mkdirp@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "mkdirp@npm:2.0.0"
+  bin:
+    mkdirp: dist/cjs/bin.js
+  checksum: fa64b884e2174e4b661375465fc4505955764f4dc4cb2151219a2a946a2874640401f0972b2632b566f7cd37513dddeb299b43ae61fa3ed82f87745b0b9f27df
   languageName: node
   linkType: hard
 
