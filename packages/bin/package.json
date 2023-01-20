@@ -26,7 +26,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "caxa": "^2.1.0",
+    "caxa": "^3.0.0",
     "rimraf": "^4.0.0"
   },
   "dependencies": {
