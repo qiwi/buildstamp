@@ -71,7 +71,7 @@
     "terser": "^5.15.0",
     "ts-jest": "^29.0.0",
     "typedoc": "^0.23.15",
-    "typescript": "4.9.4"
+    "typescript": "4.9.5"
   },
   "dependencies": {
     "find-git-root": "^1.0.4",
