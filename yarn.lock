@@ -1880,7 +1880,7 @@ __metadata:
   dependencies:
     buildstamp: "npm:2.0.0"
     caxa: "npm:^2.1.0"
-    rimraf: "npm:^4.0.0"
+    rimraf: "npm:^5.0.0"
   bin:
     buildstamp-bin: ./src/main/js/index.js
   languageName: unknown
@@ -1896,7 +1896,7 @@ __metadata:
     eslint-config-qiwi: "npm:^1.17.6"
     jest: "npm:^29.0.0"
     prettier: "npm:^2.7.1"
-    rimraf: "npm:^4.0.0"
+    rimraf: "npm:^5.0.0"
     typescript: "npm:4.9.4"
   languageName: unknown
   linkType: soft
@@ -1916,7 +1916,7 @@ __metadata:
     meow: "npm:^11.0.0"
     mkdirp: "npm:^2.0.0"
     prettier: "npm:^2.7.1"
-    rimraf: "npm:^4.0.0"
+    rimraf: "npm:^5.0.0"
     terser: "npm:^5.15.0"
     ts-jest: "npm:^29.0.0"
     tslib: "npm:^2.4.0"
@@ -3486,6 +3486,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"glob@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "glob@npm:10.0.0"
+  dependencies:
+    fs.realpath: "npm:^1.0.0"
+    minimatch: "npm:^9.0.0"
+    minipass: "npm:^5.0.0"
+    path-scurry: "npm:^1.6.4"
+  checksum: 30efebec769652f52de6be5e3576bafc133e480f1dab90c9d37e4d7a852d48c0302affb1ba4a5ad59c2b6a819843d90912817c0b2bc84794b44d0bf67079df83
+  languageName: node
+  linkType: hard
+
 "glob@npm:^7.0.0, glob@npm:^7.1.3, glob@npm:^7.1.4, glob@npm:^7.1.6":
   version: 7.2.3
   resolution: "glob@npm:7.2.3"
@@ -4920,6 +4932,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lru-cache@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "lru-cache@npm:9.0.0"
+  checksum: 2fccdee5f2fe02bf90db36fb5c1f526dcb944ca0375708b1bd74f28cb2368cb9f135eed7a1f679ce343294036391d1e2877741ef9a3b19aaed3b81e59d84b0c0
+  languageName: node
+  linkType: hard
+
 "lunr@npm:^2.3.9":
   version: 2.3.9
   resolution: "lunr@npm:2.3.9"
@@ -5111,6 +5130,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"minimatch@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "minimatch@npm:9.0.0"
+  dependencies:
+    brace-expansion: "npm:^2.0.1"
+  checksum: 07983996ed1698bb849aa39b42e295c76255720663ee53e5cf1904a87cf652ba54e038efabe3fa673e8fe2f64ab7872985b27a36da26220a2325162e7bededbe
+  languageName: node
+  linkType: hard
+
 "minimist-options@npm:4.1.0":
   version: 4.1.0
   resolution: "minimist-options@npm:4.1.0"
@@ -5186,6 +5214,13 @@ __metadata:
   dependencies:
     yallist: "npm:^4.0.0"
   checksum: bddf78663156eebaec346762d56ce096ac45f5cb4917e9c43947b1b8146acacbaf523f2031907b3ad27d585f7a684f39dba96382739efcd7d87fac5c7ee0c66c
+  languageName: node
+  linkType: hard
+
+"minipass@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "minipass@npm:5.0.0"
+  checksum: dac2e1960990ca7c288834e7311e029828d9ae4c90fdabae95a3ea269592871feaa755a1ef9241d487e6fe59d86a43e1d8bac41c47f13c3c0add0799ab500a0b
   languageName: node
   linkType: hard
 
@@ -5608,6 +5643,16 @@ __metadata:
   version: 1.0.7
   resolution: "path-parse@npm:1.0.7"
   checksum: ca291d7bced407e20480b686d7ef4f9dd112ef00d6f109faa50bbefe8ff9dd51e164781fa0670c7b5d67a88610008e83e594f8294ec809c1b7203c6577ca3777
+  languageName: node
+  linkType: hard
+
+"path-scurry@npm:^1.6.4":
+  version: 1.6.4
+  resolution: "path-scurry@npm:1.6.4"
+  dependencies:
+    lru-cache: "npm:^9.0.0"
+    minipass: "npm:^5.0.0"
+  checksum: 2ca4b556d51e5ca0360774eae9a264a8e6944202cbebe50e139b33405914dba4544d8294cde14867b9c9f65bf465006da2112833f1e209c672478c565f1fb063
   languageName: node
   linkType: hard
 
@@ -6101,12 +6146,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rimraf@npm:^4.0.0":
-  version: 4.0.4
-  resolution: "rimraf@npm:4.0.4"
+"rimraf@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "rimraf@npm:5.0.0"
+  dependencies:
+    glob: "npm:^10.0.0"
   bin:
     rimraf: dist/cjs/src/bin.js
-  checksum: 814be48c28367ec1781c2a82173332cca01b77679a323b84a96423c8b50087e1dfc0849a6f90b6fe7859f70a005e0539efac43c88c2abd017944729b6dbb21c0
+  checksum: 67d11322c6236df8a99aa1c2d0b019193fe1d60804dcf0a964b35f9d10950ce72e5f970de6f04b4ecbb575dac6ee01499c6946e989278d45829dca892a87f30d
   languageName: node
   linkType: hard
 

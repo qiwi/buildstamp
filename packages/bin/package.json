@@ -27,7 +27,7 @@
   "license": "MIT",
   "devDependencies": {
     "caxa": "^2.1.0",
-    "rimraf": "^4.0.0"
+    "rimraf": "^5.0.0"
   },
   "dependencies": {
     "buildstamp": "2.0.0"
