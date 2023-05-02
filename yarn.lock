@@ -1913,7 +1913,7 @@ __metadata:
     "@types/node": "npm:^18.7.18"
     "@types/rimraf": "npm:^3.0.2"
     find-git-root: "npm:^1.0.4"
-    meow: "npm:^11.0.0"
+    meow: "npm:^12.0.0"
     mkdirp: "npm:^2.0.0"
     prettier: "npm:^2.7.1"
     rimraf: "npm:^4.0.0"
@@ -2395,6 +2395,18 @@ __metadata:
     decamelize: "npm:^1.1.0"
     map-obj: "npm:^1.0.0"
   checksum: 20d7f2e96144b1aecea50ed0a9a91fbb6f7e97fd50972ad9214a1ba3b53fa44b1023ca54a9d3ef7583bc98958ee685b53b306ec1d93cd420300b71a42a90b8db
+  languageName: node
+  linkType: hard
+
+"decamelize-keys@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "decamelize-keys@npm:2.0.1"
+  dependencies:
+    decamelize: "npm:^6.0.0"
+    map-obj: "npm:^4.3.0"
+    quick-lru: "npm:^6.1.1"
+    type-fest: "npm:^3.1.0"
+  checksum: a227d6f408e7426689f106c790eb535e468c3660ee034458c2cbb8dedf30cb88401d289e9c9791e52d238641dc40a129b92e22003267c724a38157837f02521c
   languageName: node
   linkType: hard
 
@@ -3678,6 +3690,15 @@ __metadata:
   dependencies:
     lru-cache: "npm:^7.5.1"
   checksum: 479756f48473747fad111f980b00014dd50b8fd142cb7975396d731c201f23697d4335a317a604f1f3266cb5a1ea6dbb1fea9da3ff04428913afda92052dc14d
+  languageName: node
+  linkType: hard
+
+"hosted-git-info@npm:^6.0.0":
+  version: 6.1.1
+  resolution: "hosted-git-info@npm:6.1.1"
+  dependencies:
+    lru-cache: "npm:^7.5.1"
+  checksum: bf0532d09895323968c41184d7068c25b0ccb95b1b7bc3ffb9f95c46163e86e003bedd5df711739b215d872825eaeead75a6d25f1b92f4403c0b6132d22e9311
   languageName: node
   linkType: hard
 
@@ -5039,6 +5060,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"meow@npm:^12.0.0":
+  version: 12.0.0
+  resolution: "meow@npm:12.0.0"
+  dependencies:
+    "@types/minimist": "npm:^1.2.2"
+    camelcase-keys: "npm:^8.0.2"
+    decamelize: "npm:^6.0.0"
+    decamelize-keys: "npm:^2.0.1"
+    hard-rejection: "npm:^2.1.0"
+    minimist-options: "npm:4.1.0"
+    normalize-package-data: "npm:^5.0.0"
+    read-pkg-up: "npm:^9.1.0"
+    redent: "npm:^4.0.0"
+    trim-newlines: "npm:^5.0.0"
+    type-fest: "npm:^3.9.0"
+    yargs-parser: "npm:^21.1.1"
+  checksum: fa42533d045fdf22e2127e88f6aff2e75b40105f07d080270258fe39481bfc9792349b1b105ad26083912c91420fa32a0ffe9c3681e09f01baf289b8624228df
+  languageName: node
+  linkType: hard
+
 "merge-stream@npm:^2.0.0":
   version: 2.0.0
   resolution: "merge-stream@npm:2.0.0"
@@ -5339,6 +5380,18 @@ __metadata:
     semver: "npm:^7.3.5"
     validate-npm-package-license: "npm:^3.0.4"
   checksum: 8fb3d401c8963e130bb9df8c55730db3d8ee9040cb307c5580a89bbcc36a82e7156556b52cde19b69804b9c5e82852e7150af19d10be9ea52baedaa6de13a19a
+  languageName: node
+  linkType: hard
+
+"normalize-package-data@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "normalize-package-data@npm:5.0.0"
+  dependencies:
+    hosted-git-info: "npm:^6.0.0"
+    is-core-module: "npm:^2.8.1"
+    semver: "npm:^7.3.5"
+    validate-npm-package-license: "npm:^3.0.4"
+  checksum: a77ec1138ddfe8d185a41b33b0522f30b32b4a1329e3e9ed14338ba5476c728b9d2684ffb4a4b66122bbd9b40c590b99b52aa8a57a96466b7251aa645ef4e4d5
   languageName: node
   linkType: hard
 
@@ -6683,6 +6736,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"trim-newlines@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "trim-newlines@npm:5.0.0"
+  checksum: 50faa59ccd185ec4ffa4247f45ec377238e4280926ae2fb703a1038657398a16cb7750ac57358eda706644ce4ed5188dc23f1ce3f096155a7f659b1db46f9aeb
+  languageName: node
+  linkType: hard
+
 "ts-jest@npm:^29.0.0":
   version: 29.0.3
   resolution: "ts-jest@npm:29.0.3"
@@ -6838,6 +6898,13 @@ __metadata:
   version: 3.4.0
   resolution: "type-fest@npm:3.4.0"
   checksum: 0a7cc2a0e656f2a488dfcd42900de780a4f6b8d8ab5edcc64eb849c579d1e12ed95b48577bcb4763e866834454ba3a74b58e50ee10ca3512a8955f830f84037a
+  languageName: node
+  linkType: hard
+
+"type-fest@npm:^3.9.0":
+  version: 3.9.0
+  resolution: "type-fest@npm:3.9.0"
+  checksum: 2c2348c5f9327e93d9da8673b07ebc1d1647707961e989eb1ed7c90c9c2f2d8f0ff060691645b7fcdf1dfeb4b8705da76c0b72d2c59e5bea56426557aa47c782
   languageName: node
   linkType: hard
 
