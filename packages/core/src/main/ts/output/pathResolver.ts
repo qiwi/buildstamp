@@ -1,5 +1,5 @@
-import fs from 'fs'
-import p from 'path'
+import fs from 'node:fs'
+import p from 'node:path'
 
 import { defaultFilename } from '../constants'
 import { hasTrailingSeparator } from '../utils'

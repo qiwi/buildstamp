@@ -1,5 +1,5 @@
 import { jest } from '@jest/globals'
-import { mkdirSync, writeFileSync } from 'fs'
+import { mkdirSync, writeFileSync } from 'node:fs'
 import rimraf from 'rimraf'
 
 import { TChunkContext, TGitDetails } from '../../../main/ts'

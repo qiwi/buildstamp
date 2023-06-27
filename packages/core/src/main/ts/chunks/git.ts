@@ -1,5 +1,5 @@
-import findGitRoot from 'find-git-root'
-import { sep } from 'path'
+import { gitRootSync } from '@antongolub/git-root'
+import { sep } from 'node:path'
 
 import { TStampChunk } from '../interfaces'
 import { readFileToString } from '../utils'
@@ -18,13 +18,13 @@ export type IGitStampOptions = {
 
 export const getGitInfo: TVcsInfoCreator = (argCwd) => {
   const cwd = argCwd || process.cwd()
-  const gitFolder = findGitRoot(cwd)
+  const gitFolder = gitRootSync(cwd)
 
   const rev = readFileToString(`${gitFolder}${sep}HEAD`).trim()
 
-  const commitId = !rev.includes(':')
-    ? rev
-    : readFileToString(`${gitFolder}${sep}` + rev.slice('ref: '.length)).trim()
+  const commitId = rev.includes(':')
+    ? readFileToString(`${gitFolder}${sep}` + rev.slice('ref: '.length)).trim()
+    : rev
 
   const repoUrlRegexp = /\turl = (.+)$/
   const repoNameRegexp = /\turl =.+[/:]([\w-]+\/[\w-]+).*$/

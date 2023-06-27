@@ -1,4 +1,4 @@
-import fs from 'fs'
+import fs from 'node:fs'
 import mkdirp from 'mkdirp'
 import rimraf from 'rimraf'
 
