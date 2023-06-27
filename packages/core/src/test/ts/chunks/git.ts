@@ -1,5 +1,5 @@
 import { jest } from '@jest/globals'
-import { mkdirSync, writeFileSync, realpathSync } from 'node:fs'
+import { mkdirSync, writeFileSync, realpathSync, rmSync } from 'node:fs'
 import * as os from 'node:os'
 import * as path from 'node:path'
 
@@ -61,7 +61,7 @@ const testCases: TGitInfoTestCase[] = [
   },
 ]
 
-// afterAll(() => rmSync(artifactsFolder, { recursive: true }))
+afterAll(() => rmSync(artifactsFolder, { recursive: true }))
 
 describe('getGitInfo', () => {
   it('is properly exported', () => {

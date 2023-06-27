@@ -11,9 +11,9 @@ import (
 
 func TestGetGitInfo(t *testing.T) {
 	gitInfo := GetGitInfo(Cwd())
-	expected := "qiwi/buildstamp.git"
+	expected := "qiwi/buildstamp"
 
-	if strings.Contains(gitInfo.RepoUrl, expected) {
+	if !strings.Contains(gitInfo.RepoUrl, expected) {
 		t.Errorf("got %q, wanted %q", gitInfo.RepoUrl, expected)
 	}
 }
