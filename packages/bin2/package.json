@@ -4,5 +4,11 @@
   "private": true,
   "publishConfig": {
     "access": "public"
+  },
+  "scripts": {
+    "test": "yarn test:unit",
+    "test:unit": "mkdir -p target/coverage && GOPATH=\"$(pwd)/src/test/go\" go test -coverprofile=./target/coverage/coverage.out -coverpkg='../../...' './src/test/go/...' && yarn cov",
+    "cov": "go tool cover -html=./target/coverage/coverage.out -o ./target/coverage/coverage.html",
+    "build": "GOPATH=\"$(pwd)/src/main/go\" go build -ldflags \"-w\" -o target/bin/buildstamp ./src/main/go"
   }
 }

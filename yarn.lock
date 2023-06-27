@@ -981,6 +981,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@qiwi/buildstamp-bin@workspace:packages/bin2":
+  version: 0.0.0-use.local
+  resolution: "@qiwi/buildstamp-bin@workspace:packages/bin2"
+  languageName: unknown
+  linkType: soft
+
 "@qiwi/dts-bundle@npm:^0.7.5":
   version: 0.7.5
   resolution: "@qiwi/dts-bundle@npm:0.7.5"
