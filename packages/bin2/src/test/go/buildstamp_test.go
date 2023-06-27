@@ -1,6 +1,7 @@
 package buildstamp
 
 import (
+	"path/filepath"
 	"testing"
 )
 import (
@@ -8,7 +9,7 @@ import (
 )
 
 func TestGetGitInfo(t *testing.T) {
-	gitInfo := GetGitInfo()
+	gitInfo := GetGitInfo(Cwd())
 	expected := "git@github.com:qiwi/buildstamp.git"
 
 	if gitInfo.RepoUrl != expected {
@@ -16,21 +17,11 @@ func TestGetGitInfo(t *testing.T) {
 	}
 }
 
-//func TestGetPkgInfo(t *testing.T) {
-//	pkgInfo := GetPkgInfo()
-//	name := "@qiwi/buildstamp-bin"
-//
-//	if pkgInfo.Name != name {
-//		t.Errorf("got %q, wanted %q", pkgInfo.Name, name)
-//	}
-//}
-
-func TestCwd(t *testing.T) {
-	cwd := Cwd()
-
+func TestGetPkgInfo(t *testing.T) {
+	pkgInfo := GetPkgInfo(filepath.Join(Cwd(), "../../.."))
 	name := "@qiwi/buildstamp-bin"
 
-	if cwd != name {
-		t.Errorf("got %q, wanted %q", cwd, name)
+	if pkgInfo.Name != name {
+		t.Errorf("got %q, wanted %q", pkgInfo.Name, name)
 	}
 }

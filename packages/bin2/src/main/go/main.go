@@ -12,8 +12,9 @@ import (
 )
 
 func main() {
-	var gitInfo = GetGitInfo()
-	var pkgInfo = GetPkgInfo()
+	var cwd = Cwd()
+	var gitInfo = GetGitInfo(cwd)
+	var pkgInfo = GetPkgInfo(cwd)
 	var date = time.Now().Format(time.RFC3339)
 
 	var digest = Digest{gitInfo, pkgInfo, date}
