@@ -1895,7 +1895,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "buildstamp-bin@workspace:packages/bin"
   dependencies:
-    buildstamp: "npm:2.0.0"
+    buildstamp: "npm:^2.1.1"
     caxa: "npm:^2.1.0"
     rimraf: "npm:^4.0.0"
   bin:
@@ -1918,7 +1918,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"buildstamp@npm:2.0.0, buildstamp@workspace:packages/core":
+"buildstamp@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "buildstamp@npm:2.1.1"
+  dependencies:
+    find-git-root: "npm:^1.0.4"
+    meow: "npm:^11.0.0"
+    tslib: "npm:^2.4.0"
+  bin:
+    buildstamp: target/es6/cli.js
+  checksum: 54c636bf5107d5bf092dcc2da9af69878b5df1ac7249aa6b17610fa258a71ca6d1e10a1e2f478480f6db495da9b139be9134129f0858bf1ba3d6b4992145ebc4
+  languageName: node
+  linkType: hard
+
+"buildstamp@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "buildstamp@workspace:packages/core"
   dependencies:

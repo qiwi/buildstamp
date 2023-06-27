@@ -35,6 +35,8 @@ jobs:
 
       - name: Build
         run: yarn build
+        env:
+          GO111MODULE: 'auto'
 
       - name: Run tests
         run: yarn test
