@@ -1,8 +1,0 @@
-{
-  "name": "@qiwi/buildstamp-bin",
-  "description": "Platform-specific buildstamp binaries",
-  "private": true,
-  "publishConfig": {
-    "access": "public"
-  }
-}
