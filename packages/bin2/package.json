@@ -9,7 +9,7 @@
     "test": "yarn test:unit",
     "test:unit": "mkdir -p target/coverage && GOPATH=\"$(pwd)/src/test/go\" go test -coverprofile=./target/coverage/coverage.out -coverpkg='../../...' './src/test/go/...' && yarn cov",
     "cov": "go tool cover -html=./target/coverage/coverage.out -o ./target/coverage/coverage.html",
-    "build": "concurrently --kill-others-on-fail 'npm:build:*(!default)' ",
+    "build": "concurrently -m 2 --kill-others-on-fail 'npm:build:*(!default)' ",
     "build:default": "GOPATH=\"$(pwd)/src/main/go\" go build -ldflags \"-w\" -o target/bin/buildstamp-${GOOS}-${GOARCH} ./src/main/go",
     "build:linux-arm64": "GOOS=linux GOARCH=arm64 yarn build:default",
     "build:linux-amd64": "GOOS=linux GOARCH=amd64 yarn build:default",

@@ -1,4 +1,7 @@
 {
   "testCmd": "yarn test",
-  "buildCmd": "yarn build"
+  "buildCmd": "yarn build",
+  "ghAssets": [
+    { "name": "buildstamp-darwin-amd64.tar.gz", "source": "target/bin/buildstamp-darwin-amd64", "zip": true}
+  ]
 }
