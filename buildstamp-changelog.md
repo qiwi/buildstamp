@@ -1,3 +1,8 @@
+## [buildstamp@2.1.4](https://github.com/qiwi/buildstamp/compare/2023.6.27-buildstamp.2.1.3-f0...2023.6.27-buildstamp.2.1.4-f0) (2023-06-27)
+
+### Fixes & improvements
+* fix: attach licenses [db9c28b](https://github.com/qiwi/buildstamp/commit/db9c28bcbfd8ec66b75954d9464389deb9011b07)
+
 ## [buildstamp@2.1.3](https://github.com/qiwi/buildstamp/compare/2023.6.27-buildstamp.2.1.2-f0...2023.6.27-buildstamp.2.1.3-f0) (2023-06-27)
 
 ### Fixes & improvements
