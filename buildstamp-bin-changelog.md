@@ -1,3 +1,11 @@
+## [buildstamp-bin@1.3.2](https://github.com/qiwi/buildstamp/compare/2023.1.3-buildstamp-bin.1.3.1-f0...2023.6.27-buildstamp-bin.1.3.2-f0) (2023-06-27)
+
+### Fixes & improvements
+* perf: up deps [b74b365](https://github.com/qiwi/buildstamp/commit/b74b365e9d19b354761f39bc9a4d8aa8fe4073e5)
+
+### Dependencies
+* perf: dependencies buildstamp updated to ^2.1.1
+
 ## [buildstamp-bin@1.3.1](https://github.com/qiwi/buildstamp/compare/2022.9.20-buildstamp-bin.1.3.0-f0...2023.1.3-buildstamp-bin.1.3.1-f0) (2023-01-03)
 
 ### Dependencies
