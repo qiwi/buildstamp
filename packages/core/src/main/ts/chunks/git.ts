@@ -1,5 +1,5 @@
 import { gitRootSync } from '@antongolub/git-root'
-import { sep } from 'node:path'
+import { sep, join } from 'node:path'
 
 import { TStampChunk } from '../interfaces'
 import { readFileToString } from '../utils'
@@ -18,7 +18,7 @@ export type IGitStampOptions = {
 
 export const getGitInfo: TVcsInfoCreator = (argCwd) => {
   const cwd = argCwd || process.cwd()
-  const gitFolder = gitRootSync(cwd)
+  const gitFolder = join(gitRootSync(cwd) + '', '.git')
 
   const rev = readFileToString(`${gitFolder}${sep}HEAD`).trim()
 

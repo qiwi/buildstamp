@@ -1,11 +1,13 @@
 import { jest } from '@jest/globals'
-import { mkdirSync, writeFileSync } from 'node:fs'
-import rimraf from 'rimraf'
+import { mkdirSync, writeFileSync, realpathSync } from 'node:fs'
+import * as os from 'node:os'
+import * as path from 'node:path'
 
 import { TChunkContext, TGitDetails } from '../../../main/ts'
 import { getGitInfo, gitChunk } from '../../../main/ts/chunks'
 
-const artifactsFolder = 'testArtifactsFolder'
+// const artifactsFolder = 'testArtifactsFolder'
+const artifactsFolder = path.join(realpathSync(os.tmpdir()), `testArtifactsFolder-${Math.random().toString(36).slice(2)}`)
 
 type TGitInfoTestCase = {
   description: string
@@ -59,7 +61,7 @@ const testCases: TGitInfoTestCase[] = [
   },
 ]
 
-afterAll(() => rimraf.sync(artifactsFolder))
+// afterAll(() => rmSync(artifactsFolder, { recursive: true }))
 
 describe('getGitInfo', () => {
   it('is properly exported', () => {
@@ -69,6 +71,7 @@ describe('getGitInfo', () => {
   describe('returns correct git info', () => {
     testCases.forEach((testCase, i) => it(testCase.description, () => {
       const gitFolderPath = `${artifactsFolder}/case${i}/.git`
+
       mkdirSync(gitFolderPath, { recursive: true })
       writeFileSync(`${gitFolderPath}/HEAD`, testCase.head)
       writeFileSync(`${gitFolderPath}/config`, testCase.config)

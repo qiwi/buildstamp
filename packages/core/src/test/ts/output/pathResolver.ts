@@ -1,6 +1,5 @@
-import fs from 'node:fs'
-import mkdirp from 'mkdirp'
-import rimraf from 'rimraf'
+import * as fs from 'node:fs'
+import { rmSync, mkdirSync } from 'node:fs'
 
 import { defaultFilename } from '../../../main/ts/constants'
 import { resolveFilePath } from '../../../main/ts/output/pathResolver'
@@ -8,13 +7,9 @@ import { resolveFilePath } from '../../../main/ts/output/pathResolver'
 const root = 'temp'
 const path = `${root}/test/`
 
-beforeAll(() => {
-  mkdirp.sync(path)
-})
+beforeAll(() => mkdirSync(path, {recursive: true}))
 
-afterAll(() => {
-  rimraf.sync(root)
-})
+afterAll(() => rmSync(root, {recursive: true}))
 
 describe('resolveFilePath', () => {
   it('is properly exported', () => expect(resolveFilePath).toBeDefined())
