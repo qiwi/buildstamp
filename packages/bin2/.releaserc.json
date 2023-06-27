@@ -1,0 +1,4 @@
+{
+  "testCmd": "yarn test",
+  "buildCmd": "yarn build"
+}

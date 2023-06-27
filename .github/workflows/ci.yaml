@@ -33,15 +33,12 @@ jobs:
       - name: Fetch deps
         run: yarn --silent --immutable
 
-      - name: Build
+      - name: Topo build-test
         run: yarn build
         env:
+          NODE_OPTIONS: "--max_old_space_size=4096"
           GO111MODULE: 'auto'
 
-      - name: Run tests
-        run: yarn test
-        env:
-          NODE_OPTIONS: "--max_old_space_size=4096"
 
       #      - name: Codeclimate
       #        if: github.ref == 'refs/heads/master'
@@ -94,10 +91,8 @@ jobs:
       - name: Fetch deps
         run: yarn --silent --immutable
 
-      - name: Build
+      - name: Topo build-test
         run: yarn build
-
-      - name: Run tests
-        run: yarn test
         env:
           NODE_OPTIONS: "--max_old_space_size=4096"
+          GO111MODULE: 'auto'

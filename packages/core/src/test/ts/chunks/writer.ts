@@ -1,5 +1,5 @@
 import { jest } from '@jest/globals'
-import fs from 'fs'
+import fs from 'node:fs'
 
 import { TChunkContext } from '../../../main/ts'
 import { writerChunk } from '../../../main/ts/chunks'

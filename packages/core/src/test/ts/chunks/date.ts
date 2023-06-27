@@ -19,7 +19,7 @@ const cases: Array<TTestCase> = [
       options: {
         date: {
           format: 'iso',
-          value: 1598428388395,
+          value: 1_598_428_388_395,
         },
       },
     },
@@ -33,12 +33,12 @@ const cases: Array<TTestCase> = [
       options: {
         date: {
           format: 'instant',
-          value: 1598428388395,
+          value: 1_598_428_388_395,
         },
       },
     },
     stamp: {
-      date: 1598428388395,
+      date: 1_598_428_388_395,
     },
   },
   {
@@ -51,9 +51,9 @@ const cases: Array<TTestCase> = [
       },
     },
     stamp: {
-      date: 1598428388395,
+      date: 1_598_428_388_395,
     },
-    currentTimestamp: 1598428388395,
+    currentTimestamp: 1_598_428_388_395,
   },
   {
     description: 'appends current date as ISO string for appropriate format when value is not given',
@@ -67,7 +67,7 @@ const cases: Array<TTestCase> = [
     stamp: {
       date: '2020-08-26T07:53:08.395Z',
     },
-    currentTimestamp: 1598428388395,
+    currentTimestamp: 1_598_428_388_395,
   },
 ]
 

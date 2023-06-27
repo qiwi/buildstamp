@@ -1,5 +1,5 @@
 import { jest } from '@jest/globals'
-import fs from 'fs'
+import fs from 'node:fs'
 
 import { readBuildstamp, TStamp } from '../../main/ts'
 

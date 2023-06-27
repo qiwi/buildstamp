@@ -1,3 +1,5 @@
 {
+  "testCmd": "yarn test",
+  "buildCmd": "yarn build",
   "changelog": "changelog"
 }

@@ -1,4 +1,4 @@
-import fs from 'fs'
+import fs from 'node:fs'
 
 export const readFileToString = (path: string): string => fs.readFileSync(path, 'utf-8')
 

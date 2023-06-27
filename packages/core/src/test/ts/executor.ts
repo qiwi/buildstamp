@@ -12,7 +12,7 @@ describe('execute', () => {
     const docker = {
       imageTag: 'foo',
     }
-    const date = 1599225650789
+    const date = 1_599_225_650_789
     const options: TStampOptions = {
       git: true,
       docker,
