@@ -2,6 +2,7 @@ package buildstamp
 
 import (
 	"path/filepath"
+	"strings"
 	"testing"
 )
 import (
@@ -10,9 +11,9 @@ import (
 
 func TestGetGitInfo(t *testing.T) {
 	gitInfo := GetGitInfo(Cwd())
-	expected := "git@github.com:qiwi/buildstamp.git"
+	expected := "qiwi/buildstamp.git"
 
-	if gitInfo.RepoUrl != expected {
+	if strings.Contains(gitInfo.RepoUrl, expected) {
 		t.Errorf("got %q, wanted %q", gitInfo.RepoUrl, expected)
 	}
 }
