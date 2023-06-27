@@ -1,3 +1,8 @@
+## [buildstamp@2.1.3](https://github.com/qiwi/buildstamp/compare/2023.6.27-buildstamp.2.1.2-f0...2023.6.27-buildstamp.2.1.3-f0) (2023-06-27)
+
+### Fixes & improvements
+* perf: up deps [7639180](https://github.com/qiwi/buildstamp/commit/7639180e379e2b833870059ac9542c69c8602c66)
+
 ## [buildstamp@2.1.2](https://github.com/qiwi/buildstamp/compare/2023.1.3-buildstamp.2.1.1-f0...2023.6.27-buildstamp.2.1.2-f0) (2023-06-27)
 
 ### Fixes & improvements
