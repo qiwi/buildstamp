@@ -1,3 +1,8 @@
+## [buildstamp@3.0.2](https://github.com/qiwi/buildstamp/compare/2023.6.30-buildstamp.3.0.1-f0...2023.6.30-buildstamp.3.0.2-f0) (2023-06-30)
+
+### Fixes & improvements
+* fix: handle `false` str flags as bool [b34215f](https://github.com/qiwi/buildstamp/commit/b34215fe73cf0b1e71c07aec227502797a1014f3)
+
 ## [buildstamp@3.0.1](https://github.com/qiwi/buildstamp/compare/2023.6.30-buildstamp.3.0.0-f0...2023.6.30-buildstamp.3.0.1-f0) (2023-06-30)
 
 ### Fixes & improvements
