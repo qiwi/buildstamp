@@ -11,6 +11,7 @@
   ],
   "description": "Buildstamp monorepo",
   "scripts": {
+    "readme:toc": "node ./packages/infra/scripts/readme-toc.mjs",
     "clean": "yarn workspaces foreach --parallel --topological-dev --no-private run clean",
     "build": "zx-bulk-release --dry-run --include-private",
     "test": "zx-bulk-release --dry-run --include-private --no-build",

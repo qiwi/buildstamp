@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/buildstamp-bash",
-  "description": "buildstamp rewritten in bash",
+  "description": "Buildstamp rewritten in bash",
   "private": true,
   "publishConfig": {
     "access": "public"

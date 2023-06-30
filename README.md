@@ -34,16 +34,29 @@ await buildstamp({
 ### CLI
 There are a pair of options: with or w/o Node.js on board.
 ### npx
-```shell
+```sh
 npx buildstamp --output='buildstamp.json'
 ```
 
 ### binary
-```shell
+```sh
 # fetch and call golang-ported binary
-
 curl 'https://github.com/qiwi/buildstamp/releases/download/2023.6.27-qiwi.buildstamp-bin.1.0.2-f0/buildstamp-darwin-amd64.tar.gz' | tar -xvz --strip-components=1 -С . && ./buildstamp && rm ./buildstamp
 ```
 
-# License
+### bash
+```sh
+# invoke poor but pure bash implementation
+curl "https://raw.githubusercontent.com/qiwi/buildstamp/master/packages/bash/src/main/sh/buildstamp.sh" | sh
+```
+
+## Contents
+| Package | Description | Latest |
+|---------|-------------|--------|
+| [@qiwi/buildstamp-bash](./packages/bash) | Buildstamp rewritten in bash |  |
+| [@qiwi/buildstamp-bin](./packages/bin) | Platform-specific Buildstamp binaries |  |
+| [@qiwi/buildstamp-infra](./packages/infra) | buildstamp monorepo infra assets |  |
+| [buildstamp](./packages/core) | Buildstamp JS/TS API | [![npm (scoped)](https://img.shields.io/npm/v/buildstamp)](https://www.npmjs.com/package/buildstamp) |
+
+## License
 [MIT](./LICENSE)
