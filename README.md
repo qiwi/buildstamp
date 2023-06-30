@@ -1,40 +1,49 @@
-# Buildstamp monorepo
+# buildstamp
 [![CI](https://github.com/qiwi/buildstamp/actions/workflows/ci.yaml/badge.svg?branch=master)](https://github.com/qiwi/buildstamp/actions/workflows/ci.yaml)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/b14a2a44e024ca0b2771/test_coverage)](https://codeclimate.com/github/qiwi/buildstamp/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/b14a2a44e024ca0b2771/maintainability)](https://codeclimate.com/github/qiwi/buildstamp/maintainability)
 
-Utility for generating buildstamp file, which contains build meta info like gitcommit hash, timestamp, repo name and so on. This file could be a part of some release artifact (npm-package, docker-image) and makes it self-descriptive.
+A small utility for generating `buildstamp` file, which contains various build info like timestamp, repo name, git commit and so on. This file could be a part of some release artifact (npm-package, docker-image) and makes it self-descriptive.
 ```json
 {
-  "git": {
-    "commitId": "007b8f715eb5670662d90f90cd1916398d1dfe98",
-    "repoUrl": "https://github.com/qiwi/buildstamp.git",
-    "repoName": "qiwi/buildstamp"
-  },
-  "docker": {
-    "imageTag": "foo"
-  },
-  "date": "2020-11-05T15:16:35.904Z"
+  "date":             "2020-11-05T15:16:35.904Z",
+  "docker_image_tag": "foo",
+  "git_commit_id":    "007b8f715eb5670662d90f90cd1916398d1dfe98",
+  "git_rep_url":      "https://github.com/qiwi/buildstamp.git",
+  "git_repo_name":    "qiwi/buildstamp"
 }
-
 ```
-## Packages
-### [buildstamp](https://github.com/qiwi/buildstamp/tree/master/packages/core)
-Buildstamp generator utility supporting native JS and CLI API
-```javascript
-import { execute } from 'buildstamp'
 
-const stamp = execute({
-    git: true,
-    date: { format: 'iso' },
-    docker: { imageTag: 'foo' }
+## Usage
+### JS/TS API
+```ts
+import {buildstamp} from '@qiwi/buildstamp'
+
+await buildstamp({
+  output: 'buildstamp.json',  // filepath or `console` or `false` to disable
+  git: true,                  // to capture git digest
+  ci: true,                   // to collect basic CICD info
+  date: true,                 // to attach the current iso8601 date
+  extra: {                    // Object.assign mixin
+    foo: 'bar'
+  }
 })
+// returns a plain object, so you're able to process it in any way
 ```
-```shell script
-buildstamp --out.path=some/path/b.json --git --docker.imageTag=foo --date.format=iso
+
+### CLI
+There are a pair of options: with or w/o Node.js on board.
+### npx
+```shell
+npx buildstamp --output='buildstamp.json'
 ```
-###  [buildstamp-bin](https://github.com/qiwi/buildstamp/tree/master/packages/bin)
-Buildstamp generator executables for MacOS, Windows and Linux. No need Node.js (npx) to be installed.
-```shell script
-./buildstamp-macos --out.path=some/path/b.json --git --docker.imageTag=foo --date.format=iso
+
+### binary
+```shell
+# fetch and call golang-ported binary
+
+curl 'https://github.com/qiwi/buildstamp/releases/download/2023.6.27-qiwi.buildstamp-bin.1.0.2-f0/buildstamp-darwin-amd64.tar.gz' | tar -xvz -С . && ./buildstamp-darwin-amd64 && rm ./buildstamp-darwin-amd64
 ```
+
+# License
+[MIT](./LICENSE)
