@@ -5,8 +5,6 @@ import {gitRoot} from '@antongolub/git-root'
 
 const root = await gitRoot()
 const {packages} = await topo({cwd: root})
-const readmeFile = path.resolve(root, 'README.md')
-let readmeContents = await fs.readFile(readmeFile, 'utf8')
 
 /**
  * This snippet generates a md table by the package.jsons descriptions referenced by the root workspace
@@ -21,8 +19,10 @@ const digest = Object.values(packages)
     return m + `\n| [${name}](./${relPath}) | ${description} | ${badge} |`
   }, '| Package | Description | Latest |\n|---------|-------------|--------|')
 
-readmeContents = readmeContents.replace(/(## Contents)([\s\S]+)(##)/, (_, pre, __, post) =>
-  `${pre}\n${digest}\n\n${post}`
-)
+const readmeFile = path.resolve(root, 'README.md')
+const readmeContents = (await fs.readFile(readmeFile, 'utf8'))
+  .replace(/(## Contents)([\s\S]+)(##)/, (_, pre, __, post) =>
+    `${pre}\n${digest}\n\n${post}`
+  )
 
 await fs.writeFile(readmeFile, readmeContents, 'utf8')

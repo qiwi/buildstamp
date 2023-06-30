@@ -1,39 +1,49 @@
-#!/usr/bin/env node
-import meow, { Options } from 'meow'
+import {createRequire} from 'node:module'
+import minimist from 'minimist'
+import {buildstamp} from './buildstamp'
 
-import { run } from './index'
+const camelize = (s: string) => s.replace(/-./g, x => x[1].toUpperCase())
+const normalizeFlags = (flags = {}): Record<string, any> => Object.fromEntries(Object.entries(flags).map(( [k, v]) => [camelize(k), v]))
 
-const cli = meow(`
-    Usage:
-      buildstamp --out=some/path/stamp.json --git --docker.imageTag=foo --date.format=iso
-    Options
-      --out, path to generated file, optional, data is printed in stdout if absent
-      --git, add git data to output, optional
-      --cwd, working directory, default to process.cwd()
-      --docker.imageTag, image tag, optional
-      --date.format, adds date info to stamp, iso or instant
-      --date.value, any valid input for Date constructor, default is current time
-`, {
-  importMeta: import.meta,
-  flags: {
-    out: {
-      type: 'string',
-    },
-    git: {
-      type: 'boolean',
-    },
-    cwd: {
-      type: 'string',
-    },
-    docker: {
-      type: 'string',
-      isMultiple: true,
-    },
-    date: {
-      type: 'string',
-      isMultiple: true,
-    },
+const { cwd, git, date, output, version, help, extra } = normalizeFlags(minimist(process.argv.slice(2), {
+  alias: {
+    help: ['h'],
+    version: ['v'],
   },
-} as Options<any>)
+}));
 
-run(cli.flags)
+(async () => {
+
+  if (help) {
+    console.log(`
+  Usage:
+    $ buildstamp [opts]
+  
+  Options:
+    --output        Specify the output file. Defaults to 'buildstamp.json'
+    --git           Inject git info. True by default
+    --date          Inject date. True by default
+    --extra         JSON to mixin
+    --help, -h      Print help digest
+    --version, -v   Print version
+  
+  Examples:
+    $ buildstamp --output=stamp.json
+    $ buildstamp --extra='{"foo": "bar"}'
+`)
+    return
+  }
+
+  if (version) {
+    console.log((import.meta.url ? createRequire(import.meta.url) : require)('../../package.json').version)
+    return
+  }
+
+  await buildstamp({
+    cwd,
+    date,
+    git,
+    output,
+    extra: extra ? JSON.parse(extra) : {}
+  })
+})()

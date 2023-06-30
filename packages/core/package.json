@@ -22,22 +22,11 @@
     "definition": "typings/index.d.ts"
   },
   "scripts": {
-    "lint": "eslint src/**/*.ts",
-    "lint:fix": "eslint src/**/*.ts --fix",
-    "test": "yarn lint && yarn test:unit",
-    "test:unit": "NODE_OPTIONS='--experimental-vm-modules' jest --config=jest.config.json",
-    "test:depcheck": "npm_config_yes=true npx -p depcheck -p @babel/parser@7.16.4 depcheck --ignores typedoc,tslib,eslint-config-*",
-    "clean": "rimraf target typings flow-typed buildcache",
-    "build": "yarn build:es6 && yarn build:ts && yarn build:libdef && yarn docs && yarn build:esmfix",
-    "build:es6": "mkdirp target/es6 && tsc -p tsconfig.es6.json",
-    "build:ts": "mkdirp target/ts && cp -r src/main/ts/ target/ts/",
-    "build:local": "yarn build:es5 && chmod +x target/es5/cli.js",
-    "build:libdef": "libdefkit --tsconfig=tsconfig.es6.json",
-    "build:esmfix": "npm_config_yes=true npx tsc-esm-fix --target=target/es6 --dirnameVar=false",
-    "docs": "typedoc --tsconfig tsconfig.json",
-    "uglify": "for f in $(find target -name '*.js'); do short=${f%.js}; terser -c -m -o $short.js -- $f; done",
-    "postupdate": "yarn && npx yarn-audit-fix && yarn build && yarn test",
-    "format": "prettier --write 'src/**/*.ts'"
+    "build:esm": "node ../infra/scripts/build.mjs --entry='./src/main/ts/index.ts:./src/main/ts/cli.ts'",
+    "build:dts": "tsc --emitDeclarationOnly --skipLibCheck --outDir target/dts",
+    "build:docs": "typedoc --options src/main/typedoc",
+    "test": "concurrently --kill-others-on-fail 'npm:test:*'",
+    "test:unit": "abstractest --runner=native src/test/ts/**/*.test.ts"
   },
   "repository": {
     "type": "git",
@@ -57,26 +46,11 @@
   "author": "Anton Golub <a.golub@qiwi.com>",
   "license": "MIT",
   "dependencies": {
-    "@antongolub/git-root": "^1.5.13",
-    "meow": "^12.0.1",
-    "tslib": "^2.6.0"
+    "minimist": "^1.2.8"
   },
   "devDependencies": {
-    "@jest/globals": "^29.5.0",
-    "@qiwi/buildstamp-infra": "workspace:*",
-    "@qiwi/libdefkit": "^5.0.0",
-    "@qiwi/license": "^2.0.0",
-    "@types/jest": "^29.5.2",
-    "@types/mkdirp": "^1.0.2",
-    "@types/node": "^20.3.2",
-    "@types/rimraf": "^3.0.2",
-    "mkdirp": "^3.0.1",
-    "prettier": "^2.8.8",
-    "rimraf": "^5.0.1",
-    "terser": "^5.18.2",
-    "ts-jest": "^29.1.0",
-    "typedoc": "^0.24.8",
-    "typescript": "5.1.6"
+    "@abstractest/core": "^0.2.0",
+    "@qiwi/buildstamp-infra": "workspace:*"
   },
   "engines": {
     "node": ">=16"
