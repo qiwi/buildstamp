@@ -32,13 +32,12 @@ npx buildstamp --output='buildstamp.json' --extra='{"foo": "bar"}'
 
 | Flag             | Description                 | Default           | 
 |------------------|-----------------------------|-------------------|
-| `--output`, `-o` | Duildstamp file destination | `buildstamp.json` |
+| `--output`, `-o` | Buildstamp file destination | `buildstamp.json` |
 | `--cwd`          | Directory to apply          | `process.cwd()`   |
 | `--git`          | Collect git info            | `true`            |
 | `--date`         | Attach ISO8601 date         | `true`            |
 | `--extra`        | JSON mixin to inject        |                   |
 | `--help`         | Print help info             |                   |               
-
 
 # License
 [MIT](./LICENSE)

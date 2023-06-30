@@ -20,7 +20,7 @@ A small utility for generating `buildstamp` file, which contains various build i
 import {buildstamp} from '@qiwi/buildstamp'
 
 await buildstamp({
-  output: 'buildstamp.json',  // filepath or `console` or `false` to disable
+  output: 'buildstamp.json',  // filepath or `false` to disable
   git: true,                  // to capture git digest
   ci: true,                   // to collect basic CICD info
   date: true,                 // to attach the current iso8601 date

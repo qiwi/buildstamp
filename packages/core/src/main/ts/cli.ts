@@ -5,7 +5,8 @@ import minimist from 'minimist'
 import {buildstamp} from './buildstamp'
 
 const camelize = (s: string) => s.replace(/-./g, x => x[1].toUpperCase())
-const normalizeFlags = (flags = {}): Record<string, any> => Object.fromEntries(Object.entries(flags).map(( [k, v]) => [camelize(k), v]))
+const normalizeFlags = (flags = {}): Record<string, any> => Object.fromEntries(Object.entries(flags).map(([k, v]) =>
+  [camelize(k), v === 'false' ? false : v]))
 
 const { cwd, git, date, output, version, help, extra } = normalizeFlags(minimist(process.argv.slice(2), {
   alias: {
