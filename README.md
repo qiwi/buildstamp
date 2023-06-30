@@ -32,7 +32,7 @@ await buildstamp({
 ```
 
 ### CLI
-There are a pair of options: with or w/o Node.js on board.
+There are several options with or w/o Node.js on board.
 ### npx
 ```sh
 npx buildstamp --output='buildstamp.json'
