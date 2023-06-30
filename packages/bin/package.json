@@ -1,36 +1,25 @@
 {
-  "name": "buildstamp-bin",
-  "version": "1.2.1",
+  "name": "@qiwi/buildstamp-bin",
+  "description": "Platform-specific buildstamp binaries",
+  "private": true,
   "publishConfig": {
     "access": "public"
   },
-  "bin": "./src/main/js/index.js",
-  "description": "Buildstamp binaries for MacOS, Linux and Windows",
   "scripts": {
-    "clean": "rimraf target",
-    "build:bins": "caxa --input ./ --output 'target/bin/buildstamp' -- '{{caxa}}/node_modules/.bin/node' '{{caxa}}/src/main/js/index.js'",
-    "build": "yarn build:bins",
-    "test": "exit 0"
+    "test": "yarn test:unit",
+    "test:unit": "mkdir -p target/coverage && GOPATH=\"$(pwd)/src/test/go\" go test -coverprofile=./target/coverage/coverage.out -coverpkg='../../...' './src/test/go/...' && yarn cov",
+    "cov": "go tool cover -html=./target/coverage/coverage.out -o ./target/coverage/coverage.html",
+    "build": "concurrently -m 2 --kill-others-on-fail 'npm:build:*(!default)' ",
+    "build:default": "GOPATH=\"$(pwd)/src/main/go\" go build -ldflags \"-w\" -o target/bin/buildstamp-${GOOS}-${GOARCH} ./src/main/go",
+    "build:linux-arm64": "GOOS=linux GOARCH=arm64 yarn build:default",
+    "build:linux-amd64": "GOOS=linux GOARCH=amd64 yarn build:default",
+    "build:darwin-arm64": "GOOS=darwin GOARCH=arm64 yarn build:default",
+    "build:darwin-amd64": "GOOS=darwin GOARCH=amd64 yarn build:default",
+    "build:windows-arm64": "GOOS=windows GOARCH=arm64 yarn build:default",
+    "build:windows-amd64": "GOOS=windows GOARCH=amd64 yarn build:default"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/qiwi/buildstamp.git"
-  },
-  "keywords": [
-    "build-info",
-    "buildstamp"
-  ],
-  "files": [
-    "README.md",
-    "CHANGELOG.md",
-    "target"
-  ],
-  "license": "MIT",
   "devDependencies": {
-    "caxa": "^3.0.1",
-    "rimraf": "^5.0.1"
+    "concurrently": "^8.2.0"
   },
-  "dependencies": {
-    "buildstamp": "^2.1.4"
-  }
+  "files": []
 }

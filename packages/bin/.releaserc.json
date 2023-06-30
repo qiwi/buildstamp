@@ -1,5 +1,8 @@
 {
   "testCmd": "yarn test",
   "buildCmd": "yarn build",
-  "changelog": "changelog"
+  "ghAssets": [
+    { "name": "buildstamp-darwin-amd64.tar.gz", "source": "target/bin/buildstamp-darwin-amd64", "zip": true},
+    { "name": "buildstamp-darwin-arm64.tar.gz", "source": "target/bin/buildstamp-darwin-arm64", "zip": true}
+  ]
 }
