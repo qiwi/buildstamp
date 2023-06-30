@@ -9,6 +9,7 @@ const { cwd, git, date, output, version, help, extra } = normalizeFlags(minimist
   alias: {
     help: ['h'],
     version: ['v'],
+    output: ['o']
   },
 }));
 
