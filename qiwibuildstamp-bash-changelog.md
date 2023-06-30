@@ -1,3 +1,8 @@
+## [@qiwi/buildstamp-bash@1.0.2](https://github.com/qiwi/buildstamp/compare/2023.6.30-qiwi.buildstamp-bash.1.0.1-f0...2023.6.30-qiwi.buildstamp-bash.1.0.2-f0) (2023-06-30)
+
+### Fixes & improvements
+* fix: omit empty keys [e9abf5d](https://github.com/qiwi/buildstamp/commit/e9abf5d664d93b589f85e66e9cf4e83cf80f8771)
+
 ## [@qiwi/buildstamp-bash@1.0.1](https://github.com/qiwi/buildstamp/compare/2023.6.30-qiwi.buildstamp-bash.1.0.0-f0...2023.6.30-qiwi.buildstamp-bash.1.0.1-f0) (2023-06-30)
 
 ### Fixes & improvements
