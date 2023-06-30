@@ -55,7 +55,7 @@ curl "https://raw.githubusercontent.com/qiwi/buildstamp/master/packages/bash/src
 |---------|-------------|--------|
 | [@qiwi/buildstamp-bash](./packages/bash) | Buildstamp rewritten in bash |  |
 | [@qiwi/buildstamp-bin](./packages/bin) | Platform-specific Buildstamp binaries |  |
-| [@qiwi/buildstamp-infra](./packages/infra) | buildstamp monorepo infra assets |  |
+| [@qiwi/buildstamp-infra](./packages/infra) | Buildstamp monorepo infra assets |  |
 | [buildstamp](./packages/core) | Buildstamp JS/TS API | [![npm (scoped)](https://img.shields.io/npm/v/buildstamp)](https://www.npmjs.com/package/buildstamp) |
 
 ## License

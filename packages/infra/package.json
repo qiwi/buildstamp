@@ -2,7 +2,7 @@
   "name": "@qiwi/buildstamp-infra",
   "private": true,
   "version": "0.0.0",
-  "description": "buildstamp monorepo infra assets",
+  "description": "Buildstamp monorepo infra assets",
   "publishConfig": {
     "access": "public"
   },
