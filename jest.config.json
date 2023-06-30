@@ -1,6 +1,0 @@
-{
-  "collectCoverage": true,
-  "projects": [
-    "<rootDir>/packages/core/jest.config.json"
-  ]
-}

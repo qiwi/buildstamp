@@ -12,6 +12,44 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@abstractest/core@npm:0.2.0, @abstractest/core@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "@abstractest/core@npm:0.2.0"
+  dependencies:
+    "@abstractest/types": "npm:0.1.0"
+  checksum: 40a54b8d9d62537492c8f48667dac23be21ec119ebbaeaf67b43f6afbd1df339c7498398469bdcc3854453f520fe40388a419b96b85ba9701ae504bba611fde4
+  languageName: node
+  linkType: hard
+
+"@abstractest/expect@npm:0.0.2":
+  version: 0.0.2
+  resolution: "@abstractest/expect@npm:0.0.2"
+  dependencies:
+    "@jest/expect": "npm:^29.5.0"
+  checksum: c0544c000130510066d04cfbcd22603bf68e6dbc37a7e1950165206451405cb8e04ecaeb21a82860bb43a8574d57da677f1b3729983b3110f43278788bb6e1d9
+  languageName: node
+  linkType: hard
+
+"@abstractest/native@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "@abstractest/native@npm:0.2.0"
+  dependencies:
+    "@abstractest/core": "npm:0.2.0"
+    "@abstractest/expect": "npm:0.0.2"
+    c8: "npm:^8.0.0"
+    fast-glob: "npm:^3.2.12"
+    ts-node: "npm:^10.9.1"
+  checksum: 3736d11696b825e3060c015d6f241d78ff4ee6b85551ec3b93c86706f1855024be7a14a53da931254ff46e24bd52bdc78367d432da3b5e424d320b447326aec4
+  languageName: node
+  linkType: hard
+
+"@abstractest/types@npm:0.1.0":
+  version: 0.1.0
+  resolution: "@abstractest/types@npm:0.1.0"
+  checksum: a848d83ad2fd79ab7edac8b973ef578e0135736aaeb0885b958858d02924be866df44e22528f52b401e6740aab24c6e96362a8fd30aa56345533702f86a4e798
+  languageName: node
+  linkType: hard
+
 "@ampproject/remapping@npm:^2.2.0":
   version: 2.2.1
   resolution: "@ampproject/remapping@npm:2.2.1"
@@ -1055,8 +1093,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/buildstamp-infra@workspace:packages/infra"
   dependencies:
+    "@abstractest/native": "npm:^0.2.0"
     "@antongolub/git-root": "npm:^1.5.13"
     "@semrel-extra/topo": "npm:^1.13.0"
+    abstractest: "npm:^0.1.1"
     c8: "npm:^8.0.0"
     concurrently: "npm:^8.2.0"
     esbuild: "npm:^0.18.10"
@@ -1646,6 +1686,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"abstractest@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "abstractest@npm:0.1.1"
+  dependencies:
+    "@abstractest/core": "npm:0.2.0"
+    minimist: "npm:^1.2.8"
+  bin:
+    abstractest: target/esm/cli.mjs
+  checksum: 47128293fde4a8a8d389605b8da47a688a39af468a7126d0a7db6a7373e45acd280b959f7f4a836e8ce60878af159d0a250c59e419a5d22d556c4e42d08661a1
+  languageName: node
+  linkType: hard
+
 "acorn-jsx@npm:^5.3.2":
   version: 5.3.2
   resolution: "acorn-jsx@npm:5.3.2"
@@ -2182,6 +2234,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "buildstamp@workspace:packages/core"
   dependencies:
+    "@abstractest/core": "npm:^0.2.0"
     "@antongolub/git-root": "npm:^1.5.13"
     "@jest/globals": "npm:^29.5.0"
     "@qiwi/buildstamp-infra": "workspace:*"
