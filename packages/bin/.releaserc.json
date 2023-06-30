@@ -3,6 +3,8 @@
   "buildCmd": "yarn build",
   "ghAssets": [
     { "name": "buildstamp-darwin-amd64.tar.gz", "source": "target/bin/darwin-amd64", "zip": true},
-    { "name": "buildstamp-darwin-arm64.tar.gz", "source": "target/bin/darwin-arm64", "zip": true}
+    { "name": "buildstamp-darwin-arm64.tar.gz", "source": "target/bin/darwin-arm64", "zip": true},
+    { "name": "buildstamp-linux-amd64.tar.gz", "source": "target/bin/linux-amd64", "zip": true},
+    { "name": "buildstamp-linux-arm64.tar.gz", "source": "target/bin/linux-arm64", "zip": true}
   ]
 }
