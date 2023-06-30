@@ -1,0 +1,11 @@
+{
+  "name": "@qiwi/buildstamp-infra",
+  "externalPattern": ["**/node_modules/**"],
+  "excludeExternals": true,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "includeVersion": true,
+  "hideGenerator": true,
+  "tsconfig": "./tsconfig.json",
+  "theme": "default"
+}

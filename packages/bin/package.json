@@ -31,6 +31,6 @@
     "rimraf": "^5.0.1"
   },
   "dependencies": {
-    "buildstamp": "^2.1.2"
+    "buildstamp": "^2.1.4"
   }
 }
