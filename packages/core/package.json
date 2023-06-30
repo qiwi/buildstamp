@@ -4,7 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "Buildstamp",
+  "description": "Buildstamp JS/TS API",
   "type": "module",
   "main": "target/es6/index.js",
   "bin": "./target/es6/cli.js",
@@ -56,8 +56,14 @@
   ],
   "author": "Anton Golub <a.golub@qiwi.com>",
   "license": "MIT",
+  "dependencies": {
+    "@antongolub/git-root": "^1.5.13",
+    "meow": "^12.0.1",
+    "tslib": "^2.6.0"
+  },
   "devDependencies": {
     "@jest/globals": "^29.5.0",
+    "@qiwi/buildstamp-infra": "workspace:*",
     "@qiwi/libdefkit": "^5.0.0",
     "@qiwi/license": "^2.0.0",
     "@types/jest": "^29.5.2",
@@ -70,12 +76,7 @@
     "terser": "^5.18.2",
     "ts-jest": "^29.1.0",
     "typedoc": "^0.24.8",
-    "typescript": "5.1.5"
-  },
-  "dependencies": {
-    "@antongolub/git-root": "^1.5.13",
-    "meow": "^12.0.1",
-    "tslib": "^2.6.0"
+    "typescript": "5.1.6"
   },
   "engines": {
     "node": ">=16"
