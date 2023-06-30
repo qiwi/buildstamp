@@ -1,3 +1,8 @@
+## [@qiwi/buildstamp-bash@1.0.3](https://github.com/qiwi/buildstamp/compare/2023.6.30-qiwi.buildstamp-bash.1.0.2-f0...2023.6.30-qiwi.buildstamp-bash.1.0.3-f0) (2023-06-30)
+
+### Fixes & improvements
+* docs: update usage examples [3469c87](https://github.com/qiwi/buildstamp/commit/3469c874d94a2ccc5671758dc60ebf10b01dffbe)
+
 ## [@qiwi/buildstamp-bash@1.0.2](https://github.com/qiwi/buildstamp/compare/2023.6.30-qiwi.buildstamp-bash.1.0.1-f0...2023.6.30-qiwi.buildstamp-bash.1.0.2-f0) (2023-06-30)
 
 ### Fixes & improvements
