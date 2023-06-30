@@ -55,11 +55,7 @@
   ],
   "author": "Anton Golub <a.golub@qiwi.com>",
   "license": "MIT",
-
   "engines": {
     "node": ">=16"
-  },
-  "pkg": {
-    "scripts": "../core/target/es5/**/*.js"
   }
 }
