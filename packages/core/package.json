@@ -1,31 +1,43 @@
 {
   "name": "buildstamp",
   "version": "2.0.0",
+  "description": "Buildstamp JS/TS API",
   "publishConfig": {
     "access": "public"
   },
-  "description": "Buildstamp JS/TS API",
   "type": "module",
-  "main": "target/es6/index.js",
-  "bin": "./target/es6/cli.js",
+  "main": "./target/cjs/index.cjs",
+  "bin": "./target/esm/cli.mjs",
   "exports": {
     ".": {
-      "import": "./target/es6/index.js"
+      "types": "./target/dts/index.d.ts",
+      "require": "./target/cjs/index.cjs",
+      "import": "./target/esm/index.mjs",
+      "default": "./target/esm/index.mjs"
     },
     "./cli": {
-      "import": "./target/es6/cli.js"
+      "types": "./target/dts/cli.d.ts",
+      "require": "./target/cjs/cli.cjs",
+      "import": "./target/esm/cli.mjs",
+      "default": "./target/esm/cli.mjs"
     },
-    "./*": "./*"
+    "./package.json": "./package.json"
   },
-  "types": "typings/index.d.ts",
-  "typescript": {
-    "definition": "typings/index.d.ts"
+  "dependencies": {
+    "minimist": "^1.2.8"
+  },
+  "devDependencies": {
+    "@abstractest/core": "^0.2.0",
+    "@qiwi/buildstamp-infra": "workspace:*"
   },
   "scripts": {
+    "build": "concurrently --kill-others-on-fail 'npm:build:*'",
     "build:esm": "node ../infra/scripts/build.mjs --entry='./src/main/ts/index.ts:./src/main/ts/cli.ts'",
+    "build:cjs": "node ../infra/scripts/build.mjs --entry='./src/main/ts/index.ts:./src/main/ts/cli.ts' --cjs",
     "build:dts": "tsc --emitDeclarationOnly --skipLibCheck --outDir target/dts",
     "build:docs": "typedoc --options src/main/typedoc",
     "test": "concurrently --kill-others-on-fail 'npm:test:*'",
+    "test:lint": "eslint -c src/test/lint/.eslintrc.json src",
     "test:unit": "abstractest --runner=native src/test/ts/**/*.test.ts"
   },
   "repository": {
@@ -37,21 +49,13 @@
     "buildstamp"
   ],
   "files": [
-    "README.md",
-    "CHANGELOG.md",
-    "target",
-    "typings",
-    "flow-typed"
+    "target/cjs",
+    "target/esm",
+    "target/dts"
   ],
   "author": "Anton Golub <a.golub@qiwi.com>",
   "license": "MIT",
-  "dependencies": {
-    "minimist": "^1.2.8"
-  },
-  "devDependencies": {
-    "@abstractest/core": "^0.2.0",
-    "@qiwi/buildstamp-infra": "workspace:*"
-  },
+
   "engines": {
     "node": ">=16"
   },

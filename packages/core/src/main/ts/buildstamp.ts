@@ -44,7 +44,7 @@ export const buildstamp = async (opts?: IBuildstampOptions): Promise<IBuildstamp
 const getGitInfo = async (cwd: string): Promise<IGitInfo> => {
   const { stdout: git_commit_id } = await spawn('git', ['rev-parse', 'HEAD'], cwd)
   const { stdout: git_repo_url } = await spawn('git', ['config', '--get', 'remote.origin.url'], cwd)
-  const git_repo_name = (git_repo_url.match(/([^/:.]+\/[^/.]+)(\.git)?$/) || [])[1]
+  const git_repo_name = (git_repo_url.match(/([^./:]+\/[^./]+)(\.git)?$/) || [])[1]
 
   return {
     git_commit_id,
