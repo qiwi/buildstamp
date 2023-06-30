@@ -1,21 +1,14 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "../infra/tsconfig.json",
   "compilerOptions": {
-    "rootDir": "./src/main/ts",
-    "baseUrl": "./src/main/ts/",
-    "target": "es6",
-    "outDir": "target/es6",
-    "module": "esnext",
-    "lib": [
-      "esnext"
-    ],
-    "tsBuildInfoFile": "./buildcache/.tsbuildinfo"
+    "rootDir": "./src/main/ts/",
+    "baseUrl": "./src/main/ts/"
   },
-  "references": [],
   "include": [
-    "src/main/ts/**/*"
+    "src/main/ts/"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "src/test"
   ]
 }
