@@ -1,3 +1,17 @@
+## [buildstamp@3.0.0](https://github.com/qiwi/buildstamp/compare/2023.6.27-buildstamp.2.1.4-f0...2023.6.30-buildstamp.3.0.0-f0) (2023-06-30)
+
+### Fixes & improvements
+* docs: update usage examples [bdcdeb7](https://github.com/qiwi/buildstamp/commit/bdcdeb747dbfbc0dc9c1f87b8230e6dc253b0c69)
+
+### Features
+* feat: introduce new simplified API [6199c12](https://github.com/qiwi/buildstamp/commit/6199c128f75b65e6f9e08db122bc8c8c15975ea5)
+
+### BREAKING CHANGES
+* feat: introduce new simplified API [6199c12](https://github.com/qiwi/buildstamp/commit/6199c128f75b65e6f9e08db122bc8c8c15975ea5)
+
+### Dependencies
+* perf: devDependencies @qiwi/buildstamp-infra updated to 0.0.0
+
 ## [buildstamp@2.1.4](https://github.com/qiwi/buildstamp/compare/2023.6.27-buildstamp.2.1.3-f0...2023.6.27-buildstamp.2.1.4-f0) (2023-06-27)
 
 ### Fixes & improvements
