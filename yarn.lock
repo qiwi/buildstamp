@@ -1074,6 +1074,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@qiwi/buildstamp-bash@workspace:packages/bash":
+  version: 0.0.0-use.local
+  resolution: "@qiwi/buildstamp-bash@workspace:packages/bash"
+  languageName: unknown
+  linkType: soft
+
 "@qiwi/buildstamp-bin@workspace:packages/bin":
   version: 0.0.0-use.local
   resolution: "@qiwi/buildstamp-bin@workspace:packages/bin"
