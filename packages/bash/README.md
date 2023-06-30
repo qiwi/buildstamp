@@ -9,7 +9,7 @@ curl -L "https://raw.githubusercontent.com/qiwi/buildstamp/master/packages/bash/
 ## Usage
 ### CLI
 ```shell
-sh --output='buildstamp.json'
+sh .buildstamp.sh --output='buildstamp.json'
 ```
 
 Output:
@@ -30,4 +30,4 @@ Output:
 
 
 # License
-[MIT](./LICENSE)
+[MIT](LICENSE)
