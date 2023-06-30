@@ -1,3 +1,11 @@
+## [buildstamp@3.0.3](https://github.com/qiwi/buildstamp/compare/2023.6.30-buildstamp.3.0.2-f0...2023.6.30-buildstamp.3.0.3-f0) (2023-06-30)
+
+### Fixes & improvements
+* docs: update usage examples [3469c87](https://github.com/qiwi/buildstamp/commit/3469c874d94a2ccc5671758dc60ebf10b01dffbe)
+
+### Dependencies
+* perf: devDependencies @qiwi/buildstamp-infra updated to 0.0.1
+
 ## [buildstamp@3.0.2](https://github.com/qiwi/buildstamp/compare/2023.6.30-buildstamp.3.0.1-f0...2023.6.30-buildstamp.3.0.2-f0) (2023-06-30)
 
 ### Fixes & improvements
@@ -165,4 +173,3 @@
 * add basic runner, introduce date, git and docker stamp chunks ([916becb](https://github.com/qiwi/buildstamp/commit/916becbf9e1906acf270090e46e23fb0caa54ef0))
 * add repoUrl to git resolve output, minor refactoring ([7a41106](https://github.com/qiwi/buildstamp/commit/7a4110661555a9fac8679dcccf8951693056c09b))
 * migrate to single argument chunk iface ([faf109f](https://github.com/qiwi/buildstamp/commit/faf109ff20d0b8e493b648a55bc713192c42a78c))
-
