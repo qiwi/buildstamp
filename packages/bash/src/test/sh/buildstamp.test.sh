@@ -1,7 +1,7 @@
 #!/bin/bash
 
 it () {
-  if [[ $2 =~ $3 ]]; then
+  if [[ $2 == *$3* || ($4 == "!" && $2 != *$3*) ]]; then
     echo $1 "- ok"
   else
     echo $1 "- failed"
@@ -19,7 +19,7 @@ script=$cwd"/../../main/sh/buildstamp.sh"
 describe "bash ported CLI"
 it "returns default output" $(sh $script --no-output | tr -d "\n ") "qiwi\/buildstamp"
 
-it "handles --no-* flags" $(sh $script --no-output --no-git --no-date | tr -d "\n ") '"git_repo_url"\:""'
+it "handles --no-* flags" $(sh $script --no-output --no-git --no-date | tr -d "\n ") "git_repo_url" "!"
 
 echo "Success!"
 exit 0

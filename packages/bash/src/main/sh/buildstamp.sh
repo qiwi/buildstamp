@@ -31,14 +31,19 @@ if [[ $opt_no_git == "" ]]; then
   fi
 fi
 
-# Render
+# Buildstamp render
 # use jq?
-jsontpl='{\\n  "date": "%s",\\n  "git_commit_id": "%s",\\n  "git_repo_url": "%s",\\n  "git_repo_name": "%s"\\n}\\n'
-buildstamp=$(printf "$jsontpl" "$date" "$git_commit_id" "$git_repo_url" "$git_repo_name")
+for entry in "date" "git_commit_id" "git_repo_url" "git_repo_name"
+do
+  if [[ ${!entry} != "" ]]; then
+    json=$json\\n'  '\"$entry\":' '\"${!entry}\",
+  fi
+done
+json=\{${json%,}\\n\}
 
 # Output
 if [[ $opt_no_output == "" || $opt_output == "false" ]]; then
-  echo $buildstamp > $opt_output
+  echo $json > $opt_output
 else
-  echo $buildstamp
+  echo $json
 fi
