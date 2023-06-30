@@ -1,3 +1,8 @@
+## [buildstamp@3.0.1](https://github.com/qiwi/buildstamp/compare/2023.6.30-buildstamp.3.0.0-f0...2023.6.30-buildstamp.3.0.1-f0) (2023-06-30)
+
+### Fixes & improvements
+* fix: add shebang [de9ff73](https://github.com/qiwi/buildstamp/commit/de9ff7343f6e674f2f937bb092dd1aeb260997e3)
+
 ## [buildstamp@3.0.0](https://github.com/qiwi/buildstamp/compare/2023.6.27-buildstamp.2.1.4-f0...2023.6.30-buildstamp.3.0.0-f0) (2023-06-30)
 
 ### Fixes & improvements
