@@ -1,3 +1,8 @@
+## [@qiwi/buildstamp-bash@1.2.0](https://github.com/qiwi/buildstamp/compare/2023.7.1-qiwi.buildstamp-bash.1.1.0-f0...2023.7.1-qiwi.buildstamp-bash.1.2.0-f0) (2023-07-01)
+
+### Features
+* feat: add ci env capturer [be1ac9d](https://github.com/qiwi/buildstamp/commit/be1ac9d4744a547855cfd9d84f09023d3e8c2ad6)
+
 ## [@qiwi/buildstamp-bash@1.1.0](https://github.com/qiwi/buildstamp/compare/2023.6.30-qiwi.buildstamp-bash.1.0.3-f0...2023.7.1-qiwi.buildstamp-bash.1.1.0-f0) (2023-07-01)
 
 ### Features
