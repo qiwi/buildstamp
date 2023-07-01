@@ -1,3 +1,8 @@
+## [buildstamp@3.1.0](https://github.com/qiwi/buildstamp/compare/2023.6.30-buildstamp.3.0.3-f0...2023.7.1-buildstamp.3.1.0-f0) (2023-07-01)
+
+### Features
+* feat(bin): provide json extra injection [e8e36f4](https://github.com/qiwi/buildstamp/commit/e8e36f4a7b3ab03a6505163634dfa67af2817f23)
+
 ## [buildstamp@3.0.3](https://github.com/qiwi/buildstamp/compare/2023.6.30-buildstamp.3.0.2-f0...2023.6.30-buildstamp.3.0.3-f0) (2023-06-30)
 
 ### Fixes & improvements
