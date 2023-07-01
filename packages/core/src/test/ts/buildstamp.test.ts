@@ -15,34 +15,36 @@ describe('buildstamp', () => {
 })
 
 describe('getCIInfo()', () => {
-  const expected = {ci_run_id: '123', ci_run_url: 'https://cicd.com/123'}
+  const ciRunId = '123'
+  const ciRunUrl = 'https://cicd.com/123'
+  const expected = {ci_run_id: ciRunId, ci_run_url: ciRunUrl}
   const cases: [string, Record<string, string>, Record<string, string>][] = [
     [
       'detects TeamCity env',
       {
-        BUILD_NUMBER: '123',
-        BUILD_URL: 'https://cicd.com/123'
+        BUILD_NUMBER: ciRunId,
+        BUILD_URL: ciRunUrl
       },
       expected
     ],
     [
       'detects GitLab env',
       {
-        CI_JOB_ID: '123',
-        CI_JOB_URL: 'https://cicd.com/123'
+        CI_JOB_ID: ciRunId,
+        CI_JOB_URL: ciRunUrl
       },
       expected
     ],
     [
       'detects GitHub env',
       {
-        GITHUB_RUN_ID: '123',
+        GITHUB_RUN_ID: ciRunId,
         GITHUB_SERVER_URL: 'https://cicd.com',
         GITHUB_REPOSITORY: 'foo/bar'
       },
       {
-        ci_run_id: '123',
-        ci_run_url: 'https://cicd.com/foo/bar/actions/runs/123'
+        ci_run_id: ciRunId,
+        ci_run_url: `https://cicd.com/foo/bar/actions/runs/${ciRunId}`
       }
     ],
     [
