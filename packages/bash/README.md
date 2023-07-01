@@ -26,6 +26,7 @@ Output:
 |-------------|-----------------------------|-------------------|
 | `--output`  | Duildstamp file destination | `buildstamp.json` |
 | `--git`     | Collect git info            | `true`            |
+| `--ci`      | Capture CI digest           | `true`            |
 | `--date`    | Attach ISO8601 date         | `true`            |
 
 

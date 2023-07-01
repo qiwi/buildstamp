@@ -46,6 +46,26 @@ func GetGitInfo(cwd string) GitInfo {
 	}
 }
 
+func GetCIInfo() CIInfo {
+	var runId = getFirstNonEmpty(os.Getenv("BUILD_NUMBER"), os.Getenv("CI_JOB_ID")+os.Getenv("GITHUB_RUN_ID"))
+	var runUrl = getFirstNonEmpty(os.Getenv("BUILD_URL"), os.Getenv("GITHUB_RUN_ID"))
+
+	if os.Getenv("GITHUB_RUN_ID") == "" {
+		runUrl = os.Getenv("GITHUB_SERVER_URL") + "/" + os.Getenv("GITHUB_REPOSITORY") + "/actions/runs/" + os.Getenv("GITHUB_RUN_ID")
+	}
+
+	return CIInfo{runId, runUrl}
+}
+
+func getFirstNonEmpty(args ...string) string {
+	for _, elem := range args {
+		if elem != "" {
+			return elem
+		}
+	}
+	return ""
+}
+
 func invoke(cmd string, args []string, dir string) (int, string, string) {
 	var outb, errb bytes.Buffer
 	var code int = 0

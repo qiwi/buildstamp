@@ -3,10 +3,16 @@ export interface IBuildstampOptionsNormalized {
   output: false | string
   date:   boolean | string
   git:    boolean
+  ci:     boolean
   extra:  Record<string, string>
 }
 
 export type IBuildstampOptions = Partial<IBuildstampOptionsNormalized>
+
+export interface ICIInfo {
+  ci_run_id:      string
+  ci_run_url:     string
+}
 
 export interface IGitInfo {
   git_commit_id:  string
@@ -14,7 +20,7 @@ export interface IGitInfo {
   git_repo_name:  string
 }
 
-export interface IBuildstamp extends Partial<IGitInfo> {
+export interface IBuildstamp extends Partial<IGitInfo>, Partial<ICIInfo> {
   date?: string
   [e: string]: string | undefined
 }

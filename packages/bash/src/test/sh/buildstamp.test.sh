@@ -23,5 +23,7 @@ it "handles false flags" $(sh $script --output false --git false --date false | 
 
 it "handles --no-* flags" $(sh $script --no-output --no-git --no-date | tr -d "\n ") "git_repo_url" "!"
 
+it "captures CI env" $(BUILD_NUMBER=123 BUILD_URL='test' sh $script --no-output | tr -d "\n ") '"ci_run_id":"123","ci_run_url":"test"'
+
 echo "Success!"
 exit 0
