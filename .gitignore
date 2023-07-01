@@ -30,6 +30,9 @@ target/
 typings/
 flow-typed/
 
+# Provenance
+buildstamp.json
+
 # Docs
 docs
 doc

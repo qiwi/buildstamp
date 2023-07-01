@@ -33,12 +33,12 @@ func GetPkgInfo(cwd string) PackageJson {
 	return data
 }
 
-func GetGitInfo(cwd string) GitDigest {
+func GetGitInfo(cwd string) GitInfo {
 	var _, hash, _ = invoke("git", []string{"rev-parse", "HEAD"}, cwd)
 	var _, repoUrl, _ = invoke("git", []string{"config", "--get", "remote.origin.url"}, cwd)
 	var repoName = string(repoUrl[strings.LastIndex(repoUrl, ":")+1 : strings.LastIndex(repoUrl, ".")])
 
-	return GitDigest{
+	return GitInfo{
 		hash,
 		repoUrl,
 		repoName,

@@ -1,18 +1,19 @@
 package buildstamp
 
-type Digest struct {
-	Git  GitDigest   `json:"git"`
-	Pkg  PackageJson `json:"pkg"`
-	Date string      `json:"date"`
+type Buildstamp struct {
+	GitCommitId string `json:"git_commit_id,omitempty"`
+	GitRepoUrl  string `json:"git_repo_url,omitempty"`
+	GitRepoName string `json:"git_repo_name,omitempty"`
+	Date        string `json:"date,omitempty"`
 }
 
 type PackageJson struct {
-	Name    string `json:"name"`
-	Version string `json:"version"`
+	Name    string
+	Version string
 }
 
-type GitDigest struct {
-	Hash     string `json:"hash"`
-	RepoUrl  string `json:"repoUrl"`
-	RepoName string `json:"repoName"`
+type GitInfo struct {
+	CommitId string
+	RepoUrl  string
+	RepoName string
 }

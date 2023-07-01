@@ -36,7 +36,7 @@ npx buildstamp --output='buildstamp.json' --extra='{"foo": "bar"}'
 | `--cwd`          | Directory to apply          | `process.cwd()`   |
 | `--git`          | Collect git info            | `true`            |
 | `--date`         | Attach ISO8601 date         | `true`            |
-| `--extra`        | JSON mixin to inject        |                   |
+| `--extra`        | JSON mixin to inject        | `{}`              |
 | `--help`         | Print help info             |                   |               
 
 # License
