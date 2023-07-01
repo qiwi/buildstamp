@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Defaults
-opt_date=true
+opt_date="true"
+opt_git="true"
 opt_output="./buildstamp.json"
 
 # argv "parsing"
@@ -18,11 +19,11 @@ while [ $# -gt 0 ]; do
   shift
 done
 
-if [[ $opt_no_date == "" ]]; then
+if [[ $opt_no_date == "" && $opt_date == "true" ]]; then
   date=$(date +"%Y-%m-%dT%H:%M:%S%z")
 fi
 
-if [[ $opt_no_git == "" ]]; then
+if [[ $opt_no_git == "" && $opt_git == "true" ]]; then
   git_commit_id=$(git rev-parse HEAD)
   git_repo_url=$(git config --get remote.origin.url)
   re="([^./:]+\/[^./]+)(\.git)?$"
@@ -42,7 +43,7 @@ done
 json=\{${json%,}\\n\}
 
 # Output
-if [[ $opt_no_output == "" || $opt_output == "false" ]]; then
+if [[ $opt_no_output == "" && $opt_output != "false" ]]; then
   echo $json > $opt_output
 else
   echo $json

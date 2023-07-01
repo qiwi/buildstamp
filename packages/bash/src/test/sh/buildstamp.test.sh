@@ -19,6 +19,8 @@ script=$cwd"/../../main/sh/buildstamp.sh"
 describe "bash ported CLI"
 it "returns default output" $(sh $script --no-output | tr -d "\n ") "qiwi\/buildstamp"
 
+it "handles false flags" $(sh $script --output false --git false --date false | tr -d "\n ") "git_repo_url" "!"
+
 it "handles --no-* flags" $(sh $script --no-output --no-git --no-date | tr -d "\n ") "git_repo_url" "!"
 
 echo "Success!"
