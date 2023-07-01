@@ -13,10 +13,12 @@ import {
 export const normalizeOpts = ({
   cwd = process.cwd(),
   output = 'buildstamp.json',
+  ci = true,
   git = true,
   date = true,
   extra = {}
 }: IBuildstampOptions = {}): IBuildstampOptionsNormalized => ({
+  ci,
   cwd,
   output,
   git,
@@ -25,7 +27,7 @@ export const normalizeOpts = ({
 })
 
 export const buildstamp = async (opts?: IBuildstampOptions): Promise<IBuildstamp> => {
-  const {git, date, cwd, output, extra} = normalizeOpts(opts)
+  const {ci, git, date, cwd, output, extra} = normalizeOpts(opts)
   const stamp: IBuildstamp = {...extra}
 
   if (date) {
@@ -34,6 +36,9 @@ export const buildstamp = async (opts?: IBuildstampOptions): Promise<IBuildstamp
   if (git) {
     Object.assign(stamp, await getGitInfo(cwd))
   }
+  if (ci) {
+    Object.assign(stamp, await getCIInfo(process.env))
+  }
   if (output) {
     await fs.writeFile(path.resolve(cwd, output), JSON.stringify(stamp, null, 2))
   }
@@ -41,7 +46,7 @@ export const buildstamp = async (opts?: IBuildstampOptions): Promise<IBuildstamp
   return stamp
 }
 
-const getGitInfo = async (cwd: string): Promise<IGitInfo> => {
+export const getGitInfo = async (cwd: string): Promise<IGitInfo> => {
   const { stdout: git_commit_id } = await spawn('git', ['rev-parse', 'HEAD'], cwd)
   const { stdout: git_repo_url } = await spawn('git', ['config', '--get', 'remote.origin.url'], cwd)
   const git_repo_name = (git_repo_url.match(/([^./:]+\/[^./]+)(\.git)?$/) || [])[1]
@@ -52,6 +57,14 @@ const getGitInfo = async (cwd: string): Promise<IGitInfo> => {
     git_repo_name
   }
 }
+
+// https://docs.github.com/en/actions/learn-github-actions/variables#default-environment-variables
+// https://docs.gitlab.com/ee/ci/variables/predefined_variables.html
+// https://www.jetbrains.com/help/teamcity/predefined-build-parameters.html#Predefined+Server+Build+Parameters
+export const getCIInfo = (env: Record<string, string | undefined>) => ({
+  ci_run_id: env.BUILD_NUMBER || env.CI_JOB_ID || env.GITHUB_RUN_ID,
+  ci_run_url: env.BUILD_URL || env.CI_JOB_URL || (env.GITHUB_RUN_ID && `${env.GITHUB_SERVER_URL}/${env.GITHUB_REPOSITORY}/actions/runs/${env.GITHUB_RUN_ID}`)
+})
 
 export const spawn = (
   cmd: string,

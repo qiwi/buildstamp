@@ -1,6 +1,7 @@
 package buildstamp
 
 import (
+	"os"
 	"path/filepath"
 	"strings"
 	"testing"
@@ -24,5 +25,17 @@ func TestGetPkgInfo(t *testing.T) {
 
 	if pkgInfo.Name != name {
 		t.Errorf("got %q, wanted %q", pkgInfo.Name, name)
+	}
+}
+
+func TestGetCIInfo(t *testing.T) {
+	if err := os.Setenv("BUILD_NUMBER", "123"); err != nil {
+		panic(err)
+	}
+
+	ciInfo := GetCIInfo()
+	ciRunId := "123"
+	if ciInfo.RunId != ciRunId {
+		t.Errorf("got %q, wanted %q", ciInfo.RunId, ciRunId)
 	}
 }

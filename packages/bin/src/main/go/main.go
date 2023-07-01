@@ -16,6 +16,7 @@ import (
 var (
 	optOutput string
 	optGit    bool
+	optCi     bool
 	optDate   bool
 	optExtra  string
 	optCwd    string
@@ -24,6 +25,7 @@ var (
 func init() {
 	flag.StringVar(&optOutput, "output", "buildstamp.json", "Buildstamp file destination")
 	flag.BoolVar(&optGit, "git", true, "Collect git info")
+	flag.BoolVar(&optCi, "co", true, "Capture CI digest")
 	flag.BoolVar(&optDate, "date", true, "Attach ISO8601 date")
 	flag.StringVar(&optExtra, "extra", "{}", "JSON mixin to inject")
 	flag.StringVar(&optCwd, "cwd", Cwd(), "Working directory")
@@ -35,6 +37,7 @@ func main() {
 	var (
 		date    string
 		gitInfo GitInfo
+		ciInfo  CIInfo
 		extra   map[string]string
 		output  = path.Join(optCwd, optOutput)
 	)
@@ -47,6 +50,10 @@ func main() {
 		gitInfo = GetGitInfo(optCwd)
 	}
 
+	if optCi {
+		ciInfo = GetCIInfo()
+	}
+
 	if err := json.Unmarshal([]byte(optExtra), &extra); err != nil {
 		panic(err)
 	}
@@ -56,6 +63,8 @@ func main() {
 		gitInfo.RepoUrl,
 		gitInfo.RepoName,
 		date,
+		ciInfo.RunId,
+		ciInfo.RunUrl,
 	}, "", "  ")
 	var buildstampWithExtra = Mixin(string(buildstamp[:]), extra)
 

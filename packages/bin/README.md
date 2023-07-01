@@ -24,9 +24,9 @@ buildstamp [opts]
 | `--output`  | Buildstamp file destination | `buildstamp.json` |
 | `--cwd`     | Working directory           | `process.cwd()`   |
 | `--git`     | Collect git info            | `true`            |
+| `--ci`      | Capture CI digest           | `true`            |
 | `--date`    | Attach ISO8601 date         | `true`            |
 | `--extra`   | JSON mixin to inject        | `{}`              |
-
 
 ## License
 [MIT](./LICENSE)

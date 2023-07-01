@@ -33,8 +33,9 @@ npx buildstamp --output='buildstamp.json' --extra='{"foo": "bar"}'
 | Flag             | Description                 | Default           | 
 |------------------|-----------------------------|-------------------|
 | `--output`, `-o` | Buildstamp file destination | `buildstamp.json` |
-| `--cwd`          | Directory to apply          | `process.cwd()`   |
+| `--cwd`          | Working directory           | `process.cwd()`   |
 | `--git`          | Collect git info            | `true`            |
+| `--ci`           | Capture CI digest           | `true`            |
 | `--date`         | Attach ISO8601 date         | `true`            |
 | `--extra`        | JSON mixin to inject        | `{}`              |
 | `--help`         | Print help info             |                   |               
