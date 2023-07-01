@@ -1,3 +1,8 @@
+## [@qiwi/buildstamp-bash@1.1.0](https://github.com/qiwi/buildstamp/compare/2023.6.30-qiwi.buildstamp-bash.1.0.3-f0...2023.7.1-qiwi.buildstamp-bash.1.1.0-f0) (2023-07-01)
+
+### Features
+* feat(bash): handle `false` flags [a9c2888](https://github.com/qiwi/buildstamp/commit/a9c2888ecb065251a2e7a72e003b7357034b9e06)
+
 ## [@qiwi/buildstamp-bash@1.0.3](https://github.com/qiwi/buildstamp/compare/2023.6.30-qiwi.buildstamp-bash.1.0.2-f0...2023.6.30-qiwi.buildstamp-bash.1.0.3-f0) (2023-06-30)
 
 ### Fixes & improvements
