@@ -1,0 +1,9 @@
+{
+  "META_VERSION": "1",
+  "name": "buildstamp",
+  "hash": "fce8324b81377f6e1cc4e902789373fe5c3e15d7",
+  "version": "3.2.0",
+  "devDependencies": {
+    "@qiwi/buildstamp-infra": "0.0.1"
+  }
+}
