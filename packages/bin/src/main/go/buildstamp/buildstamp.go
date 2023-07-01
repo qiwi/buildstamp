@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"errors"
+	"fmt"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -66,4 +67,13 @@ func invoke(cmd string, args []string, dir string) (int, string, string) {
 	}
 
 	return code, strings.Trim(outb.String(), "\n"), strings.Trim(errb.String(), "\n")
+}
+
+func Mixin(target string, data map[string]string) string {
+	result := strings.TrimRight(target, ",\n}")
+	for k := range data {
+		result += fmt.Sprintf(",\n  \"%s\": \"%s\"", k, data[k])
+	}
+
+	return result + "\n}"
 }

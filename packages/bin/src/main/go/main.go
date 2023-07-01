@@ -3,10 +3,9 @@ package main
 import (
 	"encoding/json"
 	"flag"
-	"fmt"
 	"log"
 	"os"
-	"strings"
+	"path"
 	"time"
 )
 
@@ -19,6 +18,7 @@ var (
 	optGit    bool
 	optDate   bool
 	optExtra  string
+	optCwd    string
 )
 
 func init() {
@@ -26,16 +26,17 @@ func init() {
 	flag.BoolVar(&optGit, "git", true, "Collect git info")
 	flag.BoolVar(&optDate, "date", true, "Attach ISO8601 date")
 	flag.StringVar(&optExtra, "extra", "{}", "JSON mixin to inject")
+	flag.StringVar(&optCwd, "cwd", Cwd(), "Working directory")
 }
 
 func main() {
 	flag.Parse()
 
 	var (
-		cwd     = Cwd()
 		date    string
 		gitInfo GitInfo
 		extra   map[string]string
+		output  = path.Join(optCwd, optOutput)
 	)
 
 	if optDate {
@@ -43,32 +44,22 @@ func main() {
 	}
 
 	if optGit {
-		gitInfo = GetGitInfo(cwd)
+		gitInfo = GetGitInfo(optCwd)
 	}
 
 	if err := json.Unmarshal([]byte(optExtra), &extra); err != nil {
 		panic(err)
 	}
 
-	var buildstamp = Buildstamp{
+	var buildstamp, _ = json.MarshalIndent(Buildstamp{
 		gitInfo.CommitId,
 		gitInfo.RepoUrl,
 		gitInfo.RepoName,
 		date,
-	}
-	var stamp, _ = json.MarshalIndent(buildstamp, "", "  ")
-	buildstampJson := mixin(string(stamp[:]), extra)
+	}, "", "  ")
+	var buildstampWithExtra = Mixin(string(buildstamp[:]), extra)
 
-	if os.WriteFile("buildstamp.json", []byte(buildstampJson), 0644) != nil {
+	if os.WriteFile(output, []byte(buildstampWithExtra), 0644) != nil {
 		log.Fatal("Ooops")
 	}
-}
-
-func mixin(target string, data map[string]string) string {
-	result := strings.TrimRight(target, ",\n}")
-	for k := range data {
-		result += fmt.Sprintf(",\n  \"%s\": \"%s\"", k, data[k])
-	}
-
-	return result + "\n}"
 }

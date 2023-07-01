@@ -22,6 +22,7 @@ buildstamp [opts]
 | Flag        | Description                 | Default           | 
 |-------------|-----------------------------|-------------------|
 | `--output`  | Buildstamp file destination | `buildstamp.json` |
+| `--cwd`     | Working directory           | `process.cwd()`   |
 | `--git`     | Collect git info            | `true`            |
 | `--date`    | Attach ISO8601 date         | `true`            |
 | `--extra`   | JSON mixin to inject        | `{}`              |
