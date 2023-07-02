@@ -7,10 +7,10 @@
   },
   "scripts": {
     "test": "yarn test:unit",
-    "test:unit": "mkdir -p target/coverage && GOPATH=\"$(pwd)/src/test/go\" go test -coverprofile=./target/coverage/coverage.out -coverpkg='../../...' './src/test/go/...' && yarn cov",
-    "cov": "go tool cover -html=./target/coverage/coverage.out -o ./target/coverage/coverage.html",
+    "test:unit": "mkdir -p target/coverage && GOPATH='' go test -coverprofile=./target/coverage/coverage.out -coverpkg='../../...' './src/test/go/...' && yarn cov",
+    "cov": "GOPATH='' go tool cover -html=./target/coverage/coverage.out -o ./target/coverage/coverage.html",
     "build": "concurrently -m 2 --kill-others-on-fail 'npm:build:*(!default)' ",
-    "build:default": "mkdir -p target/bin && GOPATH=\"$(pwd)/src/main/go\" go build -ldflags \"-w\" -o target/bin/${GOOS}-${GOARCH}/buildstamp ./src/main/go",
+    "build:default": "mkdir -p target/bin && GOPATH='' go build -ldflags \"-w\" -o target/bin/${GOOS}-${GOARCH}/buildstamp ./src/main/go",
     "build:linux-arm64": "GOOS=linux GOARCH=arm64 yarn build:default",
     "build:linux-amd64": "GOOS=linux GOARCH=amd64 yarn build:default",
     "build:darwin-arm64": "GOOS=darwin GOARCH=arm64 yarn build:default",

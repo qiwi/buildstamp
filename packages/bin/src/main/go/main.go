@@ -1,16 +1,11 @@
 package main
 
 import (
-	"encoding/json"
 	"flag"
 	"log"
 	"os"
 	"path"
-	"time"
-)
-
-import (
-	. "./buildstamp"
+	. "github.com/qiwi/buildstamp/packages/bin/src/main/go/buildstamp"
 )
 
 var (
@@ -25,7 +20,7 @@ var (
 func init() {
 	flag.StringVar(&optOutput, "output", "buildstamp.json", "Buildstamp file destination")
 	flag.BoolVar(&optGit, "git", true, "Collect git info")
-	flag.BoolVar(&optCi, "co", true, "Capture CI digest")
+	flag.BoolVar(&optCi, "ci", true, "Capture CI digest")
 	flag.BoolVar(&optDate, "date", true, "Attach ISO8601 date")
 	flag.StringVar(&optExtra, "extra", "{}", "JSON mixin to inject")
 	flag.StringVar(&optCwd, "cwd", Cwd(), "Working directory")
@@ -34,42 +29,17 @@ func init() {
 func main() {
 	flag.Parse()
 
-	var (
-		date    string
-		gitInfo GitInfo
-		ciInfo  CIInfo
-		extra   map[string]string
-		output  = path.Join(optCwd, optOutput)
-	)
+	var output = path.Join(optCwd, optOutput)
 
-	if optDate {
-		date = time.Now().Format(time.RFC3339)
-	}
+	var buildstamp = GetBuildstamp(BuildstampOpts{
+		optGit,
+		optCi,
+		optDate,
+		optExtra,
+		optCwd,
+	})
 
-	if optGit {
-		gitInfo = GetGitInfo(optCwd)
-	}
-
-	if optCi {
-		ciInfo = GetCIInfo()
-	}
-
-	if err := json.Unmarshal([]byte(optExtra), &extra); err != nil {
-		panic(err)
-	}
-
-	var buildstamp, _ = json.MarshalIndent(Buildstamp{
-		date,
-		gitInfo.CommitId,
-		gitInfo.RepoUrl,
-		gitInfo.CommitId,
-		gitInfo.RepoName,
-		ciInfo.RunId,
-		ciInfo.RunUrl,
-	}, "", "  ")
-	var buildstampWithExtra = Mixin(string(buildstamp[:]), extra)
-
-	if os.WriteFile(output, []byte(buildstampWithExtra), 0644) != nil {
+	if os.WriteFile(output, []byte(buildstamp), 0644) != nil {
 		log.Fatal("Ooops")
 	}
 }

@@ -1,5 +1,13 @@
 package buildstamp
 
+type BuildstampOpts struct {
+	Git    bool
+	Ci     bool
+	Date   bool
+	Extra  string
+	Cwd    string
+}
+
 type Buildstamp struct {
 	Date            string `json:"date,omitempty"`
 	GitCommitId     string `json:"git_commit_id,omitempty"`

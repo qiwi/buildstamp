@@ -9,7 +9,45 @@ import (
 	"os/exec"
 	"path/filepath"
 	"strings"
+	"time"
 )
+
+func GetBuildstamp (opts BuildstampOpts) string {
+	var (
+		date    string
+		gitInfo GitInfo
+		ciInfo  CIInfo
+		extra   map[string]string
+	)
+
+	if opts.Date {
+		date = time.Now().Format(time.RFC3339)
+	}
+
+	if opts.Git {
+		gitInfo = GetGitInfo(opts.Cwd)
+	}
+
+	if opts.Ci {
+		ciInfo = GetCIInfo()
+	}
+
+	if err := json.Unmarshal([]byte(opts.Extra), &extra); err != nil {
+		panic(err)
+	}
+
+	var buildstamp, _ = json.MarshalIndent(Buildstamp{
+		date,
+		gitInfo.CommitId,
+		gitInfo.RepoUrl,
+		gitInfo.CommitId,
+		gitInfo.RepoName,
+		ciInfo.RunId,
+		ciInfo.RunUrl,
+	}, "", "  ")
+
+	return Mixin(string(buildstamp[:]), extra)
+}
 
 func Cwd() string {
 	//if cwd, exists := os.LookupEnv("BUILDSTAMP_CWD"); exists {

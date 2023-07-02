@@ -7,7 +7,7 @@ import (
 	"testing"
 )
 import (
-	. "../../main/go/buildstamp"
+	. "github.com/qiwi/buildstamp/packages/bin/src/main/go/buildstamp"
 )
 
 func TestGetGitInfo(t *testing.T) {
