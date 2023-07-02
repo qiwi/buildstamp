@@ -3,7 +3,7 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/b14a2a44e024ca0b2771/test_coverage)](https://codeclimate.com/github/qiwi/buildstamp/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/b14a2a44e024ca0b2771/maintainability)](https://codeclimate.com/github/qiwi/buildstamp/maintainability)
 
-A small utility for generating `buildstamp` file, which contains various build info like timestamp, repo name, git commit and so on. This file could be a part of some release artifact (npm-package, docker-image) and makes it self-descriptive.
+A small utility for generating `buildstamp` file, which contains various build info like timestamp, repo name, git commit and so on. This file could be a part of some release artifact (npm-package, docker-image) to make it self-descriptive.
 ```json
 {
   "date":               "2020-11-05T15:16:35.904Z",
