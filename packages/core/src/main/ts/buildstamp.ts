@@ -34,10 +34,10 @@ export const buildstamp = async (opts?: IBuildstampOptions): Promise<IBuildstamp
     stamp.date = new Date().toISOString()
   }
   if (git) {
-    Object.assign(stamp, await getGitInfo(cwd))
+    Object.assign(stamp, await getGitInfo(cwd, process.env))
   }
   if (ci) {
-    Object.assign(stamp, await getCIInfo(process.env))
+    Object.assign(stamp, getCIInfo(process.env))
   }
   if (output) {
     await fs.writeFile(path.resolve(cwd, output), JSON.stringify(stamp, null, 2))
@@ -46,12 +46,17 @@ export const buildstamp = async (opts?: IBuildstampOptions): Promise<IBuildstamp
   return stamp
 }
 
-export const getGitInfo = async (cwd: string): Promise<IGitInfo> => {
+export const getCommitBranch = async (cwd: string, env: Record<string, string | undefined>) =>
+  env.CI_COMMIT_BRANCH || env.GITHUB_REF_NAME || (await spawn('git', ['rev-parse', '--abbrev-ref', 'HEAD'], cwd)).stdout
+
+export const getGitInfo = async (cwd: string, env: Record<string, string | undefined>): Promise<IGitInfo> => {
   const { stdout: git_commit_id } = await spawn('git', ['rev-parse', 'HEAD'], cwd)
   const { stdout: git_repo_url } = await spawn('git', ['config', '--get', 'remote.origin.url'], cwd)
+  const git_commit_branch = await getCommitBranch(cwd, env)
   const git_repo_name = (git_repo_url.match(/([^./:]+\/[^./]+)(\.git)?$/) || [])[1]
 
   return {
+    git_commit_branch,
     git_commit_id,
     git_repo_url,
     git_repo_name

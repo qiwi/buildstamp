@@ -1,5 +1,5 @@
 import {describe, it, expect} from '@abstractest/core'
-import {buildstamp, getCIInfo} from '../../main/ts/buildstamp'
+import {buildstamp, getCIInfo, getGitInfo} from '../../main/ts/buildstamp'
 
 describe('buildstamp', () => {
   it('returns a result corresponding the passed opts', async () => {
@@ -11,6 +11,17 @@ describe('buildstamp', () => {
     })
     expect(result.git_repo_name).toEqual('qiwi/buildstamp')
     expect(result.foo).toEqual('bar')
+  })
+})
+
+describe('getGitInfo()', () => {
+  it('returns git info', async () => {
+    const result = await getGitInfo(process.cwd(), process.env)
+
+    expect(result.git_repo_name).toEqual('qiwi/buildstamp')
+    expect(typeof result.git_repo_url).toEqual('string')
+    expect(typeof result.git_commit_id).toEqual('string')
+    expect(typeof result.git_commit_branch).toEqual('string')
   })
 })
 

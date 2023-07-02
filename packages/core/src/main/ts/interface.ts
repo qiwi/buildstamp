@@ -10,14 +10,15 @@ export interface IBuildstampOptionsNormalized {
 export type IBuildstampOptions = Partial<IBuildstampOptionsNormalized>
 
 export interface ICIInfo {
-  ci_run_id:      string
-  ci_run_url:     string
+  ci_run_id:  string
+  ci_run_url: string
 }
 
 export interface IGitInfo {
-  git_commit_id:  string
-  git_repo_url:   string
-  git_repo_name:  string
+  git_commit_branch:  string
+  git_commit_id:      string
+  git_repo_url:       string
+  git_repo_name:      string
 }
 
 export interface IBuildstamp extends Partial<IGitInfo>, Partial<ICIInfo> {
