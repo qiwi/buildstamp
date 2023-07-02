@@ -59,10 +59,11 @@ func main() {
 	}
 
 	var buildstamp, _ = json.MarshalIndent(Buildstamp{
+		date,
 		gitInfo.CommitId,
 		gitInfo.RepoUrl,
+		gitInfo.CommitId,
 		gitInfo.RepoName,
-		date,
 		ciInfo.RunId,
 		ciInfo.RunUrl,
 	}, "", "  ")

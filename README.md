@@ -6,11 +6,12 @@
 A small utility for generating `buildstamp` file, which contains various build info like timestamp, repo name, git commit and so on. This file could be a part of some release artifact (npm-package, docker-image) and makes it self-descriptive.
 ```json
 {
-  "date":             "2020-11-05T15:16:35.904Z",
-  "docker_image_tag": "foo",
-  "git_commit_id":    "007b8f715eb5670662d90f90cd1916398d1dfe98",
-  "git_rep_url":      "https://github.com/qiwi/buildstamp.git",
-  "git_repo_name":    "qiwi/buildstamp"
+  "date":               "2020-11-05T15:16:35.904Z",
+  "docker_image_tag":   "foo",
+  "git_commit_id":      "007b8f715eb5670662d90f90cd1916398d1dfe98",
+  "git_commit_branch":  "master",
+  "git_repo_url":       "https://github.com/qiwi/buildstamp.git",
+  "git_repo_name":      "qiwi/buildstamp"
 }
 ```
 

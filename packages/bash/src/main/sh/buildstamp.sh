@@ -39,6 +39,10 @@ fi
 
 # Git info
 if [[ $opt_git == "true" ]]; then
+  git_commit_branch=$(getFirstDefined $CI_COMMIT_BRANCH $GITHUB_REF_NAME)
+  if [[ git_commit_branch == "" ]]; then
+    git_commit_branch = $(git rev-parse --abbrev-ref HEAD)
+  fi
   git_commit_id=$(git rev-parse HEAD)
   git_repo_url=$(git config --get remote.origin.url)
   re="([^./:]+\/[^./]+)(\.git)?$"
@@ -60,7 +64,7 @@ fi
 
 # Buildstamp render
 # use jq?
-for entry in "date" "git_commit_id" "git_repo_url" "git_repo_name" "ci_run_id" "ci_run_url"
+for entry in "date" "git_commit_id" "git_commit_branch" "git_repo_url" "git_repo_name" "ci_run_id" "ci_run_url"
 do
   if [[ ${!entry} != "" ]]; then
     json=$json\\n'  '\"$entry\":' '\"${!entry}\",

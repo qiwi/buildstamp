@@ -35,15 +35,27 @@ func GetPkgInfo(cwd string) PackageJson {
 }
 
 func GetGitInfo(cwd string) GitInfo {
-	var _, hash, _ = invoke("git", []string{"rev-parse", "HEAD"}, cwd)
+	var _, commitId, _ = invoke("git", []string{"rev-parse", "HEAD"}, cwd)
 	var _, repoUrl, _ = invoke("git", []string{"config", "--get", "remote.origin.url"}, cwd)
 	var repoName = string(repoUrl[strings.LastIndex(repoUrl, ":")+1 : strings.LastIndex(repoUrl, ".")])
+	var commitBranch = getCommitBranch(cwd)
 
 	return GitInfo{
-		hash,
+		commitId,
+		commitBranch,
 		repoUrl,
 		repoName,
 	}
+}
+
+func getCommitBranch(cwd string) string {
+	var commitBranch = getFirstNonEmpty(os.Getenv("CI_COMMIT_BRANCH"), os.Getenv("GITHUB_REF_NAME"))
+	if commitBranch == "" {
+		var _, branch, _ = invoke("git", []string{"rev-parse", "--abbrev-ref", "HEAD"}, cwd)
+		commitBranch = branch
+	}
+
+	return commitBranch
 }
 
 func GetCIInfo() CIInfo {
