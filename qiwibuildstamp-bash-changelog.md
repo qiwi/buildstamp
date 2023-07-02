@@ -1,3 +1,8 @@
+## [@qiwi/buildstamp-bash@1.3.0](https://github.com/qiwi/buildstamp/compare/2023.7.1-qiwi.buildstamp-bash.1.2.0-f0...2023.7.2-qiwi.buildstamp-bash.1.3.0-f0) (2023-07-02)
+
+### Features
+* feat: gather `git_commit_branch` value [627f8c6](https://github.com/qiwi/buildstamp/commit/627f8c6af4d860e6408ec57bf662e3dd9804749c)
+
 ## [@qiwi/buildstamp-bash@1.2.0](https://github.com/qiwi/buildstamp/compare/2023.7.1-qiwi.buildstamp-bash.1.1.0-f0...2023.7.1-qiwi.buildstamp-bash.1.2.0-f0) (2023-07-01)
 
 ### Features
