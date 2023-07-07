@@ -12,7 +12,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@abstractest/core@npm:0.2.0, @abstractest/core@npm:^0.2.0":
+"@abstractest/core@npm:0.2.0":
   version: 0.2.0
   resolution: "@abstractest/core@npm:0.2.0"
   dependencies:
@@ -21,7 +21,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@abstractest/core@npm:0.4.2":
+"@abstractest/core@npm:0.4.2, @abstractest/core@npm:^0.4.0":
   version: 0.4.2
   resolution: "@abstractest/core@npm:0.4.2"
   dependencies:
@@ -1722,7 +1722,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "buildstamp@workspace:packages/core"
   dependencies:
-    "@abstractest/core": "npm:^0.2.0"
+    "@abstractest/core": "npm:^0.4.0"
     "@qiwi/buildstamp-infra": "workspace:*"
     minimist: "npm:^1.2.8"
   bin:
