@@ -21,7 +21,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@abstractest/core@npm:0.4.2, @abstractest/core@npm:^0.4.0":
+"@abstractest/core@npm:0.4.3":
+  version: 0.4.3
+  resolution: "@abstractest/core@npm:0.4.3"
+  dependencies:
+    "@abstractest/types": "npm:0.5.0"
+  checksum: 80323608ccb39c44b835cea577ccc5acbab9804118d2756990120e6e8ac8ffce2563803770728c3c70d71555be19624e82bf83be846360d25904c20c0cf0cb8e
+  languageName: node
+  linkType: hard
+
+"@abstractest/core@npm:^0.4.0":
   version: 0.4.2
   resolution: "@abstractest/core@npm:0.4.2"
   dependencies:
@@ -30,37 +39,37 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@abstractest/expect@npm:0.1.3":
-  version: 0.1.3
-  resolution: "@abstractest/expect@npm:0.1.3"
+"@abstractest/expect@npm:0.1.4":
+  version: 0.1.4
+  resolution: "@abstractest/expect@npm:0.1.4"
   dependencies:
-    "@abstractest/types": "npm:0.4.1"
+    "@abstractest/types": "npm:0.5.0"
     expect: "npm:^29.6.1"
     jest-snapshot: "npm:^29.6.1"
-  checksum: e358a750f4c7f4f3f3bb62c998251ffd1a0368d3a737d1f5286aa8c0fa27114e0c1a129d9fa3f882edbb8b9f1c585664ae240008bd0c86928898a9f11198e5ce
+  checksum: b0ec0d131e62f6ce97cbd35353120e8d873292138a9ed7c940ef0ccce22a193e914b03d898b8f4497a8277da9240a7a9c01f62dcbbd0d4d87674386fb68c9f20
   languageName: node
   linkType: hard
 
-"@abstractest/mock@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@abstractest/mock@npm:0.0.1"
+"@abstractest/mock@npm:0.0.2":
+  version: 0.0.2
+  resolution: "@abstractest/mock@npm:0.0.2"
   dependencies:
     jest-mock: "npm:^29.6.1"
-  checksum: adc21503d672f367352a11440debf3b0f72eef28f54d908c311ce32a9418a0b1d0f199073ad51e07ed0988016e972370c66ae4591e79b9397f3a40d5214dba82
+  checksum: e470a4745213a222bd3bf049ecfa7020c271baccf760a6545b49cb89bba5655be89b909aa7e480518de1e6e84913e551451c83f7c1b8731ed9789f766219c2a0
   languageName: node
   linkType: hard
 
-"@abstractest/native@npm:^0.3.0":
-  version: 0.3.5
-  resolution: "@abstractest/native@npm:0.3.5"
+"@abstractest/native@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "@abstractest/native@npm:0.4.0"
   dependencies:
-    "@abstractest/core": "npm:0.4.2"
-    "@abstractest/expect": "npm:0.1.3"
-    "@abstractest/mock": "npm:0.0.1"
+    "@abstractest/core": "npm:0.4.3"
+    "@abstractest/expect": "npm:0.1.4"
+    "@abstractest/mock": "npm:0.0.2"
     c8: "npm:^8.0.0"
     fast-glob: "npm:^3.3.0"
     ts-node: "npm:^10.9.1"
-  checksum: 859ca4f5b2a0eed574a30916d373474ee9fcf8f04d637e9b9fe2a3767ddf9feb84bbb5174f07739490ea33856b8b87b7eefbff3b1cd6d29e0f3a92dc854683ff
+  checksum: ccdc13ab2e70c23df01d5f48ccb9d2e5fe230d916353be4d051bf6697bef37da3f95c7e5813b07c7a95de36edc816e1ded6a64cb3b00c38cbe0a54201ecf1b43
   languageName: node
   linkType: hard
 
@@ -75,6 +84,13 @@ __metadata:
   version: 0.4.1
   resolution: "@abstractest/types@npm:0.4.1"
   checksum: 2cb7b15bbc6fb662df1769aee3f37008d8a8a8daed9d553091217988983553f5fa3a8f5c62462fa1d71cc2d680392aaa370e57fe29d25e1574d36b03158d6cd6
+  languageName: node
+  linkType: hard
+
+"@abstractest/types@npm:0.5.0":
+  version: 0.5.0
+  resolution: "@abstractest/types@npm:0.5.0"
+  checksum: e1245404085a5183b341f702be8ec25286c0e3bd429b376ddb74251978c4658e2e28c56e0f6f345945d52d662f2a60b9bfe6f994c70a95eb0528b3e4ff1defba
   languageName: node
   linkType: hard
 
@@ -945,7 +961,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/buildstamp-infra@workspace:packages/infra"
   dependencies:
-    "@abstractest/native": "npm:^0.3.0"
+    "@abstractest/native": "npm:^0.4.0"
     "@antongolub/git-root": "npm:^1.5.13"
     "@semrel-extra/topo": "npm:^1.13.0"
     abstractest: "npm:^0.1.1"

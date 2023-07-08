@@ -15,7 +15,7 @@
     "bulk:topobuild": "cd $INIT_CWD && zx-bulk-release --dry-run --include-private --ignore=@qiwi/buildstamp-infra"
   },
   "devDependencies": {
-    "@abstractest/native": "^0.3.0",
+    "@abstractest/native": "^0.4.0",
     "@antongolub/git-root": "^1.5.13",
     "@semrel-extra/topo": "^1.13.0",
     "abstractest": "^0.1.1",
