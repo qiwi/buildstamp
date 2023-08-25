@@ -974,7 +974,7 @@ __metadata:
     fast-glob: "npm:^3.3.0"
     minimist: "npm:^1.2.8"
     ts-node: "npm:^10.9.1"
-    typedoc: "npm:^0.24.8"
+    typedoc: "npm:^0.25.0"
     typescript: "npm:^5.1.6"
     zx-bulk-release: "npm:^2.11.4"
   languageName: unknown
@@ -4183,12 +4183,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimatch@npm:^9.0.0, minimatch@npm:^9.0.1":
+"minimatch@npm:^9.0.1":
   version: 9.0.2
   resolution: "minimatch@npm:9.0.2"
   dependencies:
     brace-expansion: "npm:^2.0.1"
   checksum: 39157d5fd831a7981f7c0c5b22a0e0c2ae8a987ec4a4aeaacc21d3e85da24ce812808cbf7c07cde0d63ad1cf307f73be581131a7a84eeda65f00be1f51972471
+  languageName: node
+  linkType: hard
+
+"minimatch@npm:^9.0.3":
+  version: 9.0.3
+  resolution: "minimatch@npm:9.0.3"
+  dependencies:
+    brace-expansion: "npm:^2.0.1"
+  checksum: 85f407dcd38ac3e180f425e86553911d101455ca3ad5544d6a7cec16286657e4f8a9aa6695803025c55e31e35a91a2252b5dc8e7d527211278b8b65b4dbd5eac
   languageName: node
   linkType: hard
 
@@ -5697,19 +5706,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc@npm:^0.24.8":
-  version: 0.24.8
-  resolution: "typedoc@npm:0.24.8"
+"typedoc@npm:^0.25.0":
+  version: 0.25.0
+  resolution: "typedoc@npm:0.25.0"
   dependencies:
     lunr: "npm:^2.3.9"
     marked: "npm:^4.3.0"
-    minimatch: "npm:^9.0.0"
+    minimatch: "npm:^9.0.3"
     shiki: "npm:^0.14.1"
   peerDependencies:
-    typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x || 5.1.x
+    typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x || 5.1.x || 5.2.x
   bin:
     typedoc: bin/typedoc
-  checksum: 0fae7de1b17561085e112b6b429de66ee84536dd3a602f11eefd702997c7bcfbde0ac9b56759a66d0d5fda98ff99d37940fc4257a5a0113854549777801901d1
+  checksum: 7dd55a137e043118b0a6bfed0a60ced970c310892cc1a803a749251b6e9fbc26673e8f2ea7162412abf4c14f647c7246580148c8c319bce3d5709f522b42da2f
   languageName: node
   linkType: hard
 
