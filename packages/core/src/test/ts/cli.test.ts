@@ -17,7 +17,7 @@ const run = async (...args: string[]) => spawn('node', [
 
 describe('CLI', () => {
   it('returns a result corresponding the passed opts', async () => {
-    const tmp = await fs.mkdir(path.resolve(await fs.realpath(os.tmpdir()), Math.random().toString(36).slice(2)), {recursive: true}) + ''
+    const tmp = path.resolve(await fs.realpath(os.tmpdir()), Math.random().toString(36).slice(2))
     const output = path.resolve(tmp, 'out.json')
 
     await run(`--output=${output}`)

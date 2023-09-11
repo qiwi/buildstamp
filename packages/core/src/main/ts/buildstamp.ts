@@ -40,7 +40,9 @@ export const buildstamp = async (opts?: IBuildstampOptions): Promise<IBuildstamp
     Object.assign(stamp, getCIInfo(process.env))
   }
   if (output) {
-    await fs.writeFile(path.resolve(cwd, output), JSON.stringify(stamp, null, 2))
+    const file = path.resolve(cwd, output)
+    await fs.mkdir(path.dirname(file), { recursive: true })
+    await fs.writeFile(file, JSON.stringify(stamp, null, 2))
   }
 
   return stamp
