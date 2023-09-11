@@ -1,3 +1,8 @@
+## [buildstamp@3.3.1](https://github.com/qiwi/buildstamp/compare/2023.7.2-buildstamp.3.3.0-f0...2023.9.11-buildstamp.3.3.1-f0) (2023-09-11)
+
+### Fixes & improvements
+* fix: mkdir output (#124) [a693fb0](https://github.com/qiwi/buildstamp/commit/a693fb083941405967a35f01e91242b320c3312e)
+
 ## [buildstamp@3.3.0](https://github.com/qiwi/buildstamp/compare/2023.7.1-buildstamp.3.2.0-f0...2023.7.2-buildstamp.3.3.0-f0) (2023-07-02)
 
 ### Features
