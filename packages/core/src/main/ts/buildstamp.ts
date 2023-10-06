@@ -53,7 +53,7 @@ export const getCommitBranch = async (cwd: string, env: Record<string, string | 
 
 export const getGitInfo = async (cwd: string, env: Record<string, string | undefined>): Promise<IGitInfo> => {
   const { stdout: git_commit_id } = await spawn('git', ['rev-parse', 'HEAD'], cwd)
-  const { stdout: git_repo_url } = await spawn('git', ['config', '--get', 'remote.origin.url'], cwd)
+  const git_repo_url = await getGitRepoUrl(cwd)
   const git_commit_branch = await getCommitBranch(cwd, env)
   const git_repo_name = (git_repo_url.match(/([^./:]+\/[^./]+)(\.git)?$/) || [])[1]
 
@@ -63,6 +63,12 @@ export const getGitInfo = async (cwd: string, env: Record<string, string | undef
     git_repo_url,
     git_repo_name
   }
+}
+
+const getGitRepoUrl = async (cwd: string): Promise<string> => {
+  const { stdout: git_remote } = await spawn('git', ['remote', 'show'], cwd)
+  const { stdout: git_repo_url } = await spawn('git', ['config', '--get', `remote.${git_remote}.url`], cwd)
+  return git_repo_url
 }
 
 // https://docs.github.com/en/actions/learn-github-actions/variables#default-environment-variables

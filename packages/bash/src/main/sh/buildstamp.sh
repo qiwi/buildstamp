@@ -44,7 +44,8 @@ if [[ $opt_git == "true" ]]; then
     git_commit_branch = $(git rev-parse --abbrev-ref HEAD)
   fi
   git_commit_id=$(git rev-parse HEAD)
-  git_repo_url=$(git config --get remote.origin.url)
+  git_remote=$(git remote show)
+  git_repo_url=$(git config --get remote.${git_remote}.url)
   re="([^./:]+\/[^./]+)(\.git)?$"
   if [[ $git_repo_url =~ $re ]]; then
       git_repo_name=${BASH_REMATCH[1]}
