@@ -74,7 +74,7 @@ func GetPkgInfo(cwd string) PackageJson {
 
 func GetGitInfo(cwd string) GitInfo {
 	var _, commitId, _ = invoke("git", []string{"rev-parse", "HEAD"}, cwd)
-	var _, repoUrl, _ = invoke("git", []string{"config", "--get", "remote.origin.url"}, cwd)
+	var repoUrl = getGitRepoUrl(cwd)
 	var repoName = string(repoUrl[strings.LastIndex(repoUrl, ":")+1 : strings.LastIndex(repoUrl, ".")])
 	var commitBranch = getCommitBranch(cwd)
 
@@ -84,6 +84,13 @@ func GetGitInfo(cwd string) GitInfo {
 		repoUrl,
 		repoName,
 	}
+}
+
+func getGitRepoUrl(cwd string) string {
+    var _, remote, _ = invoke("git", []string{"remote", "show"}, cwd)
+    var _, repoUrl, _ = invoke("git", []string{"config", "--get", "remote." + remote + ".url"}, cwd)
+
+    return repoUrl
 }
 
 func getCommitBranch(cwd string) string {
