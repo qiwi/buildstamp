@@ -1,3 +1,8 @@
+## [buildstamp@3.3.2](https://github.com/qiwi/buildstamp/compare/2023.9.11-buildstamp.3.3.1-f0...2023.10.6-buildstamp.3.3.2-f0) (2023-10-06)
+
+### Fixes & improvements
+* fix: changed git_repo_url search [2dfe277](https://github.com/qiwi/buildstamp/commit/2dfe2771344a7fde421932ea1558ea626f0006de)
+
 ## [buildstamp@3.3.1](https://github.com/qiwi/buildstamp/compare/2023.7.2-buildstamp.3.3.0-f0...2023.9.11-buildstamp.3.3.1-f0) (2023-09-11)
 
 ### Fixes & improvements
