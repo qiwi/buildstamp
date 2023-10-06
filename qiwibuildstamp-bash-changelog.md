@@ -1,3 +1,8 @@
+## [@qiwi/buildstamp-bash@1.3.1](https://github.com/qiwi/buildstamp/compare/2023.7.2-qiwi.buildstamp-bash.1.3.0-f0...2023.10.6-qiwi.buildstamp-bash.1.3.1-f0) (2023-10-06)
+
+### Fixes & improvements
+* fix: changed git_repo_url search [2dfe277](https://github.com/qiwi/buildstamp/commit/2dfe2771344a7fde421932ea1558ea626f0006de)
+
 ## [@qiwi/buildstamp-bash@1.3.0](https://github.com/qiwi/buildstamp/compare/2023.7.1-qiwi.buildstamp-bash.1.2.0-f0...2023.7.2-qiwi.buildstamp-bash.1.3.0-f0) (2023-07-02)
 
 ### Features
