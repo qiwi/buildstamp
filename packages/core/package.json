@@ -27,7 +27,7 @@
     "minimist": "^1.2.8"
   },
   "devDependencies": {
-    "@abstractest/core": "^0.4.0",
+    "@abstractest/core": "^0.4.4",
     "@qiwi/buildstamp-infra": "workspace:*"
   },
   "scripts": {
