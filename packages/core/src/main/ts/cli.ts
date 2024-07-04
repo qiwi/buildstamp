@@ -8,7 +8,7 @@ const camelize = (s: string) => s.replace(/-./g, x => x[1].toUpperCase())
 const normalizeFlags = (flags = {}): Record<string, any> => Object.fromEntries(Object.entries(flags).map(([k, v]) =>
   [camelize(k), v === 'false' ? false : v]))
 
-const { cwd, git, date, output, version, help, extra } = normalizeFlags(minimist(process.argv.slice(2), {
+const { cwd, git, date, output, version, help, extra, safe } = normalizeFlags(minimist(process.argv.slice(2), {
   alias: {
     help: ['h'],
     version: ['v'],
@@ -28,6 +28,7 @@ const { cwd, git, date, output, version, help, extra } = normalizeFlags(minimist
     --git           Inject git info. True by default
     --date          Inject date. True by default
     --extra         JSON to mixin
+    --safe          Suppress any errors. Defaults to false
     --help, -h      Print help digest
     --version, -v   Print version
   
@@ -48,6 +49,7 @@ const { cwd, git, date, output, version, help, extra } = normalizeFlags(minimist
     date,
     git,
     output,
+    safe,
     extra: extra ? JSON.parse(extra) : {}
   })
 })()
