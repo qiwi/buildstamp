@@ -4,6 +4,7 @@ export interface IBuildstampOptionsNormalized {
   date:   boolean | string
   git:    boolean
   ci:     boolean
+  safe:   boolean
   extra:  Record<string, string>
 }
 
@@ -25,3 +26,5 @@ export interface IBuildstamp extends Partial<IGitInfo>, Partial<ICIInfo> {
   date?: string
   [e: string]: string | undefined
 }
+
+export interface ICallable { (...args: any[]): any }

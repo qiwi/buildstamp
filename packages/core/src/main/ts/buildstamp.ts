@@ -7,7 +7,8 @@ import {
   IBuildstamp,
   IBuildstampOptions,
   IBuildstampOptionsNormalized,
-  IGitInfo
+  IGitInfo,
+  ICallable
 } from './interface'
 
 export const normalizeOpts = ({
@@ -16,6 +17,7 @@ export const normalizeOpts = ({
   ci = true,
   git = true,
   date = true,
+  safe = false,
   extra = {}
 }: IBuildstampOptions = {}): IBuildstampOptionsNormalized => ({
   ci,
@@ -24,25 +26,27 @@ export const normalizeOpts = ({
   git,
   date,
   extra,
+  safe
 })
 
 export const buildstamp = async (opts?: IBuildstampOptions): Promise<IBuildstamp> => {
-  const {ci, git, date, cwd, output, extra} = normalizeOpts(opts)
+  const {ci, git, date, cwd, output, extra, safe} = normalizeOpts(opts)
   const stamp: IBuildstamp = {...extra}
+  const s = safe ? safify : (v: any) => v
 
   if (date) {
     stamp.date = new Date().toISOString()
   }
   if (git) {
-    Object.assign(stamp, await getGitInfo(cwd, process.env))
+    Object.assign(stamp, await s(getGitInfo)(cwd, process.env))
   }
   if (ci) {
-    Object.assign(stamp, getCIInfo(process.env))
+    Object.assign(stamp, s(getCIInfo)(process.env))
   }
   if (output) {
-    const file = path.resolve(cwd, output)
-    await fs.mkdir(path.dirname(file), { recursive: true })
-    await fs.writeFile(file, JSON.stringify(stamp, null, 2))
+    const file = s(path.resolve)(cwd, output)
+    await s(fs.mkdir)(s(path.dirname)(file), { recursive: true })
+    await s(fs.writeFile)(file, JSON.stringify(stamp, null, 2))
   }
 
   return stamp
@@ -106,3 +110,12 @@ export const spawn = (
       })
     })
 })
+
+export const safify = <T extends ICallable>(fn: T, value: any = {}): T => ((...args: any[]) => {
+  try {
+    const result = fn(...args)
+    return result?.then((v: any) => v, () => value) || result
+  } catch {
+    return value
+  }
+}) as T

@@ -28,7 +28,8 @@
   },
   "devDependencies": {
     "@abstractest/core": "^0.4.4",
-    "@qiwi/buildstamp-infra": "workspace:*"
+    "@qiwi/buildstamp-infra": "workspace:*",
+    "@types/minimist": "^1.2.5"
   },
   "scripts": {
     "build": "concurrently --kill-others-on-fail 'npm:build:*'",

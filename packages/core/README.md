@@ -37,6 +37,7 @@ npx buildstamp --output='buildstamp.json' --extra='{"foo": "bar"}'
 | `--git`          | Collect git info            | `true`            |
 | `--ci`           | Capture CI digest           | `true`            |
 | `--date`         | Attach ISO8601 date         | `true`            |
+| `--safe`         | Suppress errors             | `false`           |
 | `--extra`        | JSON mixin to inject        | `{}`              |
 | `--help`         | Print help info             |                   |               
 

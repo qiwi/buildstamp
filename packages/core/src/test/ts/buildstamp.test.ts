@@ -12,6 +12,18 @@ describe('buildstamp', () => {
     expect(result.git_repo_name).toEqual('qiwi/buildstamp')
     expect(result.foo).toEqual('bar')
   })
+
+  it('suppresses errors in `safe` mode', async () => {
+    const output = '\0invali::?d_path.json'
+    try {
+      await buildstamp({output})
+    } catch (e) {
+      expect(e.message).toMatch(/The argument 'path' must be a string, Uint8Array, or URL without null bytes/)
+    }
+
+    const result = await buildstamp({output, safe: true})
+    expect(result.git_repo_name).toEqual('qiwi/buildstamp')
+  })
 })
 
 describe('getGitInfo()', () => {
