@@ -1,3 +1,11 @@
+## [buildstamp@3.4.0](https://github.com/qiwi/buildstamp/compare/2023.10.6-buildstamp.3.3.2-f0...2024.7.4-buildstamp.3.4.0-f0) (2024-07-04)
+
+### Features
+* feat(js): introduce `safe` flag to suppress errors [58e43df](https://github.com/qiwi/buildstamp/commit/58e43df7f1e48d752e438588c4bc12c017a7c15d)
+
+### Dependencies
+* perf: devDependencies @qiwi/buildstamp-infra updated to 0.1.0
+
 ## [buildstamp@3.3.2](https://github.com/qiwi/buildstamp/compare/2023.9.11-buildstamp.3.3.1-f0...2023.10.6-buildstamp.3.3.2-f0) (2023-10-06)
 
 ### Fixes & improvements
