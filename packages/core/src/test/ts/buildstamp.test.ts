@@ -9,7 +9,7 @@ describe('buildstamp', () => {
         foo: 'bar'
       }
     })
-    expect(result.git_repo_name).toEqual('qiwi/buildstamp')
+    expect(result.git_repo_name).toEqual('qiwi/buildstamp') // eslint-disable-line sonarjs/no-duplicate-string
     expect(result.foo).toEqual('bar')
   })
 
