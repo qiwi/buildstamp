@@ -20,7 +20,7 @@
     "@semrel-extra/topo": "^1.14.1",
     "abstractest": "^0.1.7",
     "c8": "^10.1.2",
-    "concurrently": "^8.2.2",
+    "concurrently": "^9.0.0",
     "esbuild": "^0.23.0",
     "esbuild-node-externals": "^1.13.1",
     "eslint": "^8.44.0",
