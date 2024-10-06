@@ -70,7 +70,7 @@ export const getGitInfo = async (cwd: string, env: Record<string, string | undef
 }
 
 const getGitRepoUrl = async (cwd: string): Promise<string> => {
-  const { stdout: git_remote } = await spawn('git', ['remote', 'show'], cwd)
+  const git_remote = (await spawn('git', ['remote', 'show'], cwd)).stdout.split('\n')[0]
   const { stdout: git_repo_url } = await spawn('git', ['config', '--get', `remote.${git_remote}.url`], cwd)
   return git_repo_url
 }

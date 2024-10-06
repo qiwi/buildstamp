@@ -20,6 +20,5 @@
     "build-info",
     "buildstamp"
   ],
-  "license": "MIT",
-  "packageManager": "yarn@4.5.0"
+  "license": "MIT"
 }
