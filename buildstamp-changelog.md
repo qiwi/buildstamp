@@ -1,3 +1,11 @@
+## [buildstamp@3.5.0](https://github.com/qiwi/buildstamp/compare/2024.7.4-buildstamp.3.4.0-f0...2024.10.6-buildstamp.3.5.0-f0) (2024-10-06)
+
+### Fixes & improvements
+* fix: handle multiple remotes [f6fe907](https://github.com/qiwi/buildstamp/commit/f6fe9073f46386266f68a29323e3b1244dc31b1b)
+
+### Features
+* feat(js): set exitCode = 1 on error [c9553f2](https://github.com/qiwi/buildstamp/commit/c9553f2097a028e98d7d266ab925fc2bfa962f5d)
+
 ## [buildstamp@3.4.0](https://github.com/qiwi/buildstamp/compare/2023.10.6-buildstamp.3.3.2-f0...2024.7.4-buildstamp.3.4.0-f0) (2024-07-04)
 
 ### Features
