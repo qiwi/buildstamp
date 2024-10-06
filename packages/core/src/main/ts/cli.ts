@@ -3,6 +3,7 @@
 import {createRequire} from 'node:module'
 import minimist from 'minimist'
 import {buildstamp} from './buildstamp'
+import * as process from "node:process";
 
 const camelize = (s: string) => s.replace(/-./g, x => x[1].toUpperCase())
 const normalizeFlags = (flags = {}): Record<string, any> => Object.fromEntries(Object.entries(flags).map(([k, v]) =>
@@ -44,12 +45,18 @@ const { cwd, git, date, output, version, help, extra, safe } = normalizeFlags(mi
     return
   }
 
-  await buildstamp({
-    cwd,
-    date,
-    git,
-    output,
-    safe,
-    extra: extra ? JSON.parse(extra) : {}
-  })
+  try {
+    await buildstamp({
+      cwd,
+      date,
+      git,
+      output,
+      safe,
+      extra: extra ? JSON.parse(extra) : {}
+    })
+    process.exit(0)
+  } catch (e) {
+    console.error(e)
+    process.exit(1)
+  }
 })()
