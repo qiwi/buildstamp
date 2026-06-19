@@ -21,7 +21,7 @@
     "abstractest": "^0.1.7",
     "c8": "^10.1.2",
     "concurrently": "^9.0.1",
-    "esbuild": "^0.24.0",
+    "esbuild": "^0.25.0",
     "esbuild-node-externals": "^1.15.0",
     "eslint": "^8.44.0",
     "eslint-config-qiwi": "^2.1.3",
