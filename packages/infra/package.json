@@ -19,7 +19,7 @@
     "@antongolub/git-root": "^1.5.14",
     "@semrel-extra/topo": "^1.14.1",
     "abstractest": "^0.1.7",
-    "c8": "^10.1.2",
+    "c8": "^11.0.0",
     "concurrently": "^9.0.1",
     "esbuild": "^0.24.0",
     "esbuild-node-externals": "^1.15.0",
