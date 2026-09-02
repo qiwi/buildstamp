@@ -28,7 +28,7 @@
     "fast-glob": "^3.3.2",
     "minimist": "^1.2.8",
     "ts-node": "^10.9.2",
-    "typedoc": "^0.26.8",
+    "typedoc": "^0.28.0",
     "typescript": "^5.6.2",
     "zx-bulk-release": "^2.15.23"
   }
