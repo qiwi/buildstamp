@@ -19,7 +19,7 @@
     "build:windows-amd64": "GOOS=windows GOARCH=amd64 yarn build:default"
   },
   "devDependencies": {
-    "concurrently": "^9.0.1"
+    "concurrently": "^10.0.0"
   },
   "files": []
 }
